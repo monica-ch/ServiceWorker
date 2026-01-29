@@ -3249,24 +3249,11 @@ spec: storage; urlPrefix: https://storage.spec.whatwg.org/
                   1. Else:
                       1. Set |environment| to |client|.
                   1. Let |caches| be the result of running [=obtain a local storage bottle map=] with |environment| and "<code>caches</code>".
-                  1. [=map/For each=] |cacheName| &#x2192; |cache| of |caches|.
-                      1. If |source|["{{RouterSourceDict/cacheName}}"] [=map/exists=] and |source|["{{RouterSourceDict/cacheName}}"] [=string/is=] not |cacheName|, [=continue=].
-                      1. Let |requestResponses| be the result of running [=Query Cache=] with |request|, a new {{CacheQueryOptions}}, and |cache|.
-                      1. If |requestResponses| is an empty [=list=], return |timingInfo|.
-                      1. Else:
-                          1. Let |requestResponse| be the first element of |requestResponses|.
-                          1. Let |response| be |requestResponse|'s response.
-                          1. Let |globalObject| be |activeWorker|'s [=service worker/global object=].
-                          1. If |globalObject| is null:
-                              1. Set |globalObject| to the result of running [=Setup ServiceWorkerGlobalScope=] with |activeWorker|.
-                          1. If |globalObject| is null, return |timingInfo|.
-
-                          Note: This only creates a ServiceWorkerGlobalScope because CORS checks require that. It is not expected that implementations will actually create a ServiceWorkerGlobalScope here.
-
-                          1. If |response|'s [=response/type=] is "`opaque`", and [=cross-origin resource policy check=] with |globalObject|'s [=environment settings object/origin=], |globalObject|, "", and |response|'s [=filtered response/internal response=] returns <b>blocked</b>, then return |timingInfo|.
-                          1. Set |timingInfo|'s [=service worker timing info/worker final router source=] be set to {{RouterSourceEnum/"cache"}}.
-                          1. Set |result|'s [=service worker timing info=] be set to |timingInfo|.
-                          1. Return |response|.
+                  1. Let |response| be the result of running [=Lookup Cache for Router Source=] with |request|, |source|, "{{RouterSourceDict/cacheName}}", |reservedClient|, |client|, |activeWorker|, |timingInfo|, and |useHighResPerformanceTimers|.
+                  1. If |response| is not null, then:
+                      1. Set |timingInfo|'s [=service worker timing info/worker final router source=] be set to {{RouterSourceEnum/"cache"}}.
+                      1. Set |response|'s [=service worker timing info=] be set to |timingInfo|.
+                      1. Return |response|.
                   1. Return |timingInfo|.
               1. Else if |source| is {{RouterSourceEnum/"race-network-and-fetch-handler"}}, and |request|'s [=request/method=] is \`<code>GET</code>\` then:
                   1. If |shouldSoftUpdate| is true, then [=in parallel=] run the [=Soft Update=] algorithm with |registration|.
@@ -3319,25 +3306,12 @@ spec: storage; urlPrefix: https://storage.spec.whatwg.org/
                     1. Else:
                         1. Set |environment| to |client|.
                     1. Let |caches| be the result of running [=obtain a local storage bottle map=] with |environment| and "<code>caches</code>".
-                    1. [=map/For each=] |cacheName| &#x2192; |cache| of |caches|.
-                        1. If |source|["{{RouterSourceDict/raceNetworkAndCacheCacheName}}"] [=map/exists=] and |source|["{{RouterSourceDict/raceNetworkAndCacheCacheName}}"] [=string/is=] not |cacheName|, [=continue=].
-                        1. Let |requestResponses| be the result of running [=Query Cache=] with |request|, a new {{CacheQueryOptions}}, and |cache|.
-                        1. If |requestResponses| is an empty [=list=], [=continue=].
-                        1. Else:
-                            1. Let |requestResponse| be the first element of |requestResponses|.
-                            1. Let |response| be |requestResponse|'s response.
-                            1. Let |globalObject| be |activeWorker|'s [=service worker/global object=].
-                            1. If |globalObject| is null:
-                                1. Set |globalObject| to the result of running [=Setup ServiceWorkerGlobalScope=] with |activeWorker|.
-                            1. If |globalObject| is null, [=continue=].
-
-                            Note: This only creates a ServiceWorkerGlobalScope because CORS checks require that. It is not expected that implementations will actually create a ServiceWorkerGlobalScope here.
-
-                            1. If |response|'s [=response/type=] is "`opaque`", and [=cross-origin resource policy check=] with |globalObject|'s [=environment settings object/origin=], |globalObject|, "", and |response|'s [=filtered response/internal response=] returns <b>blocked</b>, then [=continue=].
-                            1. Let |raceCacheResult| be a [=race result=] whose [=race result/routed response=] is |response| and [=race result/used route=] is {{RouterSourceEnum/"cache"}}.
-                            1. If |raceFetchController| is not null, [=fetch controller/abort=] |raceFetchController|.
-                            1. [=queue/Enqueue=] |raceCacheResult| to |queue|.
-                            1. Return.
+                    1. Let |response| be the result of running [=Lookup Cache for Router Source=] with |request|, |source|, "{{RouterSourceDict/raceNetworkAndCacheCacheName}}", |reservedClient|, |client|, |activeWorker|, |timingInfo|, and |useHighResPerformanceTimers|.
+                    1. If |response| is not null, then:
+                        1. Let |raceCacheResult| be a [=race result=] whose [=race result/routed response=] is |response| and [=race result/used route=] is {{RouterSourceEnum/"cache"}}.
+                        1. If |raceFetchController| is not null, [=fetch controller/abort=] |raceFetchController|.
+                        1. [=queue/Enqueue=] |raceCacheResult| to |queue|.
+                        1. Return.
                 1. Wait until |queue| is not empty.
                 1. Let |result| be the result of [=dequeue=] |queue|.
                 1. Let |routedResponse| be |result|'s [=race result/routed response=].
@@ -4086,6 +4060,47 @@ spec: storage; urlPrefix: https://storage.spec.whatwg.org/
             1. Let |responseCopy| be a copy of |cachedResponse|.
             1. Add |requestCopy|/|responseCopy| to |resultList|.
       1. Return |resultList|.
+  </section>
+
+  <section algorithm>
+    <h3 id="lookup-cache-for-router-source-algorithm"><dfn>Lookup Cache for Router Source</dfn></h3>
+
+      : Input
+      :: |request|, a [=/request=]
+      :: |source|, a {{RouterSourceDict}}
+      :: |cacheNameKey|, a string (the key in |source| to filter by cache name)
+      :: |reservedClient|, an [=environment settings object=]
+      :: |client|, an [=environment settings object=]
+      :: |activeWorker|, a [=/service worker=]
+      :: |timingInfo|, a [=service worker timing info=]
+      :: |useHighResPerformanceTimers|, a boolean
+      : Output
+      :: a [=/response=] if found in cache and passes CORS checks, or null otherwise
+
+      1. Set |timingInfo|'s [=service worker timing info/worker cache lookup start=] to the [=coarsened shared current time=] given |useHighResPerformanceTimers|.
+      1. Let |environment| be null.
+      1. If |request| is a <a>non-subresource request</a>, then:
+          1. Set |environment| to |reservedClient|.
+      1. Else:
+          1. Set |environment| to |client|.
+      1. Let |caches| be the result of running [=obtain a local storage bottle map=] with |environment| and "<code>caches</code>".
+      1. Let |globalObject| be |activeWorker|'s [=service worker/global object=].
+      1. If |globalObject| is null:
+          1. Set |globalObject| to the result of running [=Setup ServiceWorkerGlobalScope=] with |activeWorker|.
+      1. If |globalObject| is null, return null.
+
+      Note: This only creates a ServiceWorkerGlobalScope because CORS checks require that. It is not expected that implementations will actually create a ServiceWorkerGlobalScope here.
+
+      1. [=map/For each=] |cacheName| &#x2192; |cache| of |caches|:
+          1. If |source|[|cacheNameKey|] [=map/exists=] and |source|[|cacheNameKey|] [=string/is=] not |cacheName|, [=continue=].
+          1. Let |requestResponses| be the result of running [=Query Cache=] with |request|, a new {{CacheQueryOptions}}, and |cache|.
+          1. If |requestResponses| is an empty [=list=], [=continue=].
+          1. Else:
+              1. Let |requestResponse| be the first element of |requestResponses|.
+              1. Let |response| be |requestResponse|'s response.
+              1. If |response|'s [=response/type=] is "`opaque`", and [=cross-origin resource policy check=] with |globalObject|'s [=environment settings object/origin=], |globalObject|, "", and |response|'s [=filtered response/internal response=] returns <b>blocked</b>, then [=continue=].
+              1. Return |response|.
+      1. Return null.
   </section>
 
   <section algorithm>
