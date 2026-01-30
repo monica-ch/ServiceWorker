@@ -1,4 +1,4 @@
-﻿<pre class='metadata'>
+<pre class='metadata'>
 Title: Service Workers Nightly
 Status: ED
 ED: https://w3c.github.io/ServiceWorker/
