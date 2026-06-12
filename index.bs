@@ -1004,6 +1004,10 @@ spec: storage; urlPrefix: https://storage.spec.whatwg.org/
 
       The <dfn method for="NavigationPreloadManager"><code>setHeaderValue(|value|)</code></dfn> method steps are:
 
+        1. If |value| is not a [=header value=], return [=a promise rejected with=] a {{TypeError}}.
+
+            Note: The {{ByteString}} IDL type only restricts |value| to bytes in the range 0x00 to 0xFF. This step additionally enforces the further restrictions defined by [=header value=].
+
         1. Let |promise| be [=a new promise=].
         1. Run the following steps [=in parallel=]:
             1. Let |registration| be [=this=]'s associated [=/service worker registration=].
