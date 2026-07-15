@@ -1639,14 +1639,17 @@ spec: storage; urlPrefix: https://storage.spec.whatwg.org/
 
             Note: this step is for making |lifetimePromise| always fullfilled to avoid the install event failure.
 
+        1. Let |serviceWorkerEventLoop| be the [=current global object=]'s [=event loop=].
         1. [=queue/Enqueue=] the following steps to [=[[service worker queue]]=]:
             1. Let |allRules| be a copy of |serviceWorker|'s [=list of router rules=].
             1.  For each |rule| of |rules|:
                 1. Append |rule| to |allRules|.
 
-            1. If running the [=Check Router Registration Limit=] with |allRules| returns false, reject |promise| with a {{TypeError}}.
+            1. If running the [=Check Router Registration Limit=] with |allRules| returns false, then:
+                1. [=Queue a task=] to run the following steps on |serviceWorkerEventLoop| using the [=DOM manipulation task source=]:
+                    1. Reject |promise| with a {{TypeError}}.
+                1. Abort these steps.
             1. Set |serviceWorker|'s [=service worker/list of router rules=] to |allRules|.
-            1. Let |serviceWorkerEventLoop| be the [=current global object=]'s [=event loop=].
             1. [=Queue a task=] to run the following steps on |serviceWorkerEventLoop| using the [=DOM manipulation task source=]:
                 1. Resolve |promise| with undefined.
         1. Return |promise|.
