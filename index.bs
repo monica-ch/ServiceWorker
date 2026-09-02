@@ -2777,6 +2777,29 @@ spec: storage; urlPrefix: https://storage.spec.whatwg.org/
   </section>
 
   <section algorithm>
+    <h3 id="register-a-service-worker-algorithm"><dfn export>Register a Service Worker</dfn></h3>
+
+    Note: Because this algorithm has no calling [=/service worker client=], the [=job/referrer=] is not set by [=Create Job=]. To satisfy the same-origin checks in the [=Register=] algorithm (steps 2 and 3), this algorithm explicitly sets the job's [=job/referrer=] to |scriptURL|. Combined with the same-origin precondition asserted in step 1, this ensures both same-origin checks in [=Register=] pass.
+
+      : Input
+      :: |storageKey|, a [=/storage key=]
+      :: |scriptURL|, a [=/URL=]
+      :: |scopeURL|, a [=/URL=]
+      :: |workerType|, a [=job/worker type=]
+      :: |updateViaCache|, a [=service worker registration/update via cache mode=]
+      : Output
+      :: None
+
+      1. Assert: |scriptURL|'s [=url/origin=] and |scopeURL|'s [=url/origin=] are [=same origin=].
+      1. If the result of running <a>potentially trustworthy origin</a> with |scriptURL|'s [=url/origin=] as the argument is <code>Not Trusted</code>, return.
+      1. Let |job| be the result of running <a>Create Job</a> with *register*, |storageKey|, |scopeURL|, |scriptURL|, null, and null.
+      1. Set |job|'s [=job/worker type=] to |workerType|.
+      1. Set |job|'s [=job/update via cache mode=] to |updateViaCache|.
+      1. Set |job|'s [=job/referrer=] to |scriptURL|.
+      1. Invoke <a>Schedule Job</a> with |job|.
+  </section>
+
+  <section algorithm>
     <h3 id="update-algorithm"><dfn>Update</dfn></h3>
 
       : Input
