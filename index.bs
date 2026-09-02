@@ -3761,6 +3761,25 @@ spec: storage; urlPrefix: https://storage.spec.whatwg.org/
   </section>
 
   <section algorithm>
+    <h3 id="unregister-service-workers-algorithm"><dfn export>Unregister Service Workers</dfn></h3>
+
+      : Input
+      :: |storageKey|, a [=/storage key=]
+      : Output
+      :: None
+
+      1. Let |scopes| be a new [=list=].
+      1. [=list/For each=] (|entryStorageKey|, |serializedScope|) of [=registration map=]'s [=map/keys=]:
+          1. If |entryStorageKey| is not |storageKey|, [=continue=].
+          1. Let |scopeURL| be the result of <a lt="URL parser">parsing</a> |serializedScope|.
+          1. If |scopeURL| is failure, [=continue=].
+          1. [=list/Append=] |scopeURL| to |scopes|.
+      1. [=list/For each=] |scope| of |scopes|:
+          1. Let |job| be the result of running <a>Create Job</a> with *unregister*, |storageKey|, |scope|, null, null, and null.
+          1. Invoke <a>Schedule Job</a> with |job|.
+  </section>
+
+  <section algorithm>
     <h3 id="set-registration-algorithm"><dfn>Set Registration</dfn></h3>
 
       : Input
