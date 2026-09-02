@@ -2907,7 +2907,7 @@ spec: storage; urlPrefix: https://storage.spec.whatwg.org/
   </section>
 
   <section algorithm>
-    <h3 id="soft-update-algorithm"><dfn>Soft Update</dfn></h3>
+    <h3 id="soft-update-algorithm"><dfn export>Soft Update</dfn></h3>
 
     The user agent *may* call this as often as it likes to check for updates.
 
