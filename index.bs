@@ -2931,7 +2931,7 @@ spec: storage; urlPrefix: https://storage.spec.whatwg.org/
   <section algorithm>
     <h3 id="request-soft-update-algorithm"><dfn export>Request Soft Update</dfn></h3>
 
-    This algorithm allows other specifications to request that the user agent check a [=/service worker registration=] for updates. The [=/storage key=] check enforces that callers can only request updates for registrations within their own partition, and user agent discretion protects against excessive resource use.
+    This algorithm allows other specifications to request that the user agent check a [=/service worker registration=] for updates.
 
       : Input
       :: |registration|, a [=/service worker registration=]
@@ -2940,9 +2940,10 @@ spec: storage; urlPrefix: https://storage.spec.whatwg.org/
       :: None
 
       1. If |registration|'s [=service worker registration/storage key=] is not [=storage key/equal=] to |requestingStorageKey|, return.
-      1. The user agent *may* return without running any further steps.
-      1. The user agent *may* also coalesce concurrent invocations of this algorithm for the same |registration|.
+      1. The user agent *may* return.
       1. Run the [=Soft Update=] algorithm with |registration|.
+
+      Note: Calling specifications are responsible for supplying the [=/storage key=] associated with their request. The preceding step gives the user agent discretion to protect against excessive resource use, for example by limiting how often it runs [=Soft Update=] for a given [=/service worker registration=], or by treating several invocations of this algorithm for the same [=/service worker registration=] that occur close together as a single invocation. Callers cannot rely on this algorithm resulting in an update check.
   </section>
 
   <section algorithm>
