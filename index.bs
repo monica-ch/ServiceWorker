@@ -2936,14 +2936,18 @@ spec: storage; urlPrefix: https://storage.spec.whatwg.org/
       : Input
       :: |registration|, a [=/service worker registration=]
       :: |requestingStorageKey|, a [=/storage key=]
+      :: |forceBypassCache|, an optional boolean, false by default
       : Output
       :: None
 
       1. If |registration|'s [=service worker registration/storage key=] is not [=storage key/equal=] to |requestingStorageKey|, return.
-      1. The user agent *may* return.
-      1. Run the [=Soft Update=] algorithm with |registration|.
+      1. If the user agent decides to limit the frequency of update checks for |registration|, return.
 
-      Note: Calling specifications are responsible for supplying the [=/storage key=] associated with their request. The preceding step gives the user agent discretion to protect against excessive resource use, for example by limiting how often it runs [=Soft Update=] for a given [=/service worker registration=], or by treating several invocations of this algorithm for the same [=/service worker registration=] that occur close together as a single invocation. Callers cannot rely on this algorithm resulting in an update check.
+          Note: The user agent may protect against excessive resource use by rate-limiting update checks or by treating several invocations for |registration| that occur close together as a single invocation. Callers cannot rely on this algorithm resulting in an update check.
+
+      1. Run the [=Soft Update=] algorithm with |registration| and |forceBypassCache|.
+
+      Note: Calling specifications are responsible for supplying the [=/storage key=] associated with their request.
   </section>
 
   <section algorithm>
