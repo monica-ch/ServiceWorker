@@ -22,6 +22,13 @@ To make edits to the design, please send pull requests against the Nightly spec 
 
 The W3C Web Mobile Group have defined a [series of use-cases where service worker is particularly useful](https://github.com/w3c-webmob/ServiceWorkersDemos). You can help by adding more use cases, draft implementation code, or even working examples once browsers support the required APIs.
 
+## Diagnostics
+
+The [media Range diagnostic](diagnostics/media-range/README.md) records
+browser-generated Range requests and service-worker interception for
+[w3c/ServiceWorker#1201](https://github.com/w3c/ServiceWorker/issues/1201).
+It is observation-only, not a conformance test for an agreed continuity rule.
+
 
 ## About labels and milestones on issues
 This is to explain how we use labels and milestones to triage the issues. Note: This is a draft, suggestions for improvements are welcomed.

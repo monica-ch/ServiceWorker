@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>ServiceWorker #1201: media Range observations</title>
+<style>
+body {font: 16px system-ui; max-width: 1100px; margin: 2em auto; padding: 0 1em}
+button {font: inherit; margin-right: 1em}
+pre {white-space: pre-wrap; overflow-wrap: anywhere; background: #f4f4f4; padding: 1em}
+table {border-collapse: collapse; width: 100%}
+th, td {border: 1px solid #aaa; padding: .5em; text-align: left}
+iframe {width: 350px; height: 70px}
+</style>
+<h1>Media Range requests through a service worker</h1>
+<p>Observation-only preparation for
+<a href="https://github.com/w3c/ServiceWorker/issues/1201">w3c/ServiceWorker#1201</a>.
+No PASS/FAIL verdict for unresolved continuity behavior. The media bytes never change.</p>
+<p>Runs nine cases: same-origin, cross-origin no-CORS, and cross-origin CORS,
+each uncontrolled, controlled with network fallback, and controlled with
+<code>respondWith(fetch(event.request))</code>. Loading and seeking may generate Range
+requests; a seek does not guarantee a subsequent network request.</p>
+<button id="run">Run observations</button><button id="download" disabled>Download JSON</button>
+<p id="status" role="status">Use a fresh, disposable browser profile. No external server or media download is needed.</p>
+<div id="frames"></div><div id="summary"></div><pre id="output"></pre>
+<script>
+"use strict";
+const runButton = document.querySelector("#run");
+const status = document.querySelector("#status");
+const output = document.querySelector("#output");
+const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
+async function api(path, init) {
+  const response = await fetch(path, init);
+  if (!response.ok) throw new Error(`${path}: ${response.status} ${await response.text()}`);
+  return response.json();
+}
+async function activated(registration) {
+  const deadline = performance.now() + 8000;
+  while (registration.active?.state !== "activated") {
+    if (performance.now() > deadline) throw new Error("Worker activation timeout");
+    await delay(50);
+  }
+}
+async function runFrame(parameters) {
+  const frame = document.createElement("iframe");
+  const path = parameters.operation === "uncontrolled" ? "/baseline/frame.html" : "/client/frame.html";
+  frame.src = path + "?" + new URLSearchParams(parameters);
+  let listener, timer;
+  try {
+    const result = new Promise((resolve, reject) => {
+      listener = event => {
+        if (event.origin !== location.origin || event.source !== frame.contentWindow ||
+            event.data?.type !== "media-range-result" ||
+            event.data.row?.case !== parameters.case) return;
+        resolve(event.data.row);
+      };
+      window.addEventListener("message", listener);
+      timer = setTimeout(() => reject(new Error(`Case ${parameters.case}: frame timeout`)), 12000);
+    });
+    document.querySelector("#frames").append(frame);
+    return await result;
+  } finally {
+    clearTimeout(timer);
+    window.removeEventListener("message", listener);
+    frame.remove();
+  }
+}
+function summarize(result) {
+  const table = document.createElement("table");
+  const header = table.insertRow();
+  for (const label of ["Case", "UA Range at server", "FetchEvent Range", "Interpretation"]) {
+    const th = document.createElement("th");
+    th.textContent = label;
+    header.append(th);
+  }
+  for (const row of result.cases) {
+    const events = result.observations.events.filter(event => event.case === row.case);
+    const network = events.filter(event => event.source === "network");
+    const intercepted = events.filter(event => event.source === "service-worker" && event.stage === "request");
+    const ranges = network.filter(event => event.range !== null);
+    const values = [
+      row.case,
+      network.length ? network.map(event => event.range ?? "(absent)").join(", ") : "(no network request recorded)",
+      intercepted.length ? intercepted.map(event => event.range ?? "(absent)").join(", ") : "(no FetchEvent recorded)",
+      row.diagnostics.length ? "Diagnostic error: " + row.diagnostics.join("; ") :
+        !ranges.length ? "No UA Range observed; inconclusive for Range interception" :
+        !row.controlled ? "Uncontrolled baseline" :
+        intercepted.length ? "FetchEvent observed; compare raw request records" :
+        "Network Range observed, no FetchEvent recorded within observation window"
+    ];
+    const tr = table.insertRow();
+    for (const value of values) tr.insertCell().textContent = value;
+  }
+  document.querySelector("#summary").replaceChildren(table);
+}
+async function run() {
+  runButton.disabled = true;
+  document.querySelector("#download").disabled = true;
+  document.querySelector("#summary").replaceChildren();
+  output.textContent = "";
+  const result = {
+    issue: "w3c/ServiceWorker#1201", kind: "Observation only, not normative WPT",
+    complete: false, started: new Date().toISOString(), userAgent: navigator.userAgent,
+    secureContext: isSecureContext, cases: [], errors: [],
+    limits: "Stable 120-second PCM WAV; one media element at a time; metadata <=8s, seek observation 1.5s"
+  };
+  window.__tpacResult = result;
+  let registration;
+  try {
+    if (!isSecureContext || !("serviceWorker" in navigator)) throw new Error("Service workers unavailable");
+    if (navigator.serviceWorker.controller ||
+        (await navigator.serviceWorker.getRegistrations()).length) {
+      throw new Error("Existing service worker detected. Use a fresh disposable profile or another server port.");
+    }
+    const config = await api("/config");
+    result.run = (await api("/new-run", {method: "POST", body: ""})).run;
+    registration = await navigator.serviceWorker.register("/worker.js", {scope: "/client/"});
+    await activated(registration);
+    for (const operation of ["uncontrolled", "fallback", "passthrough"]) {
+      for (const mediaOrigin of ["same-origin", "cross-origin-no-cors", "cross-origin-cors"]) {
+        const caseName = `${operation}/${mediaOrigin}`;
+        status.textContent = "Observing " + caseName;
+        const row = await runFrame({
+          run: result.run, case: caseName, operation, mediaOrigin,
+          mediaBase: mediaOrigin === "same-origin" ? location.origin : config.remote
+        });
+        if (row.controlled !== (operation !== "uncontrolled")) {
+          row.diagnostics.push("Unexpected controller state; case setup is invalid");
+        }
+        result.cases.push(row);
+      }
+    }
+    result.observations = await api("/results?run=" + result.run);
+    result.errors.push(...result.observations.errors);
+    summarize(result);
+  } catch (error) {
+    result.errors.push(String(error));
+  } finally {
+    if (registration) {
+      try {
+        if (!await registration.unregister()) result.errors.push("Registration cleanup returned false");
+      } catch (error) {
+        result.errors.push("Registration cleanup: " + error);
+      }
+    }
+    result.complete = true;
+    result.finished = new Date().toISOString();
+    output.textContent = JSON.stringify(result, null, 2);
+    status.textContent = result.errors.length || result.cases.some(row => row.diagnostics.length) ?
+      "Finished with diagnostics: inspect the errors and raw observations." :
+      "Observations complete. This is not a conformance verdict.";
+    document.querySelector("#download").disabled = false;
+    runButton.disabled = false;
+  }
+}
+runButton.addEventListener("click", run);
+document.querySelector("#download").addEventListener("click", () => {
+  const url = URL.createObjectURL(new Blob([JSON.stringify(window.__tpacResult, null, 2)], {
+    type: "application/json"
+  }));
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = "service-worker-1201-observations.json";
+  link.click();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+});
+if (new URLSearchParams(location.search).has("autorun")) run();
+</script>
+</html>

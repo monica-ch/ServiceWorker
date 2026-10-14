@@ -1,0 +1,71 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Media Range diagnostic client</title>
+<audio controls preload="metadata"></audio>
+<script>
+"use strict";
+const options = new URLSearchParams(location.search);
+const audio = document.querySelector("audio");
+const row = {
+  case: options.get("case"),
+  operation: options.get("operation"),
+  mediaOrigin: options.get("mediaOrigin"),
+  controlled: navigator.serviceWorker.controller !== null,
+  controllerURL: navigator.serviceWorker.controller?.scriptURL ?? null,
+  events: [],
+  diagnostics: []
+};
+const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
+for (const type of ["loadstart", "loadedmetadata", "canplay", "seeking", "seeked", "error"]) {
+  audio.addEventListener(type, () => row.events.push({
+    type, time: performance.now(), currentTime: audio.currentTime,
+    readyState: audio.readyState, networkState: audio.networkState,
+    mediaError: audio.error ? {code: audio.error.code, message: audio.error.message} : null
+  }));
+}
+navigator.serviceWorker.addEventListener("message", event => {
+  if (event.data?.type === "observation-error") row.diagnostics.push(event.data.message);
+});
+
+async function run() {
+  const url = new URL("/media.wav", options.get("mediaBase"));
+  for (const key of ["run", "case", "operation"]) url.searchParams.set(key, options.get(key));
+  if (row.mediaOrigin === "cross-origin-cors") {
+    audio.crossOrigin = "anonymous";
+    url.searchParams.set("cors", "1");
+  }
+  row.url = url.href;
+  row.crossOriginAttribute = audio.getAttribute("crossorigin");
+  // Only the media element generates requests; script never sets a Range header.
+  audio.src = url.href;
+  audio.load();
+  const deadline = performance.now() + 8000;
+  while (!audio.error && audio.readyState < HTMLMediaElement.HAVE_METADATA &&
+         performance.now() < deadline) await delay(50);
+  if (audio.error) {
+    row.diagnostics.push(`Media error ${audio.error.code}: ${audio.error.message}`);
+  } else if (audio.readyState < HTMLMediaElement.HAVE_METADATA) {
+    row.diagnostics.push("Metadata not observed within 8 seconds");
+  } else {
+    row.duration = audio.duration;
+    if (!Number.isFinite(audio.duration) || audio.duration < 2) {
+      row.diagnostics.push(`Unexpected duration: ${audio.duration}`);
+    } else {
+      row.seekTarget = audio.duration * 0.75;
+      audio.currentTime = row.seekTarget;
+      await delay(1500);
+    }
+  }
+}
+run().catch(error => row.diagnostics.push(String(error))).finally(async () => {
+  row.finalCurrentTime = audio.currentTime;
+  if (audio.error && !row.diagnostics.length) {
+    row.diagnostics.push(`Media error ${audio.error.code}: ${audio.error.message}`);
+  }
+  audio.pause();
+  audio.removeAttribute("src");
+  audio.load();
+  await delay(300);
+  parent.postMessage({type: "media-range-result", row}, location.origin);
+});
+</script>
