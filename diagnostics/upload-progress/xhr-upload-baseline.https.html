@@ -1,0 +1,20 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="timeout" content="long">
+<title>XHR upload progress without a service worker response</title>
+<link rel="help" href="https://xhr.spec.whatwg.org/#the-send()-method">
+<link rel="help" href="https://fetch.spec.whatwg.org/#http-fetch">
+<script src="/resources/testharness.js"></script>
+<script src="/resources/testharnessreport.js"></script>
+<script src="resources/probe.js"></script>
+<body>
+<script>
+for (const mode of ["uncontrolled", "fallback"]) {
+  promise_test(async t => {
+    const row = await runUploadCase(mode, t);
+    for (const [description, passed] of Object.entries(row.checks)) {
+      assert_true(passed, description);
+    }
+  }, `XHR upload progress and completion: ${mode}`);
+}
+</script>

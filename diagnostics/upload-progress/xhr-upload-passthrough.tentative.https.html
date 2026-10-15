@@ -1,0 +1,22 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="timeout" content="long">
+<title>Proposed XHR upload progress preservation through SW pass-through</title>
+<link rel="help" href="https://github.com/w3c/ServiceWorker/issues/1141">
+<link rel="help" href="https://fetch.spec.whatwg.org/#fetch-method">
+<link rel="help" href="https://xhr.spec.whatwg.org/#the-send()-method">
+<script src="/resources/testharness.js"></script>
+<script src="/resources/testharnessreport.js"></script>
+<script src="resources/probe.js"></script>
+<body>
+<p>Tentative proposal: forwarding the original XHR upload callbacks through an
+inner fetch is not established by current specification text. A failure here
+does not alone establish a browser conformance bug.</p>
+<script>
+promise_test(async t => {
+  const row = await runUploadCase("passthrough", t);
+  for (const [description, passed] of Object.entries(row.checks)) {
+    assert_true(passed, description);
+  }
+}, "PROPOSED: respondWith(fetch(event.request)) preserves XHR upload progress and completion");
+</script>

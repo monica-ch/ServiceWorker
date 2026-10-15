@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>ServiceWorker 1141: XHR upload progress diagnostic</title>
+<style>
+body {font: 16px system-ui; max-width: 1150px; margin: 2em auto; padding: 0 1em}
+table {border-collapse: collapse; width: 100%}
+td, th {border: 1px solid #aaa; padding: .5em; text-align: left}
+pre {white-space: pre-wrap; overflow-wrap: anywhere; background: #eee; padding: 1em}
+button {font: inherit; margin-right: 1em}
+</style>
+<h1>XHR upload progress through a service worker</h1>
+<p><a href="https://github.com/w3c/ServiceWorker/issues/1141">w3c/ServiceWorker#1141</a>:
+six strategies, each uploading 8 MiB to a paced receiver. No exact event count
+or timing is required. Receiver reads do not measure socket transmission timing.</p>
+<p>Uncontrolled and network fallback are baseline checks. Transparent pass-through
+tests a <strong>proposed requirement</strong>; clone/new Request/read-rebuild are
+diagnostic-only. Missing progress is not a fixture failure if the full body arrived.</p>
+<button id="run">Run observations</button><button id="download" disabled>Download JSON</button>
+<p id="status" role="status">Use a fresh disposable browser profile. A run takes about 35 seconds.</p>
+<div id="summary"></div><pre id="output"></pre>
+<script src="resources/probe.js"></script>
+<script>
+"use strict";
+const runButton = document.querySelector("#run");
+const downloadButton = document.querySelector("#download");
+async function run() {
+  runButton.disabled = true;
+  downloadButton.disabled = true;
+  document.querySelector("#summary").replaceChildren();
+  document.querySelector("#output").textContent = "";
+  const result = {
+    issue: "w3c/ServiceWorker#1141", started: new Date().toISOString(),
+    userAgent: navigator.userAgent, complete: false, cases: [], errors: []
+  };
+  window.__tpacResult = result;
+  try {
+    if (!isSecureContext || !("serviceWorker" in navigator)) throw new Error("Service workers unavailable");
+    if (navigator.serviceWorker.controller || (await navigator.serviceWorker.getRegistrations()).length) {
+      throw new Error("Existing service worker detected; use a fresh profile or another port");
+    }
+    for (const mode of UPLOAD_MODES) {
+      document.querySelector("#status").textContent = `Observing ${mode}`;
+      const row = await runUploadCase(mode);
+      row.expectation = ["uncontrolled", "fallback"].includes(mode) ? "Baseline" :
+        mode === "passthrough" ? "Proposed requirement" : "Diagnostic only";
+      result.cases.push(row);
+    }
+    const table = document.createElement("table");
+    const header = table.insertRow();
+    for (const name of ["Mode", "Upload events", "Intermediate progress", "Server bytes", "Interpretation"]) {
+      const th = document.createElement("th");
+      th.textContent = name;
+      header.append(th);
+    }
+    for (const row of result.cases) {
+      const tr = table.insertRow();
+      const types = [...new Set(row.uploadEvents.map(event => event.type))].join(", ");
+      const met = Object.values(row.checks).every(Boolean);
+      for (const value of [row.mode, types, row.intermediateProgressCount, row.server.serverBytesRead,
+        `${row.expectation}: ${met ? "progress/completion observed" : "progress/completion checks not met"}`]) {
+        tr.insertCell().textContent = value;
+      }
+    }
+    document.querySelector("#summary").append(table);
+  } catch (error) {
+    result.errors.push(String(error));
+  } finally {
+    result.complete = true;
+    result.finished = new Date().toISOString();
+    document.querySelector("#output").textContent = JSON.stringify(result, null, 2);
+    document.querySelector("#status").textContent = result.errors.length ?
+      "Incomplete/invalid measurement: inspect errors." : "Observations complete; inspect baseline versus proposed/diagnostic checks.";
+    runButton.disabled = false;
+    downloadButton.disabled = false;
+  }
+}
+runButton.addEventListener("click", run);
+downloadButton.addEventListener("click", () => {
+  const url = URL.createObjectURL(new Blob([JSON.stringify(window.__tpacResult, null, 2)], {type: "application/json"}));
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = "sw1141-upload-observations.json";
+  link.click();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+});
+if (new URLSearchParams(location.search).has("autorun")) run();
+</script>
+</html>
