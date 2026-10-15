@@ -20,6 +20,7 @@ assert.equal(check([progress(11), ...end])["Progress length is computable and lo
 assert.equal(check([progress(9), ...end])["Final progress equals body length"], false);
 assert.equal(check([progress(10), {type: "loadend"}, {type: "load"}])["Upload loadend follows load"], false);
 assert.equal(check([{type: "loadstart"}])["At least one upload progress event"], false);
+assert.equal(check([{type: "loadstart"}, ...end])["Upload load follows final progress"], false);
 assert.equal(check([progress(10), ...end, {type: "error"}])["No upload error, abort or timeout"], false);
 assert.equal(check([progress(10), ...end], 9)["Server received exact complete body"], false);
 assert.equal(check([progress(10), ...end], 10, "wrong")["Server received exact complete body"], false);

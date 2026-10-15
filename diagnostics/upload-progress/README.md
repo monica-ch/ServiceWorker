@@ -163,8 +163,36 @@ intentional evidence against the proposed behavior, not a broken test fixture.
 No expectations were weakened to make that proposed test pass.
 
 Both products share Blink. Chromium is not a measured branded Chrome release;
-no local Firefox/Safari execution is claimed. Run the diagnostic there and save
-the JSON before asserting cross-engine agreement.
+the Firefox supplement below adds Gecko evidence. Safari remains untested.
+
+### Firefox supplement
+
+[Firefox 158.0 raw observations](firefox-results.json) use the installed release
+binary, native WebDriver BiDi, a temporary profile, headless Windows and the
+same paced fixture and WPT harness. Two complete six-case runs were collected.
+
+| Case | Firefox 158.0 | Edge/Chromium above |
+| --- | --- | --- |
+| Uncontrolled / network fallback | Intermediate and final progress, load, loadend | Same event categories |
+| Transparent pass-through | loadstart, load, loadend; **no progress** | loadstart only |
+| Clone / new Request / read-rebuild | loadstart, load, loadend; **no progress** | loadstart only |
+
+All twelve Firefox uploads delivered exactly 8 MiB, verified by byte count and
+digest. For inner-fetch cases, Firefox's upload load/loadend reported loaded
+and total equal to the full body size, but neither intermediate nor final
+upload progress was emitted. Thus Gecko and Blink agree on missing progress
+in this fixture but **disagree on upload completion events**.
+
+Firefox passed the baseline WPT 2/2 and failed the tentative pass-through
+proposal on missing progress, with normal harness completion. These are
+local WPT-content executions, not published wpt.fyi or wptrunner results.
+The completion-event difference is evidence for specification discussion,
+not proof that either engine satisfies an agreed pass-through requirement.
+
+The Firefox run also motivated a reporting correction: a load event without
+any preceding progress must not satisfy "load follows final progress".
+Regression coverage now includes that event sequence. This changes only a
+derived check; it does not change the upload or event collection.
 
 ## TPAC question
 

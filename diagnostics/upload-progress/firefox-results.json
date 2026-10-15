@@ -1,0 +1,1659 @@
+{
+  "kind": "Installed Firefox; native WebDriver BiDi; headless Windows loopback; not wptrunner",
+  "harness": {
+    "testharness.js": {
+      "url": "https://wpt.live/resources/testharness.js",
+      "sha256": "7a108d7cfa98ac413ddb38f82fd509fb2037dfcc25ccf466567520cbb6bdf1fa",
+      "bytes": 198420
+    },
+    "testharnessreport.js": {
+      "url": "https://wpt.live/resources/testharnessreport.js",
+      "sha256": "3777176fc736b0a78cf7617b9613b220f635daae7536ec7ebb99c61dbb525aae",
+      "bytes": 1231
+    }
+  },
+  "product": "Firefox",
+  "diagnostics": [
+    {
+      "issue": "w3c/ServiceWorker#1141",
+      "started": "2026-10-15T19:22:36.111Z",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:158.0) Gecko/20100101 Firefox/158.0",
+      "complete": true,
+      "cases": [
+        {
+          "mode": "uncontrolled",
+          "id": "e27be913-5588-4e23-9203-9eedf6f20635",
+          "payloadBytes": 8388608,
+          "uploadEvents": [
+            {
+              "type": "loadstart",
+              "loaded": 0,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 4
+            },
+            {
+              "type": "progress",
+              "loaded": 1080785,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 54
+            },
+            {
+              "type": "progress",
+              "loaded": 1342929,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 214
+            },
+            {
+              "type": "progress",
+              "loaded": 1605073,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 264
+            },
+            {
+              "type": "progress",
+              "loaded": 1867217,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 454
+            },
+            {
+              "type": "progress",
+              "loaded": 2129361,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 615
+            },
+            {
+              "type": "progress",
+              "loaded": 2391505,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 777
+            },
+            {
+              "type": "progress",
+              "loaded": 2653649,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 940
+            },
+            {
+              "type": "progress",
+              "loaded": 2915793,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 1101
+            },
+            {
+              "type": "progress",
+              "loaded": 3177937,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 1263
+            },
+            {
+              "type": "progress",
+              "loaded": 3440081,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 1426
+            },
+            {
+              "type": "progress",
+              "loaded": 3702225,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 1589
+            },
+            {
+              "type": "progress",
+              "loaded": 3964369,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 1750
+            },
+            {
+              "type": "progress",
+              "loaded": 4226513,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 1912
+            },
+            {
+              "type": "progress",
+              "loaded": 4488657,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 2074
+            },
+            {
+              "type": "progress",
+              "loaded": 4750801,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 2237
+            },
+            {
+              "type": "progress",
+              "loaded": 5012945,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 2398
+            },
+            {
+              "type": "progress",
+              "loaded": 5275089,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 2561
+            },
+            {
+              "type": "progress",
+              "loaded": 5537233,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 2724
+            },
+            {
+              "type": "progress",
+              "loaded": 5799377,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 2886
+            },
+            {
+              "type": "progress",
+              "loaded": 6061521,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 3048
+            },
+            {
+              "type": "progress",
+              "loaded": 6323665,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 3209
+            },
+            {
+              "type": "progress",
+              "loaded": 6585809,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 3371
+            },
+            {
+              "type": "progress",
+              "loaded": 6847953,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 3533
+            },
+            {
+              "type": "progress",
+              "loaded": 7110097,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 3696
+            },
+            {
+              "type": "progress",
+              "loaded": 7372241,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 3859
+            },
+            {
+              "type": "progress",
+              "loaded": 7634385,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 4022
+            },
+            {
+              "type": "progress",
+              "loaded": 7896529,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 4183
+            },
+            {
+              "type": "progress",
+              "loaded": 8158673,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 4345
+            },
+            {
+              "type": "progress",
+              "loaded": 8388608,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 4508
+            },
+            {
+              "type": "load",
+              "loaded": 8388608,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 5228
+            },
+            {
+              "type": "loadend",
+              "loaded": 8388608,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 5228
+            }
+          ],
+          "xhrEvents": [
+            "load",
+            "loadend"
+          ],
+          "interceptions": [],
+          "controlled": false,
+          "payloadSHA256": "0c77bc0a0795a93612d45256897456d0fcb24f151c44c150d07ecd03f4ef5168",
+          "elapsedMs": 5228,
+          "status": 200,
+          "server": {
+            "source": "network-server",
+            "declaredLength": 8388608,
+            "serverBytesRead": 8388608,
+            "sha256": "0c77bc0a0795a93612d45256897456d0fcb24f151c44c150d07ecd03f4ef5168",
+            "readDurationMs": 5189,
+            "chunkBytes": 65536,
+            "pauseSeconds": 0.04
+          },
+          "intermediateProgressCount": 28,
+          "checks": {
+            "At least one upload progress event": true,
+            "Progress loaded is nondecreasing": true,
+            "Progress length is computable and loaded <= total": true,
+            "Final progress equals body length": true,
+            "Upload load follows final progress": true,
+            "Upload loadend follows load": true,
+            "No upload error, abort or timeout": true,
+            "Server received exact complete body": true
+          },
+          "expectation": "Baseline"
+        },
+        {
+          "mode": "fallback",
+          "id": "3e3dcb38-1371-4287-b3ae-a02ce8b593ee",
+          "payloadBytes": 8388608,
+          "uploadEvents": [
+            {
+              "type": "loadstart",
+              "loaded": 0,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 2
+            },
+            {
+              "type": "progress",
+              "loaded": 1080789,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 52
+            },
+            {
+              "type": "progress",
+              "loaded": 1342933,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 202
+            },
+            {
+              "type": "progress",
+              "loaded": 1605077,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 251
+            },
+            {
+              "type": "progress",
+              "loaded": 1867221,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 445
+            },
+            {
+              "type": "progress",
+              "loaded": 2129365,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 608
+            },
+            {
+              "type": "progress",
+              "loaded": 2391509,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 769
+            },
+            {
+              "type": "progress",
+              "loaded": 2653653,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 931
+            },
+            {
+              "type": "progress",
+              "loaded": 2915797,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 1093
+            },
+            {
+              "type": "progress",
+              "loaded": 3177941,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 1254
+            },
+            {
+              "type": "progress",
+              "loaded": 3440085,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 1418
+            },
+            {
+              "type": "progress",
+              "loaded": 3702229,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 1580
+            },
+            {
+              "type": "progress",
+              "loaded": 3964373,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 1742
+            },
+            {
+              "type": "progress",
+              "loaded": 4226517,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 1903
+            },
+            {
+              "type": "progress",
+              "loaded": 4488661,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 2066
+            },
+            {
+              "type": "progress",
+              "loaded": 4750805,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 2229
+            },
+            {
+              "type": "progress",
+              "loaded": 5012949,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 2391
+            },
+            {
+              "type": "progress",
+              "loaded": 5275093,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 2553
+            },
+            {
+              "type": "progress",
+              "loaded": 5537237,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 2715
+            },
+            {
+              "type": "progress",
+              "loaded": 5799381,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 2878
+            },
+            {
+              "type": "progress",
+              "loaded": 6061525,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 3040
+            },
+            {
+              "type": "progress",
+              "loaded": 6323669,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 3201
+            },
+            {
+              "type": "progress",
+              "loaded": 6585813,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 3363
+            },
+            {
+              "type": "progress",
+              "loaded": 6847957,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 3525
+            },
+            {
+              "type": "progress",
+              "loaded": 7110101,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 3686
+            },
+            {
+              "type": "progress",
+              "loaded": 7372245,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 3849
+            },
+            {
+              "type": "progress",
+              "loaded": 7634389,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 4011
+            },
+            {
+              "type": "progress",
+              "loaded": 7896533,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 4173
+            },
+            {
+              "type": "progress",
+              "loaded": 8158677,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 4335
+            },
+            {
+              "type": "progress",
+              "loaded": 8388608,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 4499
+            },
+            {
+              "type": "load",
+              "loaded": 8388608,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 5218
+            },
+            {
+              "type": "loadend",
+              "loaded": 8388608,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 5218
+            }
+          ],
+          "xhrEvents": [
+            "load",
+            "loadend"
+          ],
+          "interceptions": [
+            {
+              "type": "upload-intercepted",
+              "id": "3e3dcb38-1371-4287-b3ae-a02ce8b593ee",
+              "mode": "fallback",
+              "method": "POST",
+              "url": "http://127.0.0.1:58691/resources/upload_receiver.py?mode=fallback&id=3e3dcb38-1371-4287-b3ae-a02ce8b593ee"
+            }
+          ],
+          "controlled": true,
+          "payloadSHA256": "0c77bc0a0795a93612d45256897456d0fcb24f151c44c150d07ecd03f4ef5168",
+          "elapsedMs": 5218,
+          "status": 200,
+          "server": {
+            "source": "network-server",
+            "declaredLength": 8388608,
+            "serverBytesRead": 8388608,
+            "sha256": "0c77bc0a0795a93612d45256897456d0fcb24f151c44c150d07ecd03f4ef5168",
+            "readDurationMs": 5188,
+            "chunkBytes": 65536,
+            "pauseSeconds": 0.04
+          },
+          "intermediateProgressCount": 28,
+          "checks": {
+            "At least one upload progress event": true,
+            "Progress loaded is nondecreasing": true,
+            "Progress length is computable and loaded <= total": true,
+            "Final progress equals body length": true,
+            "Upload load follows final progress": true,
+            "Upload loadend follows load": true,
+            "No upload error, abort or timeout": true,
+            "Server received exact complete body": true
+          },
+          "expectation": "Baseline"
+        },
+        {
+          "mode": "passthrough",
+          "id": "7976c607-917d-4d2d-92cc-0a9810596400",
+          "payloadBytes": 8388608,
+          "uploadEvents": [
+            {
+              "type": "loadstart",
+              "loaded": 0,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 3
+            },
+            {
+              "type": "load",
+              "loaded": 8388608,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 5229
+            },
+            {
+              "type": "loadend",
+              "loaded": 8388608,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 5229
+            }
+          ],
+          "xhrEvents": [
+            "load",
+            "loadend"
+          ],
+          "interceptions": [
+            {
+              "type": "upload-intercepted",
+              "id": "7976c607-917d-4d2d-92cc-0a9810596400",
+              "mode": "passthrough",
+              "method": "POST",
+              "url": "http://127.0.0.1:58691/resources/upload_receiver.py?mode=passthrough&id=7976c607-917d-4d2d-92cc-0a9810596400"
+            }
+          ],
+          "controlled": true,
+          "payloadSHA256": "0c77bc0a0795a93612d45256897456d0fcb24f151c44c150d07ecd03f4ef5168",
+          "elapsedMs": 5229,
+          "status": 200,
+          "server": {
+            "source": "network-server",
+            "declaredLength": 8388608,
+            "serverBytesRead": 8388608,
+            "sha256": "0c77bc0a0795a93612d45256897456d0fcb24f151c44c150d07ecd03f4ef5168",
+            "readDurationMs": 5190,
+            "chunkBytes": 65536,
+            "pauseSeconds": 0.04
+          },
+          "intermediateProgressCount": 0,
+          "checks": {
+            "At least one upload progress event": false,
+            "Progress loaded is nondecreasing": false,
+            "Progress length is computable and loaded <= total": false,
+            "Final progress equals body length": false,
+            "Upload load follows final progress": false,
+            "Upload loadend follows load": true,
+            "No upload error, abort or timeout": true,
+            "Server received exact complete body": true
+          },
+          "expectation": "Proposed requirement"
+        },
+        {
+          "mode": "clone",
+          "id": "5e1bae84-8e49-4ec9-9e35-ea3ede16d593",
+          "payloadBytes": 8388608,
+          "uploadEvents": [
+            {
+              "type": "loadstart",
+              "loaded": 0,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 1
+            },
+            {
+              "type": "load",
+              "loaded": 8388608,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 5221
+            },
+            {
+              "type": "loadend",
+              "loaded": 8388608,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 5221
+            }
+          ],
+          "xhrEvents": [
+            "load",
+            "loadend"
+          ],
+          "interceptions": [
+            {
+              "type": "upload-intercepted",
+              "id": "5e1bae84-8e49-4ec9-9e35-ea3ede16d593",
+              "mode": "clone",
+              "method": "POST",
+              "url": "http://127.0.0.1:58691/resources/upload_receiver.py?mode=clone&id=5e1bae84-8e49-4ec9-9e35-ea3ede16d593"
+            }
+          ],
+          "controlled": true,
+          "payloadSHA256": "0c77bc0a0795a93612d45256897456d0fcb24f151c44c150d07ecd03f4ef5168",
+          "elapsedMs": 5221,
+          "status": 200,
+          "server": {
+            "source": "network-server",
+            "declaredLength": 8388608,
+            "serverBytesRead": 8388608,
+            "sha256": "0c77bc0a0795a93612d45256897456d0fcb24f151c44c150d07ecd03f4ef5168",
+            "readDurationMs": 5185,
+            "chunkBytes": 65536,
+            "pauseSeconds": 0.04
+          },
+          "intermediateProgressCount": 0,
+          "checks": {
+            "At least one upload progress event": false,
+            "Progress loaded is nondecreasing": false,
+            "Progress length is computable and loaded <= total": false,
+            "Final progress equals body length": false,
+            "Upload load follows final progress": false,
+            "Upload loadend follows load": true,
+            "No upload error, abort or timeout": true,
+            "Server received exact complete body": true
+          },
+          "expectation": "Diagnostic only"
+        },
+        {
+          "mode": "new-request",
+          "id": "4eb5252d-6a59-4b96-87bb-887beb688dd3",
+          "payloadBytes": 8388608,
+          "uploadEvents": [
+            {
+              "type": "loadstart",
+              "loaded": 0,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 3
+            },
+            {
+              "type": "load",
+              "loaded": 8388608,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 5219
+            },
+            {
+              "type": "loadend",
+              "loaded": 8388608,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 5219
+            }
+          ],
+          "xhrEvents": [
+            "load",
+            "loadend"
+          ],
+          "interceptions": [
+            {
+              "type": "upload-intercepted",
+              "id": "4eb5252d-6a59-4b96-87bb-887beb688dd3",
+              "mode": "new-request",
+              "method": "POST",
+              "url": "http://127.0.0.1:58691/resources/upload_receiver.py?mode=new-request&id=4eb5252d-6a59-4b96-87bb-887beb688dd3"
+            }
+          ],
+          "controlled": true,
+          "payloadSHA256": "0c77bc0a0795a93612d45256897456d0fcb24f151c44c150d07ecd03f4ef5168",
+          "elapsedMs": 5220,
+          "status": 200,
+          "server": {
+            "source": "network-server",
+            "declaredLength": 8388608,
+            "serverBytesRead": 8388608,
+            "sha256": "0c77bc0a0795a93612d45256897456d0fcb24f151c44c150d07ecd03f4ef5168",
+            "readDurationMs": 5186,
+            "chunkBytes": 65536,
+            "pauseSeconds": 0.04
+          },
+          "intermediateProgressCount": 0,
+          "checks": {
+            "At least one upload progress event": false,
+            "Progress loaded is nondecreasing": false,
+            "Progress length is computable and loaded <= total": false,
+            "Final progress equals body length": false,
+            "Upload load follows final progress": false,
+            "Upload loadend follows load": true,
+            "No upload error, abort or timeout": true,
+            "Server received exact complete body": true
+          },
+          "expectation": "Diagnostic only"
+        },
+        {
+          "mode": "read-rebuild",
+          "id": "d6f5f8cf-6446-4803-bf42-40b6d3c50025",
+          "payloadBytes": 8388608,
+          "uploadEvents": [
+            {
+              "type": "loadstart",
+              "loaded": 0,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 3
+            },
+            {
+              "type": "load",
+              "loaded": 8388608,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 5273
+            },
+            {
+              "type": "loadend",
+              "loaded": 8388608,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 5273
+            }
+          ],
+          "xhrEvents": [
+            "load",
+            "loadend"
+          ],
+          "interceptions": [
+            {
+              "type": "upload-intercepted",
+              "id": "d6f5f8cf-6446-4803-bf42-40b6d3c50025",
+              "mode": "read-rebuild",
+              "method": "POST",
+              "url": "http://127.0.0.1:58691/resources/upload_receiver.py?mode=read-rebuild&id=d6f5f8cf-6446-4803-bf42-40b6d3c50025"
+            }
+          ],
+          "controlled": true,
+          "payloadSHA256": "0c77bc0a0795a93612d45256897456d0fcb24f151c44c150d07ecd03f4ef5168",
+          "elapsedMs": 5273,
+          "status": 200,
+          "server": {
+            "source": "network-server",
+            "declaredLength": 8388608,
+            "serverBytesRead": 8388608,
+            "sha256": "0c77bc0a0795a93612d45256897456d0fcb24f151c44c150d07ecd03f4ef5168",
+            "readDurationMs": 5184,
+            "chunkBytes": 65536,
+            "pauseSeconds": 0.04
+          },
+          "intermediateProgressCount": 0,
+          "checks": {
+            "At least one upload progress event": false,
+            "Progress loaded is nondecreasing": false,
+            "Progress length is computable and loaded <= total": false,
+            "Final progress equals body length": false,
+            "Upload load follows final progress": false,
+            "Upload loadend follows load": true,
+            "No upload error, abort or timeout": true,
+            "Server received exact complete body": true
+          },
+          "expectation": "Diagnostic only"
+        }
+      ],
+      "errors": [],
+      "finished": "2026-10-15T19:23:07.854Z"
+    },
+    {
+      "issue": "w3c/ServiceWorker#1141",
+      "started": "2026-10-15T19:23:07.947Z",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:158.0) Gecko/20100101 Firefox/158.0",
+      "complete": true,
+      "cases": [
+        {
+          "mode": "uncontrolled",
+          "id": "0ef2f2a3-4e02-4f07-9e56-3c38f600b736",
+          "payloadBytes": 8388608,
+          "uploadEvents": [
+            {
+              "type": "loadstart",
+              "loaded": 0,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 2
+            },
+            {
+              "type": "progress",
+              "loaded": 1080785,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 52
+            },
+            {
+              "type": "progress",
+              "loaded": 1342929,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 202
+            },
+            {
+              "type": "progress",
+              "loaded": 1605073,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 252
+            },
+            {
+              "type": "progress",
+              "loaded": 1867217,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 443
+            },
+            {
+              "type": "progress",
+              "loaded": 2129361,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 606
+            },
+            {
+              "type": "progress",
+              "loaded": 2391505,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 768
+            },
+            {
+              "type": "progress",
+              "loaded": 2653649,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 930
+            },
+            {
+              "type": "progress",
+              "loaded": 2915793,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 1092
+            },
+            {
+              "type": "progress",
+              "loaded": 3177937,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 1254
+            },
+            {
+              "type": "progress",
+              "loaded": 3440081,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 1416
+            },
+            {
+              "type": "progress",
+              "loaded": 3702225,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 1579
+            },
+            {
+              "type": "progress",
+              "loaded": 3964369,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 1741
+            },
+            {
+              "type": "progress",
+              "loaded": 4226513,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 1902
+            },
+            {
+              "type": "progress",
+              "loaded": 4488657,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 2065
+            },
+            {
+              "type": "progress",
+              "loaded": 4750801,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 2227
+            },
+            {
+              "type": "progress",
+              "loaded": 5012945,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 2390
+            },
+            {
+              "type": "progress",
+              "loaded": 5275089,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 2553
+            },
+            {
+              "type": "progress",
+              "loaded": 5537233,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 2715
+            },
+            {
+              "type": "progress",
+              "loaded": 5799377,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 2876
+            },
+            {
+              "type": "progress",
+              "loaded": 6061521,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 3039
+            },
+            {
+              "type": "progress",
+              "loaded": 6323665,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 3201
+            },
+            {
+              "type": "progress",
+              "loaded": 6585809,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 3363
+            },
+            {
+              "type": "progress",
+              "loaded": 6847953,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 3525
+            },
+            {
+              "type": "progress",
+              "loaded": 7110097,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 3686
+            },
+            {
+              "type": "progress",
+              "loaded": 7372241,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 3849
+            },
+            {
+              "type": "progress",
+              "loaded": 7634385,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 4011
+            },
+            {
+              "type": "progress",
+              "loaded": 7896529,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 4172
+            },
+            {
+              "type": "progress",
+              "loaded": 8158673,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 4334
+            },
+            {
+              "type": "progress",
+              "loaded": 8388608,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 4497
+            },
+            {
+              "type": "load",
+              "loaded": 8388608,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 5217
+            },
+            {
+              "type": "loadend",
+              "loaded": 8388608,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 5217
+            }
+          ],
+          "xhrEvents": [
+            "load",
+            "loadend"
+          ],
+          "interceptions": [],
+          "controlled": false,
+          "payloadSHA256": "0c77bc0a0795a93612d45256897456d0fcb24f151c44c150d07ecd03f4ef5168",
+          "elapsedMs": 5217,
+          "status": 200,
+          "server": {
+            "source": "network-server",
+            "declaredLength": 8388608,
+            "serverBytesRead": 8388608,
+            "sha256": "0c77bc0a0795a93612d45256897456d0fcb24f151c44c150d07ecd03f4ef5168",
+            "readDurationMs": 5187,
+            "chunkBytes": 65536,
+            "pauseSeconds": 0.04
+          },
+          "intermediateProgressCount": 28,
+          "checks": {
+            "At least one upload progress event": true,
+            "Progress loaded is nondecreasing": true,
+            "Progress length is computable and loaded <= total": true,
+            "Final progress equals body length": true,
+            "Upload load follows final progress": true,
+            "Upload loadend follows load": true,
+            "No upload error, abort or timeout": true,
+            "Server received exact complete body": true
+          },
+          "expectation": "Baseline"
+        },
+        {
+          "mode": "fallback",
+          "id": "fdd9a1d8-65b5-463d-ae15-c442a8f26c72",
+          "payloadBytes": 8388608,
+          "uploadEvents": [
+            {
+              "type": "loadstart",
+              "loaded": 0,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 2
+            },
+            {
+              "type": "progress",
+              "loaded": 1080789,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 53
+            },
+            {
+              "type": "progress",
+              "loaded": 1342933,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 198
+            },
+            {
+              "type": "progress",
+              "loaded": 1605077,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 248
+            },
+            {
+              "type": "progress",
+              "loaded": 1867221,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 442
+            },
+            {
+              "type": "progress",
+              "loaded": 2129365,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 604
+            },
+            {
+              "type": "progress",
+              "loaded": 2391509,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 766
+            },
+            {
+              "type": "progress",
+              "loaded": 2653653,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 929
+            },
+            {
+              "type": "progress",
+              "loaded": 2915797,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 1090
+            },
+            {
+              "type": "progress",
+              "loaded": 3177941,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 1252
+            },
+            {
+              "type": "progress",
+              "loaded": 3440085,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 1413
+            },
+            {
+              "type": "progress",
+              "loaded": 3702229,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 1576
+            },
+            {
+              "type": "progress",
+              "loaded": 3964373,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 1737
+            },
+            {
+              "type": "progress",
+              "loaded": 4226517,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 1901
+            },
+            {
+              "type": "progress",
+              "loaded": 4488661,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 2062
+            },
+            {
+              "type": "progress",
+              "loaded": 4750805,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 2224
+            },
+            {
+              "type": "progress",
+              "loaded": 5012949,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 2387
+            },
+            {
+              "type": "progress",
+              "loaded": 5275093,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 2549
+            },
+            {
+              "type": "progress",
+              "loaded": 5537237,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 2713
+            },
+            {
+              "type": "progress",
+              "loaded": 5799381,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 2873
+            },
+            {
+              "type": "progress",
+              "loaded": 6061525,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 3035
+            },
+            {
+              "type": "progress",
+              "loaded": 6323669,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 3197
+            },
+            {
+              "type": "progress",
+              "loaded": 6585813,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 3359
+            },
+            {
+              "type": "progress",
+              "loaded": 6847957,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 3521
+            },
+            {
+              "type": "progress",
+              "loaded": 7110101,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 3682
+            },
+            {
+              "type": "progress",
+              "loaded": 7372245,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 3844
+            },
+            {
+              "type": "progress",
+              "loaded": 7634389,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 4005
+            },
+            {
+              "type": "progress",
+              "loaded": 7896533,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 4166
+            },
+            {
+              "type": "progress",
+              "loaded": 8158677,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 4329
+            },
+            {
+              "type": "progress",
+              "loaded": 8388608,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 4491
+            },
+            {
+              "type": "load",
+              "loaded": 8388608,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 5211
+            },
+            {
+              "type": "loadend",
+              "loaded": 8388608,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 5211
+            }
+          ],
+          "xhrEvents": [
+            "load",
+            "loadend"
+          ],
+          "interceptions": [
+            {
+              "type": "upload-intercepted",
+              "id": "fdd9a1d8-65b5-463d-ae15-c442a8f26c72",
+              "mode": "fallback",
+              "method": "POST",
+              "url": "http://127.0.0.1:58691/resources/upload_receiver.py?mode=fallback&id=fdd9a1d8-65b5-463d-ae15-c442a8f26c72"
+            }
+          ],
+          "controlled": true,
+          "payloadSHA256": "0c77bc0a0795a93612d45256897456d0fcb24f151c44c150d07ecd03f4ef5168",
+          "elapsedMs": 5212,
+          "status": 200,
+          "server": {
+            "source": "network-server",
+            "declaredLength": 8388608,
+            "serverBytesRead": 8388608,
+            "sha256": "0c77bc0a0795a93612d45256897456d0fcb24f151c44c150d07ecd03f4ef5168",
+            "readDurationMs": 5185,
+            "chunkBytes": 65536,
+            "pauseSeconds": 0.04
+          },
+          "intermediateProgressCount": 28,
+          "checks": {
+            "At least one upload progress event": true,
+            "Progress loaded is nondecreasing": true,
+            "Progress length is computable and loaded <= total": true,
+            "Final progress equals body length": true,
+            "Upload load follows final progress": true,
+            "Upload loadend follows load": true,
+            "No upload error, abort or timeout": true,
+            "Server received exact complete body": true
+          },
+          "expectation": "Baseline"
+        },
+        {
+          "mode": "passthrough",
+          "id": "9658dc3b-21bc-4bc0-a9ea-f6fe79877d75",
+          "payloadBytes": 8388608,
+          "uploadEvents": [
+            {
+              "type": "loadstart",
+              "loaded": 0,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 3
+            },
+            {
+              "type": "load",
+              "loaded": 8388608,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 5223
+            },
+            {
+              "type": "loadend",
+              "loaded": 8388608,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 5223
+            }
+          ],
+          "xhrEvents": [
+            "load",
+            "loadend"
+          ],
+          "interceptions": [
+            {
+              "type": "upload-intercepted",
+              "id": "9658dc3b-21bc-4bc0-a9ea-f6fe79877d75",
+              "mode": "passthrough",
+              "method": "POST",
+              "url": "http://127.0.0.1:58691/resources/upload_receiver.py?mode=passthrough&id=9658dc3b-21bc-4bc0-a9ea-f6fe79877d75"
+            }
+          ],
+          "controlled": true,
+          "payloadSHA256": "0c77bc0a0795a93612d45256897456d0fcb24f151c44c150d07ecd03f4ef5168",
+          "elapsedMs": 5223,
+          "status": 200,
+          "server": {
+            "source": "network-server",
+            "declaredLength": 8388608,
+            "serverBytesRead": 8388608,
+            "sha256": "0c77bc0a0795a93612d45256897456d0fcb24f151c44c150d07ecd03f4ef5168",
+            "readDurationMs": 5190,
+            "chunkBytes": 65536,
+            "pauseSeconds": 0.04
+          },
+          "intermediateProgressCount": 0,
+          "checks": {
+            "At least one upload progress event": false,
+            "Progress loaded is nondecreasing": false,
+            "Progress length is computable and loaded <= total": false,
+            "Final progress equals body length": false,
+            "Upload load follows final progress": false,
+            "Upload loadend follows load": true,
+            "No upload error, abort or timeout": true,
+            "Server received exact complete body": true
+          },
+          "expectation": "Proposed requirement"
+        },
+        {
+          "mode": "clone",
+          "id": "0b3ac13b-9310-47a1-805e-c84fb607cfec",
+          "payloadBytes": 8388608,
+          "uploadEvents": [
+            {
+              "type": "loadstart",
+              "loaded": 0,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 3
+            },
+            {
+              "type": "load",
+              "loaded": 8388608,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 5217
+            },
+            {
+              "type": "loadend",
+              "loaded": 8388608,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 5217
+            }
+          ],
+          "xhrEvents": [
+            "load",
+            "loadend"
+          ],
+          "interceptions": [
+            {
+              "type": "upload-intercepted",
+              "id": "0b3ac13b-9310-47a1-805e-c84fb607cfec",
+              "mode": "clone",
+              "method": "POST",
+              "url": "http://127.0.0.1:58691/resources/upload_receiver.py?mode=clone&id=0b3ac13b-9310-47a1-805e-c84fb607cfec"
+            }
+          ],
+          "controlled": true,
+          "payloadSHA256": "0c77bc0a0795a93612d45256897456d0fcb24f151c44c150d07ecd03f4ef5168",
+          "elapsedMs": 5217,
+          "status": 200,
+          "server": {
+            "source": "network-server",
+            "declaredLength": 8388608,
+            "serverBytesRead": 8388608,
+            "sha256": "0c77bc0a0795a93612d45256897456d0fcb24f151c44c150d07ecd03f4ef5168",
+            "readDurationMs": 5186,
+            "chunkBytes": 65536,
+            "pauseSeconds": 0.04
+          },
+          "intermediateProgressCount": 0,
+          "checks": {
+            "At least one upload progress event": false,
+            "Progress loaded is nondecreasing": false,
+            "Progress length is computable and loaded <= total": false,
+            "Final progress equals body length": false,
+            "Upload load follows final progress": false,
+            "Upload loadend follows load": true,
+            "No upload error, abort or timeout": true,
+            "Server received exact complete body": true
+          },
+          "expectation": "Diagnostic only"
+        },
+        {
+          "mode": "new-request",
+          "id": "4a1bba86-4021-4c0d-bc38-cc3eca3c04b6",
+          "payloadBytes": 8388608,
+          "uploadEvents": [
+            {
+              "type": "loadstart",
+              "loaded": 0,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 1
+            },
+            {
+              "type": "load",
+              "loaded": 8388608,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 5216
+            },
+            {
+              "type": "loadend",
+              "loaded": 8388608,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 5216
+            }
+          ],
+          "xhrEvents": [
+            "load",
+            "loadend"
+          ],
+          "interceptions": [
+            {
+              "type": "upload-intercepted",
+              "id": "4a1bba86-4021-4c0d-bc38-cc3eca3c04b6",
+              "mode": "new-request",
+              "method": "POST",
+              "url": "http://127.0.0.1:58691/resources/upload_receiver.py?mode=new-request&id=4a1bba86-4021-4c0d-bc38-cc3eca3c04b6"
+            }
+          ],
+          "controlled": true,
+          "payloadSHA256": "0c77bc0a0795a93612d45256897456d0fcb24f151c44c150d07ecd03f4ef5168",
+          "elapsedMs": 5216,
+          "status": 200,
+          "server": {
+            "source": "network-server",
+            "declaredLength": 8388608,
+            "serverBytesRead": 8388608,
+            "sha256": "0c77bc0a0795a93612d45256897456d0fcb24f151c44c150d07ecd03f4ef5168",
+            "readDurationMs": 5187,
+            "chunkBytes": 65536,
+            "pauseSeconds": 0.04
+          },
+          "intermediateProgressCount": 0,
+          "checks": {
+            "At least one upload progress event": false,
+            "Progress loaded is nondecreasing": false,
+            "Progress length is computable and loaded <= total": false,
+            "Final progress equals body length": false,
+            "Upload load follows final progress": false,
+            "Upload loadend follows load": true,
+            "No upload error, abort or timeout": true,
+            "Server received exact complete body": true
+          },
+          "expectation": "Diagnostic only"
+        },
+        {
+          "mode": "read-rebuild",
+          "id": "546f5ba9-e94a-480d-ab97-cad230c65e4d",
+          "payloadBytes": 8388608,
+          "uploadEvents": [
+            {
+              "type": "loadstart",
+              "loaded": 0,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 1
+            },
+            {
+              "type": "load",
+              "loaded": 8388608,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 5270
+            },
+            {
+              "type": "loadend",
+              "loaded": 8388608,
+              "total": 8388608,
+              "lengthComputable": true,
+              "elapsedMs": 5270
+            }
+          ],
+          "xhrEvents": [
+            "load",
+            "loadend"
+          ],
+          "interceptions": [
+            {
+              "type": "upload-intercepted",
+              "id": "546f5ba9-e94a-480d-ab97-cad230c65e4d",
+              "mode": "read-rebuild",
+              "method": "POST",
+              "url": "http://127.0.0.1:58691/resources/upload_receiver.py?mode=read-rebuild&id=546f5ba9-e94a-480d-ab97-cad230c65e4d"
+            }
+          ],
+          "controlled": true,
+          "payloadSHA256": "0c77bc0a0795a93612d45256897456d0fcb24f151c44c150d07ecd03f4ef5168",
+          "elapsedMs": 5270,
+          "status": 200,
+          "server": {
+            "source": "network-server",
+            "declaredLength": 8388608,
+            "serverBytesRead": 8388608,
+            "sha256": "0c77bc0a0795a93612d45256897456d0fcb24f151c44c150d07ecd03f4ef5168",
+            "readDurationMs": 5184,
+            "chunkBytes": 65536,
+            "pauseSeconds": 0.04
+          },
+          "intermediateProgressCount": 0,
+          "checks": {
+            "At least one upload progress event": false,
+            "Progress loaded is nondecreasing": false,
+            "Progress length is computable and loaded <= total": false,
+            "Final progress equals body length": false,
+            "Upload load follows final progress": false,
+            "Upload loadend follows load": true,
+            "No upload error, abort or timeout": true,
+            "Server received exact complete body": true
+          },
+          "expectation": "Diagnostic only"
+        }
+      ],
+      "errors": [],
+      "finished": "2026-10-15T19:23:39.645Z"
+    }
+  ],
+  "wpt": [
+    {
+      "file": "xhr-upload-baseline.https.html",
+      "status": 0,
+      "message": null,
+      "tests": [
+        {
+          "name": "XHR upload progress and completion: uncontrolled",
+          "status": 0,
+          "message": null
+        },
+        {
+          "name": "XHR upload progress and completion: fallback",
+          "status": 0,
+          "message": null
+        }
+      ]
+    },
+    {
+      "file": "xhr-upload-passthrough.tentative.https.html",
+      "status": 0,
+      "message": null,
+      "tests": [
+        {
+          "name": "PROPOSED: respondWith(fetch(event.request)) preserves XHR upload progress and completion",
+          "status": 1,
+          "message": "assert_true: At least one upload progress event expected true got false"
+        }
+      ]
+    }
+  ],
+  "pageErrors": [],
+  "version": "158.0"
+}

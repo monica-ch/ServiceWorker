@@ -114,7 +114,8 @@ function uploadProgressChecks(row) {
       progress.every(event => event.lengthComputable && event.loaded >= 0 &&
         event.loaded <= event.total && event.total === row.payloadBytes),
     "Final progress equals body length": last?.loaded === row.payloadBytes && last?.total === row.payloadBytes,
-    "Upload load follows final progress": types.includes("load") && types.indexOf("load") > types.lastIndexOf("progress"),
+    "Upload load follows final progress": progress.length > 0 &&
+      types.includes("load") && types.indexOf("load") > types.lastIndexOf("progress"),
     "Upload loadend follows load": types.includes("load") && types.indexOf("loadend") > types.indexOf("load"),
     "No upload error, abort or timeout": !types.some(type => ["error", "abort", "timeout"].includes(type)),
     "Server received exact complete body": row.server?.serverBytesRead === row.payloadBytes &&
