@@ -1,0 +1,1458 @@
+{
+  "product": "Firefox",
+  "automation": "Stock Firefox, native WebDriver BiDi, trusted pointer clicks",
+  "diagnostics": [
+    {
+      "issue": "w3c/ServiceWorker#1313",
+      "kind": "Observation only; not a normative WPT",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:158.0) Gecko/20100101 Firefox/158.0",
+      "started": "2026-10-15T20:59:44.159Z",
+      "eventWindowMs": 1000,
+      "cases": [
+        {
+          "scenario": "no-open-iframe",
+          "token": "524a97f6-db2b-4b01-91a1-39bec40b1a3c",
+          "scope": "http://127.0.0.1:60391/case-524a97f6-db2b-4b01-91a1-39bec40b1a3c/",
+          "scriptURL": "http://127.0.0.1:60391/worker.js?token=524a97f6-db2b-4b01-91a1-39bec40b1a3c",
+          "ownerURL": "http://127.0.0.1:60391/case-524a97f6-db2b-4b01-91a1-39bec40b1a3c/owner.html?token=524a97f6-db2b-4b01-91a1-39bec40b1a3c",
+          "callerURL": "http://127.0.0.1:60391/",
+          "callerControlled": false,
+          "errors": [],
+          "cleanupErrors": [],
+          "controllerEvents": [
+            {
+              "isTrusted": false,
+              "stage": "before",
+              "observedAt": 274,
+              "controller": {
+                "scriptURL": "http://127.0.0.1:60391/worker.js?token=524a97f6-db2b-4b01-91a1-39bec40b1a3c",
+                "state": "activated"
+              }
+            },
+            {
+              "isTrusted": false,
+              "stage": "after",
+              "observedAt": 288,
+              "controller": {
+                "scriptURL": "http://127.0.0.1:60391/worker.js?token=524a97f6-db2b-4b01-91a1-39bec40b1a3c",
+                "state": "activated"
+              }
+            }
+          ],
+          "before": {
+            "controller": {
+              "scriptURL": "http://127.0.0.1:60391/worker.js?token=524a97f6-db2b-4b01-91a1-39bec40b1a3c",
+              "state": "activated"
+            },
+            "url": "http://127.0.0.1:60391/case-524a97f6-db2b-4b01-91a1-39bec40b1a3c/owner.html?token=524a97f6-db2b-4b01-91a1-39bec40b1a3c",
+            "isTopLevel": false
+          },
+          "beforeNetwork": {
+            "token": "524a97f6-db2b-4b01-91a1-39bec40b1a3c",
+            "phase": "before",
+            "servedBy": "network"
+          },
+          "beforeWorkerObservations": [
+            {
+              "phase": "before",
+              "token": "524a97f6-db2b-4b01-91a1-39bec40b1a3c",
+              "requestURL": "http://127.0.0.1:60391/case-524a97f6-db2b-4b01-91a1-39bec40b1a3c/probe?token=524a97f6-db2b-4b01-91a1-39bec40b1a3c&phase=before",
+              "destination": "",
+              "clientId": "198c7ede-b9b0-489e-881d-5a7946611fdb",
+              "resultingClientId": "",
+              "receivedAt": 1792097984329,
+              "workerScriptURL": "http://127.0.0.1:60391/worker.js?token=524a97f6-db2b-4b01-91a1-39bec40b1a3c",
+              "instance": "18390b6c-c599-43ca-b46c-dc35c7869d95",
+              "clientURL": "http://127.0.0.1:60391/case-524a97f6-db2b-4b01-91a1-39bec40b1a3c/owner.html?token=524a97f6-db2b-4b01-91a1-39bec40b1a3c",
+              "clientType": "window",
+              "clientFrameType": "nested",
+              "clientInspectedAt": 1792097984329
+            }
+          ],
+          "operationAt": 280,
+          "immediately": {
+            "controller": {
+              "scriptURL": "http://127.0.0.1:60391/worker.js?token=524a97f6-db2b-4b01-91a1-39bec40b1a3c",
+              "state": "activated"
+            },
+            "url": "http://127.0.0.1:60391/case-524a97f6-db2b-4b01-91a1-39bec40b1a3c/owner.html?token=524a97f6-db2b-4b01-91a1-39bec40b1a3c"
+          },
+          "sameControllerImmediately": true,
+          "sameDocumentImmediately": true,
+          "sameNavigatorImmediately": true,
+          "sameContainerImmediately": true,
+          "openReturnedOriginalDocument": null,
+          "writtenScript": {
+            "type": "document-open-script-executed",
+            "token": "524a97f6-db2b-4b01-91a1-39bec40b1a3c",
+            "phase": "written",
+            "servedBy": "network"
+          },
+          "afterScript": {
+            "controller": {
+              "scriptURL": "http://127.0.0.1:60391/worker.js?token=524a97f6-db2b-4b01-91a1-39bec40b1a3c",
+              "state": "activated"
+            },
+            "url": "http://127.0.0.1:60391/case-524a97f6-db2b-4b01-91a1-39bec40b1a3c/owner.html?token=524a97f6-db2b-4b01-91a1-39bec40b1a3c"
+          },
+          "sameControllerAfterScript": true,
+          "replacementMarkerPresent": false,
+          "originalMarkerPresent": true,
+          "afterNetwork": {
+            "token": "524a97f6-db2b-4b01-91a1-39bec40b1a3c",
+            "phase": "after",
+            "servedBy": "network"
+          },
+          "workerInstanceBefore": "18390b6c-c599-43ca-b46c-dc35c7869d95",
+          "workerInstanceAfter": "18390b6c-c599-43ca-b46c-dc35c7869d95",
+          "workerContinuityVerified": true,
+          "workerObservations": [
+            {
+              "phase": "before",
+              "token": "524a97f6-db2b-4b01-91a1-39bec40b1a3c",
+              "requestURL": "http://127.0.0.1:60391/case-524a97f6-db2b-4b01-91a1-39bec40b1a3c/probe?token=524a97f6-db2b-4b01-91a1-39bec40b1a3c&phase=before",
+              "destination": "",
+              "clientId": "198c7ede-b9b0-489e-881d-5a7946611fdb",
+              "resultingClientId": "",
+              "receivedAt": 1792097984329,
+              "workerScriptURL": "http://127.0.0.1:60391/worker.js?token=524a97f6-db2b-4b01-91a1-39bec40b1a3c",
+              "instance": "18390b6c-c599-43ca-b46c-dc35c7869d95",
+              "clientURL": "http://127.0.0.1:60391/case-524a97f6-db2b-4b01-91a1-39bec40b1a3c/owner.html?token=524a97f6-db2b-4b01-91a1-39bec40b1a3c",
+              "clientType": "window",
+              "clientFrameType": "nested",
+              "clientInspectedAt": 1792097984329
+            },
+            {
+              "phase": "written",
+              "token": "524a97f6-db2b-4b01-91a1-39bec40b1a3c",
+              "requestURL": "http://127.0.0.1:60391/case-524a97f6-db2b-4b01-91a1-39bec40b1a3c/written.js?token=524a97f6-db2b-4b01-91a1-39bec40b1a3c&phase=written",
+              "destination": "script",
+              "clientId": "198c7ede-b9b0-489e-881d-5a7946611fdb",
+              "resultingClientId": "",
+              "receivedAt": 1792097984333,
+              "workerScriptURL": "http://127.0.0.1:60391/worker.js?token=524a97f6-db2b-4b01-91a1-39bec40b1a3c",
+              "instance": "18390b6c-c599-43ca-b46c-dc35c7869d95",
+              "clientURL": "http://127.0.0.1:60391/case-524a97f6-db2b-4b01-91a1-39bec40b1a3c/owner.html?token=524a97f6-db2b-4b01-91a1-39bec40b1a3c",
+              "clientType": "window",
+              "clientFrameType": "nested",
+              "clientInspectedAt": 1792097984333
+            },
+            {
+              "phase": "after",
+              "token": "524a97f6-db2b-4b01-91a1-39bec40b1a3c",
+              "requestURL": "http://127.0.0.1:60391/case-524a97f6-db2b-4b01-91a1-39bec40b1a3c/probe?token=524a97f6-db2b-4b01-91a1-39bec40b1a3c&phase=after",
+              "destination": "",
+              "clientId": "198c7ede-b9b0-489e-881d-5a7946611fdb",
+              "resultingClientId": "",
+              "receivedAt": 1792097984338,
+              "workerScriptURL": "http://127.0.0.1:60391/worker.js?token=524a97f6-db2b-4b01-91a1-39bec40b1a3c",
+              "instance": "18390b6c-c599-43ca-b46c-dc35c7869d95",
+              "clientURL": "http://127.0.0.1:60391/case-524a97f6-db2b-4b01-91a1-39bec40b1a3c/owner.html?token=524a97f6-db2b-4b01-91a1-39bec40b1a3c",
+              "clientType": "window",
+              "clientFrameType": "nested",
+              "clientInspectedAt": 1792097984338
+            }
+          ],
+          "final": {
+            "controller": {
+              "scriptURL": "http://127.0.0.1:60391/worker.js?token=524a97f6-db2b-4b01-91a1-39bec40b1a3c",
+              "state": "activated"
+            },
+            "url": "http://127.0.0.1:60391/case-524a97f6-db2b-4b01-91a1-39bec40b1a3c/owner.html?token=524a97f6-db2b-4b01-91a1-39bec40b1a3c"
+          },
+          "sameControllerFinally": true,
+          "sameDocumentFinally": true,
+          "sameContainerFinally": true,
+          "observationEndedAt": 1304,
+          "summary": {
+            "writtenScriptFetchEvents": 1,
+            "ordinaryFetchEventsAfter": 1,
+            "clientIdentity": "same-clientId",
+            "controllerchangeEvents": 0,
+            "listenerControlBefore": 1,
+            "listenerControlAfter": 1,
+            "workerClientURLs": [
+              {
+                "phase": "before",
+                "clientURL": "http://127.0.0.1:60391/case-524a97f6-db2b-4b01-91a1-39bec40b1a3c/owner.html?token=524a97f6-db2b-4b01-91a1-39bec40b1a3c"
+              },
+              {
+                "phase": "written",
+                "clientURL": "http://127.0.0.1:60391/case-524a97f6-db2b-4b01-91a1-39bec40b1a3c/owner.html?token=524a97f6-db2b-4b01-91a1-39bec40b1a3c"
+              },
+              {
+                "phase": "after",
+                "clientURL": "http://127.0.0.1:60391/case-524a97f6-db2b-4b01-91a1-39bec40b1a3c/owner.html?token=524a97f6-db2b-4b01-91a1-39bec40b1a3c"
+              }
+            ]
+          }
+        },
+        {
+          "scenario": "self-open-iframe",
+          "token": "f31b8d52-145f-4def-858e-20a21d7337f2",
+          "scope": "http://127.0.0.1:60391/case-f31b8d52-145f-4def-858e-20a21d7337f2/",
+          "scriptURL": "http://127.0.0.1:60391/worker.js?token=f31b8d52-145f-4def-858e-20a21d7337f2",
+          "ownerURL": "http://127.0.0.1:60391/case-f31b8d52-145f-4def-858e-20a21d7337f2/owner.html?token=f31b8d52-145f-4def-858e-20a21d7337f2",
+          "callerURL": "http://127.0.0.1:60391/",
+          "callerControlled": false,
+          "errors": [],
+          "cleanupErrors": [],
+          "controllerEvents": [
+            {
+              "isTrusted": false,
+              "stage": "before",
+              "observedAt": 1490,
+              "controller": {
+                "scriptURL": "http://127.0.0.1:60391/worker.js?token=f31b8d52-145f-4def-858e-20a21d7337f2",
+                "state": "activated"
+              }
+            },
+            {
+              "isTrusted": false,
+              "stage": "after",
+              "observedAt": 1502,
+              "controller": {
+                "scriptURL": "http://127.0.0.1:60391/worker.js?token=f31b8d52-145f-4def-858e-20a21d7337f2",
+                "state": "activated"
+              }
+            }
+          ],
+          "before": {
+            "controller": {
+              "scriptURL": "http://127.0.0.1:60391/worker.js?token=f31b8d52-145f-4def-858e-20a21d7337f2",
+              "state": "activated"
+            },
+            "url": "http://127.0.0.1:60391/case-f31b8d52-145f-4def-858e-20a21d7337f2/owner.html?token=f31b8d52-145f-4def-858e-20a21d7337f2",
+            "isTopLevel": false
+          },
+          "beforeNetwork": {
+            "token": "f31b8d52-145f-4def-858e-20a21d7337f2",
+            "phase": "before",
+            "servedBy": "network"
+          },
+          "beforeWorkerObservations": [
+            {
+              "phase": "before",
+              "token": "f31b8d52-145f-4def-858e-20a21d7337f2",
+              "requestURL": "http://127.0.0.1:60391/case-f31b8d52-145f-4def-858e-20a21d7337f2/probe?token=f31b8d52-145f-4def-858e-20a21d7337f2&phase=before",
+              "destination": "",
+              "clientId": "979bb169-aa08-4c97-8989-2fc069d320d9",
+              "resultingClientId": "",
+              "receivedAt": 1792097985544,
+              "workerScriptURL": "http://127.0.0.1:60391/worker.js?token=f31b8d52-145f-4def-858e-20a21d7337f2",
+              "instance": "29fc2b5f-8caf-4497-8c18-496c1e81ad1d",
+              "clientURL": "http://127.0.0.1:60391/case-f31b8d52-145f-4def-858e-20a21d7337f2/owner.html?token=f31b8d52-145f-4def-858e-20a21d7337f2",
+              "clientType": "window",
+              "clientFrameType": "nested",
+              "clientInspectedAt": 1792097985544
+            }
+          ],
+          "operationAt": 1494,
+          "immediately": {
+            "controller": {
+              "scriptURL": "http://127.0.0.1:60391/worker.js?token=f31b8d52-145f-4def-858e-20a21d7337f2",
+              "state": "activated"
+            },
+            "url": "http://127.0.0.1:60391/case-f31b8d52-145f-4def-858e-20a21d7337f2/owner.html?token=f31b8d52-145f-4def-858e-20a21d7337f2"
+          },
+          "sameControllerImmediately": true,
+          "sameDocumentImmediately": true,
+          "sameNavigatorImmediately": true,
+          "sameContainerImmediately": true,
+          "openReturnedOriginalDocument": true,
+          "writtenScript": {
+            "type": "document-open-script-executed",
+            "token": "f31b8d52-145f-4def-858e-20a21d7337f2",
+            "phase": "written",
+            "servedBy": "network"
+          },
+          "afterScript": {
+            "controller": {
+              "scriptURL": "http://127.0.0.1:60391/worker.js?token=f31b8d52-145f-4def-858e-20a21d7337f2",
+              "state": "activated"
+            },
+            "url": "http://127.0.0.1:60391/case-f31b8d52-145f-4def-858e-20a21d7337f2/owner.html?token=f31b8d52-145f-4def-858e-20a21d7337f2"
+          },
+          "sameControllerAfterScript": true,
+          "replacementMarkerPresent": true,
+          "originalMarkerPresent": false,
+          "afterNetwork": {
+            "token": "f31b8d52-145f-4def-858e-20a21d7337f2",
+            "phase": "after",
+            "servedBy": "network"
+          },
+          "workerInstanceBefore": "29fc2b5f-8caf-4497-8c18-496c1e81ad1d",
+          "workerInstanceAfter": "29fc2b5f-8caf-4497-8c18-496c1e81ad1d",
+          "workerContinuityVerified": true,
+          "workerObservations": [
+            {
+              "phase": "before",
+              "token": "f31b8d52-145f-4def-858e-20a21d7337f2",
+              "requestURL": "http://127.0.0.1:60391/case-f31b8d52-145f-4def-858e-20a21d7337f2/probe?token=f31b8d52-145f-4def-858e-20a21d7337f2&phase=before",
+              "destination": "",
+              "clientId": "979bb169-aa08-4c97-8989-2fc069d320d9",
+              "resultingClientId": "",
+              "receivedAt": 1792097985544,
+              "workerScriptURL": "http://127.0.0.1:60391/worker.js?token=f31b8d52-145f-4def-858e-20a21d7337f2",
+              "instance": "29fc2b5f-8caf-4497-8c18-496c1e81ad1d",
+              "clientURL": "http://127.0.0.1:60391/case-f31b8d52-145f-4def-858e-20a21d7337f2/owner.html?token=f31b8d52-145f-4def-858e-20a21d7337f2",
+              "clientType": "window",
+              "clientFrameType": "nested",
+              "clientInspectedAt": 1792097985544
+            },
+            {
+              "phase": "written",
+              "token": "f31b8d52-145f-4def-858e-20a21d7337f2",
+              "requestURL": "http://127.0.0.1:60391/case-f31b8d52-145f-4def-858e-20a21d7337f2/written.js?token=f31b8d52-145f-4def-858e-20a21d7337f2&phase=written",
+              "destination": "script",
+              "clientId": "979bb169-aa08-4c97-8989-2fc069d320d9",
+              "resultingClientId": "",
+              "receivedAt": 1792097985550,
+              "workerScriptURL": "http://127.0.0.1:60391/worker.js?token=f31b8d52-145f-4def-858e-20a21d7337f2",
+              "instance": "29fc2b5f-8caf-4497-8c18-496c1e81ad1d",
+              "clientURL": "http://127.0.0.1:60391/case-f31b8d52-145f-4def-858e-20a21d7337f2/owner.html?token=f31b8d52-145f-4def-858e-20a21d7337f2",
+              "clientType": "window",
+              "clientFrameType": "nested",
+              "clientInspectedAt": 1792097985550
+            },
+            {
+              "phase": "after",
+              "token": "f31b8d52-145f-4def-858e-20a21d7337f2",
+              "requestURL": "http://127.0.0.1:60391/case-f31b8d52-145f-4def-858e-20a21d7337f2/probe?token=f31b8d52-145f-4def-858e-20a21d7337f2&phase=after",
+              "destination": "",
+              "clientId": "979bb169-aa08-4c97-8989-2fc069d320d9",
+              "resultingClientId": "",
+              "receivedAt": 1792097985553,
+              "workerScriptURL": "http://127.0.0.1:60391/worker.js?token=f31b8d52-145f-4def-858e-20a21d7337f2",
+              "instance": "29fc2b5f-8caf-4497-8c18-496c1e81ad1d",
+              "clientURL": "http://127.0.0.1:60391/case-f31b8d52-145f-4def-858e-20a21d7337f2/owner.html?token=f31b8d52-145f-4def-858e-20a21d7337f2",
+              "clientType": "window",
+              "clientFrameType": "nested",
+              "clientInspectedAt": 1792097985553
+            }
+          ],
+          "final": {
+            "controller": {
+              "scriptURL": "http://127.0.0.1:60391/worker.js?token=f31b8d52-145f-4def-858e-20a21d7337f2",
+              "state": "activated"
+            },
+            "url": "http://127.0.0.1:60391/case-f31b8d52-145f-4def-858e-20a21d7337f2/owner.html?token=f31b8d52-145f-4def-858e-20a21d7337f2"
+          },
+          "sameControllerFinally": true,
+          "sameDocumentFinally": true,
+          "sameContainerFinally": true,
+          "observationEndedAt": 2509,
+          "summary": {
+            "writtenScriptFetchEvents": 1,
+            "ordinaryFetchEventsAfter": 1,
+            "clientIdentity": "same-clientId",
+            "controllerchangeEvents": 0,
+            "listenerControlBefore": 1,
+            "listenerControlAfter": 1,
+            "workerClientURLs": [
+              {
+                "phase": "before",
+                "clientURL": "http://127.0.0.1:60391/case-f31b8d52-145f-4def-858e-20a21d7337f2/owner.html?token=f31b8d52-145f-4def-858e-20a21d7337f2"
+              },
+              {
+                "phase": "written",
+                "clientURL": "http://127.0.0.1:60391/case-f31b8d52-145f-4def-858e-20a21d7337f2/owner.html?token=f31b8d52-145f-4def-858e-20a21d7337f2"
+              },
+              {
+                "phase": "after",
+                "clientURL": "http://127.0.0.1:60391/case-f31b8d52-145f-4def-858e-20a21d7337f2/owner.html?token=f31b8d52-145f-4def-858e-20a21d7337f2"
+              }
+            ]
+          }
+        },
+        {
+          "scenario": "parent-open-iframe",
+          "token": "8c100f9a-c140-49d9-af9e-11a12741078f",
+          "scope": "http://127.0.0.1:60391/case-8c100f9a-c140-49d9-af9e-11a12741078f/",
+          "scriptURL": "http://127.0.0.1:60391/worker.js?token=8c100f9a-c140-49d9-af9e-11a12741078f",
+          "ownerURL": "http://127.0.0.1:60391/case-8c100f9a-c140-49d9-af9e-11a12741078f/owner.html?token=8c100f9a-c140-49d9-af9e-11a12741078f",
+          "callerURL": "http://127.0.0.1:60391/",
+          "callerControlled": false,
+          "errors": [],
+          "cleanupErrors": [],
+          "controllerEvents": [
+            {
+              "isTrusted": false,
+              "stage": "before",
+              "observedAt": 2727,
+              "controller": {
+                "scriptURL": "http://127.0.0.1:60391/worker.js?token=8c100f9a-c140-49d9-af9e-11a12741078f",
+                "state": "activated"
+              }
+            },
+            {
+              "isTrusted": false,
+              "stage": "after",
+              "observedAt": 2738,
+              "controller": {
+                "scriptURL": "http://127.0.0.1:60391/worker.js?token=8c100f9a-c140-49d9-af9e-11a12741078f",
+                "state": "activated"
+              }
+            }
+          ],
+          "before": {
+            "controller": {
+              "scriptURL": "http://127.0.0.1:60391/worker.js?token=8c100f9a-c140-49d9-af9e-11a12741078f",
+              "state": "activated"
+            },
+            "url": "http://127.0.0.1:60391/case-8c100f9a-c140-49d9-af9e-11a12741078f/owner.html?token=8c100f9a-c140-49d9-af9e-11a12741078f",
+            "isTopLevel": false
+          },
+          "beforeNetwork": {
+            "token": "8c100f9a-c140-49d9-af9e-11a12741078f",
+            "phase": "before",
+            "servedBy": "network"
+          },
+          "beforeWorkerObservations": [
+            {
+              "phase": "before",
+              "token": "8c100f9a-c140-49d9-af9e-11a12741078f",
+              "requestURL": "http://127.0.0.1:60391/case-8c100f9a-c140-49d9-af9e-11a12741078f/probe?token=8c100f9a-c140-49d9-af9e-11a12741078f&phase=before",
+              "destination": "",
+              "clientId": "84129376-d826-4255-bfee-287be48caa97",
+              "resultingClientId": "",
+              "receivedAt": 1792097986781,
+              "workerScriptURL": "http://127.0.0.1:60391/worker.js?token=8c100f9a-c140-49d9-af9e-11a12741078f",
+              "instance": "96cece2d-f190-4ff6-b2ed-21176a9b34a4",
+              "clientURL": "http://127.0.0.1:60391/case-8c100f9a-c140-49d9-af9e-11a12741078f/owner.html?token=8c100f9a-c140-49d9-af9e-11a12741078f",
+              "clientType": "window",
+              "clientFrameType": "nested",
+              "clientInspectedAt": 1792097986782
+            }
+          ],
+          "operationAt": 2732,
+          "immediately": {
+            "controller": {
+              "scriptURL": "http://127.0.0.1:60391/worker.js?token=8c100f9a-c140-49d9-af9e-11a12741078f",
+              "state": "activated"
+            },
+            "url": "http://127.0.0.1:60391/"
+          },
+          "sameControllerImmediately": true,
+          "sameDocumentImmediately": true,
+          "sameNavigatorImmediately": true,
+          "sameContainerImmediately": true,
+          "openReturnedOriginalDocument": true,
+          "writtenScript": {
+            "type": "document-open-script-executed",
+            "token": "8c100f9a-c140-49d9-af9e-11a12741078f",
+            "phase": "written",
+            "servedBy": "network"
+          },
+          "afterScript": {
+            "controller": {
+              "scriptURL": "http://127.0.0.1:60391/worker.js?token=8c100f9a-c140-49d9-af9e-11a12741078f",
+              "state": "activated"
+            },
+            "url": "http://127.0.0.1:60391/"
+          },
+          "sameControllerAfterScript": true,
+          "replacementMarkerPresent": true,
+          "originalMarkerPresent": false,
+          "afterNetwork": {
+            "token": "8c100f9a-c140-49d9-af9e-11a12741078f",
+            "phase": "after",
+            "servedBy": "network"
+          },
+          "workerInstanceBefore": "96cece2d-f190-4ff6-b2ed-21176a9b34a4",
+          "workerInstanceAfter": "96cece2d-f190-4ff6-b2ed-21176a9b34a4",
+          "workerContinuityVerified": true,
+          "workerObservations": [
+            {
+              "phase": "before",
+              "token": "8c100f9a-c140-49d9-af9e-11a12741078f",
+              "requestURL": "http://127.0.0.1:60391/case-8c100f9a-c140-49d9-af9e-11a12741078f/probe?token=8c100f9a-c140-49d9-af9e-11a12741078f&phase=before",
+              "destination": "",
+              "clientId": "84129376-d826-4255-bfee-287be48caa97",
+              "resultingClientId": "",
+              "receivedAt": 1792097986781,
+              "workerScriptURL": "http://127.0.0.1:60391/worker.js?token=8c100f9a-c140-49d9-af9e-11a12741078f",
+              "instance": "96cece2d-f190-4ff6-b2ed-21176a9b34a4",
+              "clientURL": "http://127.0.0.1:60391/case-8c100f9a-c140-49d9-af9e-11a12741078f/owner.html?token=8c100f9a-c140-49d9-af9e-11a12741078f",
+              "clientType": "window",
+              "clientFrameType": "nested",
+              "clientInspectedAt": 1792097986782
+            },
+            {
+              "phase": "written",
+              "token": "8c100f9a-c140-49d9-af9e-11a12741078f",
+              "requestURL": "http://127.0.0.1:60391/case-8c100f9a-c140-49d9-af9e-11a12741078f/written.js?token=8c100f9a-c140-49d9-af9e-11a12741078f&phase=written",
+              "destination": "script",
+              "clientId": "84129376-d826-4255-bfee-287be48caa97",
+              "resultingClientId": "",
+              "receivedAt": 1792097986786,
+              "workerScriptURL": "http://127.0.0.1:60391/worker.js?token=8c100f9a-c140-49d9-af9e-11a12741078f",
+              "instance": "96cece2d-f190-4ff6-b2ed-21176a9b34a4",
+              "clientURL": "http://127.0.0.1:60391/case-8c100f9a-c140-49d9-af9e-11a12741078f/owner.html?token=8c100f9a-c140-49d9-af9e-11a12741078f",
+              "clientType": "window",
+              "clientFrameType": "nested",
+              "clientInspectedAt": 1792097986786
+            },
+            {
+              "phase": "after",
+              "token": "8c100f9a-c140-49d9-af9e-11a12741078f",
+              "requestURL": "http://127.0.0.1:60391/case-8c100f9a-c140-49d9-af9e-11a12741078f/probe?token=8c100f9a-c140-49d9-af9e-11a12741078f&phase=after",
+              "destination": "",
+              "clientId": "84129376-d826-4255-bfee-287be48caa97",
+              "resultingClientId": "",
+              "receivedAt": 1792097986789,
+              "workerScriptURL": "http://127.0.0.1:60391/worker.js?token=8c100f9a-c140-49d9-af9e-11a12741078f",
+              "instance": "96cece2d-f190-4ff6-b2ed-21176a9b34a4",
+              "clientURL": "http://127.0.0.1:60391/case-8c100f9a-c140-49d9-af9e-11a12741078f/owner.html?token=8c100f9a-c140-49d9-af9e-11a12741078f",
+              "clientType": "window",
+              "clientFrameType": "nested",
+              "clientInspectedAt": 1792097986790
+            }
+          ],
+          "final": {
+            "controller": {
+              "scriptURL": "http://127.0.0.1:60391/worker.js?token=8c100f9a-c140-49d9-af9e-11a12741078f",
+              "state": "activated"
+            },
+            "url": "http://127.0.0.1:60391/"
+          },
+          "sameControllerFinally": true,
+          "sameDocumentFinally": true,
+          "sameContainerFinally": true,
+          "observationEndedAt": 3743,
+          "summary": {
+            "writtenScriptFetchEvents": 1,
+            "ordinaryFetchEventsAfter": 1,
+            "clientIdentity": "same-clientId",
+            "controllerchangeEvents": 0,
+            "listenerControlBefore": 1,
+            "listenerControlAfter": 1,
+            "workerClientURLs": [
+              {
+                "phase": "before",
+                "clientURL": "http://127.0.0.1:60391/case-8c100f9a-c140-49d9-af9e-11a12741078f/owner.html?token=8c100f9a-c140-49d9-af9e-11a12741078f"
+              },
+              {
+                "phase": "written",
+                "clientURL": "http://127.0.0.1:60391/case-8c100f9a-c140-49d9-af9e-11a12741078f/owner.html?token=8c100f9a-c140-49d9-af9e-11a12741078f"
+              },
+              {
+                "phase": "after",
+                "clientURL": "http://127.0.0.1:60391/case-8c100f9a-c140-49d9-af9e-11a12741078f/owner.html?token=8c100f9a-c140-49d9-af9e-11a12741078f"
+              }
+            ]
+          }
+        },
+        {
+          "scenario": "self-open-top-level",
+          "token": "e943116b-e418-44d0-a817-1edfa360579a",
+          "scope": "http://127.0.0.1:60391/case-e943116b-e418-44d0-a817-1edfa360579a/",
+          "scriptURL": "http://127.0.0.1:60391/worker.js?token=e943116b-e418-44d0-a817-1edfa360579a",
+          "ownerURL": "http://127.0.0.1:60391/case-e943116b-e418-44d0-a817-1edfa360579a/owner.html?token=e943116b-e418-44d0-a817-1edfa360579a",
+          "callerURL": "http://127.0.0.1:60391/",
+          "callerControlled": false,
+          "errors": [],
+          "cleanupErrors": [],
+          "controllerEvents": [
+            {
+              "isTrusted": false,
+              "stage": "before",
+              "observedAt": 4937,
+              "controller": {
+                "scriptURL": "http://127.0.0.1:60391/worker.js?token=e943116b-e418-44d0-a817-1edfa360579a",
+                "state": "activated"
+              }
+            },
+            {
+              "isTrusted": false,
+              "stage": "after",
+              "observedAt": 4952,
+              "controller": {
+                "scriptURL": "http://127.0.0.1:60391/worker.js?token=e943116b-e418-44d0-a817-1edfa360579a",
+                "state": "activated"
+              }
+            }
+          ],
+          "before": {
+            "controller": {
+              "scriptURL": "http://127.0.0.1:60391/worker.js?token=e943116b-e418-44d0-a817-1edfa360579a",
+              "state": "activated"
+            },
+            "url": "http://127.0.0.1:60391/case-e943116b-e418-44d0-a817-1edfa360579a/owner.html?token=e943116b-e418-44d0-a817-1edfa360579a",
+            "isTopLevel": true
+          },
+          "beforeNetwork": {
+            "token": "e943116b-e418-44d0-a817-1edfa360579a",
+            "phase": "before",
+            "servedBy": "network"
+          },
+          "beforeWorkerObservations": [
+            {
+              "phase": "before",
+              "token": "e943116b-e418-44d0-a817-1edfa360579a",
+              "requestURL": "http://127.0.0.1:60391/case-e943116b-e418-44d0-a817-1edfa360579a/probe?token=e943116b-e418-44d0-a817-1edfa360579a&phase=before",
+              "destination": "",
+              "clientId": "62900db9-fa30-4906-8cef-c41e8cfae831",
+              "resultingClientId": "",
+              "receivedAt": 1792097988992,
+              "workerScriptURL": "http://127.0.0.1:60391/worker.js?token=e943116b-e418-44d0-a817-1edfa360579a",
+              "instance": "4bead5ce-38e2-4620-a258-1c2a359a2852",
+              "clientURL": "http://127.0.0.1:60391/case-e943116b-e418-44d0-a817-1edfa360579a/owner.html?token=e943116b-e418-44d0-a817-1edfa360579a",
+              "clientType": "window",
+              "clientFrameType": "auxiliary",
+              "clientInspectedAt": 1792097988994
+            }
+          ],
+          "operationAt": 4943,
+          "immediately": {
+            "controller": {
+              "scriptURL": "http://127.0.0.1:60391/worker.js?token=e943116b-e418-44d0-a817-1edfa360579a",
+              "state": "activated"
+            },
+            "url": "http://127.0.0.1:60391/case-e943116b-e418-44d0-a817-1edfa360579a/owner.html?token=e943116b-e418-44d0-a817-1edfa360579a"
+          },
+          "sameControllerImmediately": true,
+          "sameDocumentImmediately": true,
+          "sameNavigatorImmediately": true,
+          "sameContainerImmediately": true,
+          "openReturnedOriginalDocument": true,
+          "writtenScript": {
+            "type": "document-open-script-executed",
+            "token": "e943116b-e418-44d0-a817-1edfa360579a",
+            "phase": "written",
+            "servedBy": "network"
+          },
+          "afterScript": {
+            "controller": {
+              "scriptURL": "http://127.0.0.1:60391/worker.js?token=e943116b-e418-44d0-a817-1edfa360579a",
+              "state": "activated"
+            },
+            "url": "http://127.0.0.1:60391/case-e943116b-e418-44d0-a817-1edfa360579a/owner.html?token=e943116b-e418-44d0-a817-1edfa360579a"
+          },
+          "sameControllerAfterScript": true,
+          "replacementMarkerPresent": true,
+          "originalMarkerPresent": false,
+          "afterNetwork": {
+            "token": "e943116b-e418-44d0-a817-1edfa360579a",
+            "phase": "after",
+            "servedBy": "network"
+          },
+          "workerInstanceBefore": "4bead5ce-38e2-4620-a258-1c2a359a2852",
+          "workerInstanceAfter": "4bead5ce-38e2-4620-a258-1c2a359a2852",
+          "workerContinuityVerified": true,
+          "workerObservations": [
+            {
+              "phase": "before",
+              "token": "e943116b-e418-44d0-a817-1edfa360579a",
+              "requestURL": "http://127.0.0.1:60391/case-e943116b-e418-44d0-a817-1edfa360579a/probe?token=e943116b-e418-44d0-a817-1edfa360579a&phase=before",
+              "destination": "",
+              "clientId": "62900db9-fa30-4906-8cef-c41e8cfae831",
+              "resultingClientId": "",
+              "receivedAt": 1792097988992,
+              "workerScriptURL": "http://127.0.0.1:60391/worker.js?token=e943116b-e418-44d0-a817-1edfa360579a",
+              "instance": "4bead5ce-38e2-4620-a258-1c2a359a2852",
+              "clientURL": "http://127.0.0.1:60391/case-e943116b-e418-44d0-a817-1edfa360579a/owner.html?token=e943116b-e418-44d0-a817-1edfa360579a",
+              "clientType": "window",
+              "clientFrameType": "auxiliary",
+              "clientInspectedAt": 1792097988994
+            },
+            {
+              "phase": "written",
+              "token": "e943116b-e418-44d0-a817-1edfa360579a",
+              "requestURL": "http://127.0.0.1:60391/case-e943116b-e418-44d0-a817-1edfa360579a/written.js?token=e943116b-e418-44d0-a817-1edfa360579a&phase=written",
+              "destination": "script",
+              "clientId": "62900db9-fa30-4906-8cef-c41e8cfae831",
+              "resultingClientId": "",
+              "receivedAt": 1792097989000,
+              "workerScriptURL": "http://127.0.0.1:60391/worker.js?token=e943116b-e418-44d0-a817-1edfa360579a",
+              "instance": "4bead5ce-38e2-4620-a258-1c2a359a2852",
+              "clientURL": "http://127.0.0.1:60391/case-e943116b-e418-44d0-a817-1edfa360579a/owner.html?token=e943116b-e418-44d0-a817-1edfa360579a",
+              "clientType": "window",
+              "clientFrameType": "auxiliary",
+              "clientInspectedAt": 1792097989000
+            },
+            {
+              "phase": "after",
+              "token": "e943116b-e418-44d0-a817-1edfa360579a",
+              "requestURL": "http://127.0.0.1:60391/case-e943116b-e418-44d0-a817-1edfa360579a/probe?token=e943116b-e418-44d0-a817-1edfa360579a&phase=after",
+              "destination": "",
+              "clientId": "62900db9-fa30-4906-8cef-c41e8cfae831",
+              "resultingClientId": "",
+              "receivedAt": 1792097989004,
+              "workerScriptURL": "http://127.0.0.1:60391/worker.js?token=e943116b-e418-44d0-a817-1edfa360579a",
+              "instance": "4bead5ce-38e2-4620-a258-1c2a359a2852",
+              "clientURL": "http://127.0.0.1:60391/case-e943116b-e418-44d0-a817-1edfa360579a/owner.html?token=e943116b-e418-44d0-a817-1edfa360579a",
+              "clientType": "window",
+              "clientFrameType": "auxiliary",
+              "clientInspectedAt": 1792097989004
+            }
+          ],
+          "final": {
+            "controller": {
+              "scriptURL": "http://127.0.0.1:60391/worker.js?token=e943116b-e418-44d0-a817-1edfa360579a",
+              "state": "activated"
+            },
+            "url": "http://127.0.0.1:60391/case-e943116b-e418-44d0-a817-1edfa360579a/owner.html?token=e943116b-e418-44d0-a817-1edfa360579a"
+          },
+          "sameControllerFinally": true,
+          "sameDocumentFinally": true,
+          "sameContainerFinally": true,
+          "observationEndedAt": 5959,
+          "summary": {
+            "writtenScriptFetchEvents": 1,
+            "ordinaryFetchEventsAfter": 1,
+            "clientIdentity": "same-clientId",
+            "controllerchangeEvents": 0,
+            "listenerControlBefore": 1,
+            "listenerControlAfter": 1,
+            "workerClientURLs": [
+              {
+                "phase": "before",
+                "clientURL": "http://127.0.0.1:60391/case-e943116b-e418-44d0-a817-1edfa360579a/owner.html?token=e943116b-e418-44d0-a817-1edfa360579a"
+              },
+              {
+                "phase": "written",
+                "clientURL": "http://127.0.0.1:60391/case-e943116b-e418-44d0-a817-1edfa360579a/owner.html?token=e943116b-e418-44d0-a817-1edfa360579a"
+              },
+              {
+                "phase": "after",
+                "clientURL": "http://127.0.0.1:60391/case-e943116b-e418-44d0-a817-1edfa360579a/owner.html?token=e943116b-e418-44d0-a817-1edfa360579a"
+              }
+            ]
+          }
+        }
+      ],
+      "errors": [],
+      "running": false,
+      "complete": true,
+      "finished": "2026-10-15T20:59:50.026Z"
+    },
+    {
+      "issue": "w3c/ServiceWorker#1313",
+      "kind": "Observation only; not a normative WPT",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:158.0) Gecko/20100101 Firefox/158.0",
+      "started": "2026-10-15T20:59:50.132Z",
+      "eventWindowMs": 1000,
+      "cases": [
+        {
+          "scenario": "no-open-iframe",
+          "token": "2423bc3c-c61e-4226-b8ca-8421b3ca0aa0",
+          "scope": "http://127.0.0.1:60391/case-2423bc3c-c61e-4226-b8ca-8421b3ca0aa0/",
+          "scriptURL": "http://127.0.0.1:60391/worker.js?token=2423bc3c-c61e-4226-b8ca-8421b3ca0aa0",
+          "ownerURL": "http://127.0.0.1:60391/case-2423bc3c-c61e-4226-b8ca-8421b3ca0aa0/owner.html?token=2423bc3c-c61e-4226-b8ca-8421b3ca0aa0",
+          "callerURL": "http://127.0.0.1:60391/",
+          "callerControlled": false,
+          "errors": [],
+          "cleanupErrors": [],
+          "controllerEvents": [
+            {
+              "isTrusted": false,
+              "stage": "before",
+              "observedAt": 140,
+              "controller": {
+                "scriptURL": "http://127.0.0.1:60391/worker.js?token=2423bc3c-c61e-4226-b8ca-8421b3ca0aa0",
+                "state": "activated"
+              }
+            },
+            {
+              "isTrusted": false,
+              "stage": "after",
+              "observedAt": 152,
+              "controller": {
+                "scriptURL": "http://127.0.0.1:60391/worker.js?token=2423bc3c-c61e-4226-b8ca-8421b3ca0aa0",
+                "state": "activated"
+              }
+            }
+          ],
+          "before": {
+            "controller": {
+              "scriptURL": "http://127.0.0.1:60391/worker.js?token=2423bc3c-c61e-4226-b8ca-8421b3ca0aa0",
+              "state": "activated"
+            },
+            "url": "http://127.0.0.1:60391/case-2423bc3c-c61e-4226-b8ca-8421b3ca0aa0/owner.html?token=2423bc3c-c61e-4226-b8ca-8421b3ca0aa0",
+            "isTopLevel": false
+          },
+          "beforeNetwork": {
+            "token": "2423bc3c-c61e-4226-b8ca-8421b3ca0aa0",
+            "phase": "before",
+            "servedBy": "network"
+          },
+          "beforeWorkerObservations": [
+            {
+              "phase": "before",
+              "token": "2423bc3c-c61e-4226-b8ca-8421b3ca0aa0",
+              "requestURL": "http://127.0.0.1:60391/case-2423bc3c-c61e-4226-b8ca-8421b3ca0aa0/probe?token=2423bc3c-c61e-4226-b8ca-8421b3ca0aa0&phase=before",
+              "destination": "",
+              "clientId": "8d8f12b2-2758-4d77-9631-c800d451def7",
+              "resultingClientId": "",
+              "receivedAt": 1792097990258,
+              "workerScriptURL": "http://127.0.0.1:60391/worker.js?token=2423bc3c-c61e-4226-b8ca-8421b3ca0aa0",
+              "instance": "eb89a8c5-9181-44c7-835e-0f6a7e253023",
+              "clientURL": "http://127.0.0.1:60391/case-2423bc3c-c61e-4226-b8ca-8421b3ca0aa0/owner.html?token=2423bc3c-c61e-4226-b8ca-8421b3ca0aa0",
+              "clientType": "window",
+              "clientFrameType": "nested",
+              "clientInspectedAt": 1792097990259
+            }
+          ],
+          "operationAt": 144,
+          "immediately": {
+            "controller": {
+              "scriptURL": "http://127.0.0.1:60391/worker.js?token=2423bc3c-c61e-4226-b8ca-8421b3ca0aa0",
+              "state": "activated"
+            },
+            "url": "http://127.0.0.1:60391/case-2423bc3c-c61e-4226-b8ca-8421b3ca0aa0/owner.html?token=2423bc3c-c61e-4226-b8ca-8421b3ca0aa0"
+          },
+          "sameControllerImmediately": true,
+          "sameDocumentImmediately": true,
+          "sameNavigatorImmediately": true,
+          "sameContainerImmediately": true,
+          "openReturnedOriginalDocument": null,
+          "writtenScript": {
+            "type": "document-open-script-executed",
+            "token": "2423bc3c-c61e-4226-b8ca-8421b3ca0aa0",
+            "phase": "written",
+            "servedBy": "network"
+          },
+          "afterScript": {
+            "controller": {
+              "scriptURL": "http://127.0.0.1:60391/worker.js?token=2423bc3c-c61e-4226-b8ca-8421b3ca0aa0",
+              "state": "activated"
+            },
+            "url": "http://127.0.0.1:60391/case-2423bc3c-c61e-4226-b8ca-8421b3ca0aa0/owner.html?token=2423bc3c-c61e-4226-b8ca-8421b3ca0aa0"
+          },
+          "sameControllerAfterScript": true,
+          "replacementMarkerPresent": false,
+          "originalMarkerPresent": true,
+          "afterNetwork": {
+            "token": "2423bc3c-c61e-4226-b8ca-8421b3ca0aa0",
+            "phase": "after",
+            "servedBy": "network"
+          },
+          "workerInstanceBefore": "eb89a8c5-9181-44c7-835e-0f6a7e253023",
+          "workerInstanceAfter": "eb89a8c5-9181-44c7-835e-0f6a7e253023",
+          "workerContinuityVerified": true,
+          "workerObservations": [
+            {
+              "phase": "before",
+              "token": "2423bc3c-c61e-4226-b8ca-8421b3ca0aa0",
+              "requestURL": "http://127.0.0.1:60391/case-2423bc3c-c61e-4226-b8ca-8421b3ca0aa0/probe?token=2423bc3c-c61e-4226-b8ca-8421b3ca0aa0&phase=before",
+              "destination": "",
+              "clientId": "8d8f12b2-2758-4d77-9631-c800d451def7",
+              "resultingClientId": "",
+              "receivedAt": 1792097990258,
+              "workerScriptURL": "http://127.0.0.1:60391/worker.js?token=2423bc3c-c61e-4226-b8ca-8421b3ca0aa0",
+              "instance": "eb89a8c5-9181-44c7-835e-0f6a7e253023",
+              "clientURL": "http://127.0.0.1:60391/case-2423bc3c-c61e-4226-b8ca-8421b3ca0aa0/owner.html?token=2423bc3c-c61e-4226-b8ca-8421b3ca0aa0",
+              "clientType": "window",
+              "clientFrameType": "nested",
+              "clientInspectedAt": 1792097990259
+            },
+            {
+              "phase": "written",
+              "token": "2423bc3c-c61e-4226-b8ca-8421b3ca0aa0",
+              "requestURL": "http://127.0.0.1:60391/case-2423bc3c-c61e-4226-b8ca-8421b3ca0aa0/written.js?token=2423bc3c-c61e-4226-b8ca-8421b3ca0aa0&phase=written",
+              "destination": "script",
+              "clientId": "8d8f12b2-2758-4d77-9631-c800d451def7",
+              "resultingClientId": "",
+              "receivedAt": 1792097990263,
+              "workerScriptURL": "http://127.0.0.1:60391/worker.js?token=2423bc3c-c61e-4226-b8ca-8421b3ca0aa0",
+              "instance": "eb89a8c5-9181-44c7-835e-0f6a7e253023",
+              "clientURL": "http://127.0.0.1:60391/case-2423bc3c-c61e-4226-b8ca-8421b3ca0aa0/owner.html?token=2423bc3c-c61e-4226-b8ca-8421b3ca0aa0",
+              "clientType": "window",
+              "clientFrameType": "nested",
+              "clientInspectedAt": 1792097990263
+            },
+            {
+              "phase": "after",
+              "token": "2423bc3c-c61e-4226-b8ca-8421b3ca0aa0",
+              "requestURL": "http://127.0.0.1:60391/case-2423bc3c-c61e-4226-b8ca-8421b3ca0aa0/probe?token=2423bc3c-c61e-4226-b8ca-8421b3ca0aa0&phase=after",
+              "destination": "",
+              "clientId": "8d8f12b2-2758-4d77-9631-c800d451def7",
+              "resultingClientId": "",
+              "receivedAt": 1792097990267,
+              "workerScriptURL": "http://127.0.0.1:60391/worker.js?token=2423bc3c-c61e-4226-b8ca-8421b3ca0aa0",
+              "instance": "eb89a8c5-9181-44c7-835e-0f6a7e253023",
+              "clientURL": "http://127.0.0.1:60391/case-2423bc3c-c61e-4226-b8ca-8421b3ca0aa0/owner.html?token=2423bc3c-c61e-4226-b8ca-8421b3ca0aa0",
+              "clientType": "window",
+              "clientFrameType": "nested",
+              "clientInspectedAt": 1792097990267
+            }
+          ],
+          "final": {
+            "controller": {
+              "scriptURL": "http://127.0.0.1:60391/worker.js?token=2423bc3c-c61e-4226-b8ca-8421b3ca0aa0",
+              "state": "activated"
+            },
+            "url": "http://127.0.0.1:60391/case-2423bc3c-c61e-4226-b8ca-8421b3ca0aa0/owner.html?token=2423bc3c-c61e-4226-b8ca-8421b3ca0aa0"
+          },
+          "sameControllerFinally": true,
+          "sameDocumentFinally": true,
+          "sameContainerFinally": true,
+          "observationEndedAt": 1162,
+          "summary": {
+            "writtenScriptFetchEvents": 1,
+            "ordinaryFetchEventsAfter": 1,
+            "clientIdentity": "same-clientId",
+            "controllerchangeEvents": 0,
+            "listenerControlBefore": 1,
+            "listenerControlAfter": 1,
+            "workerClientURLs": [
+              {
+                "phase": "before",
+                "clientURL": "http://127.0.0.1:60391/case-2423bc3c-c61e-4226-b8ca-8421b3ca0aa0/owner.html?token=2423bc3c-c61e-4226-b8ca-8421b3ca0aa0"
+              },
+              {
+                "phase": "written",
+                "clientURL": "http://127.0.0.1:60391/case-2423bc3c-c61e-4226-b8ca-8421b3ca0aa0/owner.html?token=2423bc3c-c61e-4226-b8ca-8421b3ca0aa0"
+              },
+              {
+                "phase": "after",
+                "clientURL": "http://127.0.0.1:60391/case-2423bc3c-c61e-4226-b8ca-8421b3ca0aa0/owner.html?token=2423bc3c-c61e-4226-b8ca-8421b3ca0aa0"
+              }
+            ]
+          }
+        },
+        {
+          "scenario": "self-open-iframe",
+          "token": "66bdb2b1-40a6-42a1-9549-2c69adaaa4b8",
+          "scope": "http://127.0.0.1:60391/case-66bdb2b1-40a6-42a1-9549-2c69adaaa4b8/",
+          "scriptURL": "http://127.0.0.1:60391/worker.js?token=66bdb2b1-40a6-42a1-9549-2c69adaaa4b8",
+          "ownerURL": "http://127.0.0.1:60391/case-66bdb2b1-40a6-42a1-9549-2c69adaaa4b8/owner.html?token=66bdb2b1-40a6-42a1-9549-2c69adaaa4b8",
+          "callerURL": "http://127.0.0.1:60391/",
+          "callerControlled": false,
+          "errors": [],
+          "cleanupErrors": [],
+          "controllerEvents": [
+            {
+              "isTrusted": false,
+              "stage": "before",
+              "observedAt": 1370,
+              "controller": {
+                "scriptURL": "http://127.0.0.1:60391/worker.js?token=66bdb2b1-40a6-42a1-9549-2c69adaaa4b8",
+                "state": "activated"
+              }
+            },
+            {
+              "isTrusted": false,
+              "stage": "after",
+              "observedAt": 1382,
+              "controller": {
+                "scriptURL": "http://127.0.0.1:60391/worker.js?token=66bdb2b1-40a6-42a1-9549-2c69adaaa4b8",
+                "state": "activated"
+              }
+            }
+          ],
+          "before": {
+            "controller": {
+              "scriptURL": "http://127.0.0.1:60391/worker.js?token=66bdb2b1-40a6-42a1-9549-2c69adaaa4b8",
+              "state": "activated"
+            },
+            "url": "http://127.0.0.1:60391/case-66bdb2b1-40a6-42a1-9549-2c69adaaa4b8/owner.html?token=66bdb2b1-40a6-42a1-9549-2c69adaaa4b8",
+            "isTopLevel": false
+          },
+          "beforeNetwork": {
+            "token": "66bdb2b1-40a6-42a1-9549-2c69adaaa4b8",
+            "phase": "before",
+            "servedBy": "network"
+          },
+          "beforeWorkerObservations": [
+            {
+              "phase": "before",
+              "token": "66bdb2b1-40a6-42a1-9549-2c69adaaa4b8",
+              "requestURL": "http://127.0.0.1:60391/case-66bdb2b1-40a6-42a1-9549-2c69adaaa4b8/probe?token=66bdb2b1-40a6-42a1-9549-2c69adaaa4b8&phase=before",
+              "destination": "",
+              "clientId": "69d2c225-669c-48a6-b0d9-a9cd4f3b2f27",
+              "resultingClientId": "",
+              "receivedAt": 1792097991487,
+              "workerScriptURL": "http://127.0.0.1:60391/worker.js?token=66bdb2b1-40a6-42a1-9549-2c69adaaa4b8",
+              "instance": "48ec3026-78f4-45bc-918f-6ddd62c2d814",
+              "clientURL": "http://127.0.0.1:60391/case-66bdb2b1-40a6-42a1-9549-2c69adaaa4b8/owner.html?token=66bdb2b1-40a6-42a1-9549-2c69adaaa4b8",
+              "clientType": "window",
+              "clientFrameType": "nested",
+              "clientInspectedAt": 1792097991488
+            }
+          ],
+          "operationAt": 1374,
+          "immediately": {
+            "controller": {
+              "scriptURL": "http://127.0.0.1:60391/worker.js?token=66bdb2b1-40a6-42a1-9549-2c69adaaa4b8",
+              "state": "activated"
+            },
+            "url": "http://127.0.0.1:60391/case-66bdb2b1-40a6-42a1-9549-2c69adaaa4b8/owner.html?token=66bdb2b1-40a6-42a1-9549-2c69adaaa4b8"
+          },
+          "sameControllerImmediately": true,
+          "sameDocumentImmediately": true,
+          "sameNavigatorImmediately": true,
+          "sameContainerImmediately": true,
+          "openReturnedOriginalDocument": true,
+          "writtenScript": {
+            "type": "document-open-script-executed",
+            "token": "66bdb2b1-40a6-42a1-9549-2c69adaaa4b8",
+            "phase": "written",
+            "servedBy": "network"
+          },
+          "afterScript": {
+            "controller": {
+              "scriptURL": "http://127.0.0.1:60391/worker.js?token=66bdb2b1-40a6-42a1-9549-2c69adaaa4b8",
+              "state": "activated"
+            },
+            "url": "http://127.0.0.1:60391/case-66bdb2b1-40a6-42a1-9549-2c69adaaa4b8/owner.html?token=66bdb2b1-40a6-42a1-9549-2c69adaaa4b8"
+          },
+          "sameControllerAfterScript": true,
+          "replacementMarkerPresent": true,
+          "originalMarkerPresent": false,
+          "afterNetwork": {
+            "token": "66bdb2b1-40a6-42a1-9549-2c69adaaa4b8",
+            "phase": "after",
+            "servedBy": "network"
+          },
+          "workerInstanceBefore": "48ec3026-78f4-45bc-918f-6ddd62c2d814",
+          "workerInstanceAfter": "48ec3026-78f4-45bc-918f-6ddd62c2d814",
+          "workerContinuityVerified": true,
+          "workerObservations": [
+            {
+              "phase": "before",
+              "token": "66bdb2b1-40a6-42a1-9549-2c69adaaa4b8",
+              "requestURL": "http://127.0.0.1:60391/case-66bdb2b1-40a6-42a1-9549-2c69adaaa4b8/probe?token=66bdb2b1-40a6-42a1-9549-2c69adaaa4b8&phase=before",
+              "destination": "",
+              "clientId": "69d2c225-669c-48a6-b0d9-a9cd4f3b2f27",
+              "resultingClientId": "",
+              "receivedAt": 1792097991487,
+              "workerScriptURL": "http://127.0.0.1:60391/worker.js?token=66bdb2b1-40a6-42a1-9549-2c69adaaa4b8",
+              "instance": "48ec3026-78f4-45bc-918f-6ddd62c2d814",
+              "clientURL": "http://127.0.0.1:60391/case-66bdb2b1-40a6-42a1-9549-2c69adaaa4b8/owner.html?token=66bdb2b1-40a6-42a1-9549-2c69adaaa4b8",
+              "clientType": "window",
+              "clientFrameType": "nested",
+              "clientInspectedAt": 1792097991488
+            },
+            {
+              "phase": "written",
+              "token": "66bdb2b1-40a6-42a1-9549-2c69adaaa4b8",
+              "requestURL": "http://127.0.0.1:60391/case-66bdb2b1-40a6-42a1-9549-2c69adaaa4b8/written.js?token=66bdb2b1-40a6-42a1-9549-2c69adaaa4b8&phase=written",
+              "destination": "script",
+              "clientId": "69d2c225-669c-48a6-b0d9-a9cd4f3b2f27",
+              "resultingClientId": "",
+              "receivedAt": 1792097991492,
+              "workerScriptURL": "http://127.0.0.1:60391/worker.js?token=66bdb2b1-40a6-42a1-9549-2c69adaaa4b8",
+              "instance": "48ec3026-78f4-45bc-918f-6ddd62c2d814",
+              "clientURL": "http://127.0.0.1:60391/case-66bdb2b1-40a6-42a1-9549-2c69adaaa4b8/owner.html?token=66bdb2b1-40a6-42a1-9549-2c69adaaa4b8",
+              "clientType": "window",
+              "clientFrameType": "nested",
+              "clientInspectedAt": 1792097991493
+            },
+            {
+              "phase": "after",
+              "token": "66bdb2b1-40a6-42a1-9549-2c69adaaa4b8",
+              "requestURL": "http://127.0.0.1:60391/case-66bdb2b1-40a6-42a1-9549-2c69adaaa4b8/probe?token=66bdb2b1-40a6-42a1-9549-2c69adaaa4b8&phase=after",
+              "destination": "",
+              "clientId": "69d2c225-669c-48a6-b0d9-a9cd4f3b2f27",
+              "resultingClientId": "",
+              "receivedAt": 1792097991498,
+              "workerScriptURL": "http://127.0.0.1:60391/worker.js?token=66bdb2b1-40a6-42a1-9549-2c69adaaa4b8",
+              "instance": "48ec3026-78f4-45bc-918f-6ddd62c2d814",
+              "clientURL": "http://127.0.0.1:60391/case-66bdb2b1-40a6-42a1-9549-2c69adaaa4b8/owner.html?token=66bdb2b1-40a6-42a1-9549-2c69adaaa4b8",
+              "clientType": "window",
+              "clientFrameType": "nested",
+              "clientInspectedAt": 1792097991498
+            }
+          ],
+          "final": {
+            "controller": {
+              "scriptURL": "http://127.0.0.1:60391/worker.js?token=66bdb2b1-40a6-42a1-9549-2c69adaaa4b8",
+              "state": "activated"
+            },
+            "url": "http://127.0.0.1:60391/case-66bdb2b1-40a6-42a1-9549-2c69adaaa4b8/owner.html?token=66bdb2b1-40a6-42a1-9549-2c69adaaa4b8"
+          },
+          "sameControllerFinally": true,
+          "sameDocumentFinally": true,
+          "sameContainerFinally": true,
+          "observationEndedAt": 2393,
+          "summary": {
+            "writtenScriptFetchEvents": 1,
+            "ordinaryFetchEventsAfter": 1,
+            "clientIdentity": "same-clientId",
+            "controllerchangeEvents": 0,
+            "listenerControlBefore": 1,
+            "listenerControlAfter": 1,
+            "workerClientURLs": [
+              {
+                "phase": "before",
+                "clientURL": "http://127.0.0.1:60391/case-66bdb2b1-40a6-42a1-9549-2c69adaaa4b8/owner.html?token=66bdb2b1-40a6-42a1-9549-2c69adaaa4b8"
+              },
+              {
+                "phase": "written",
+                "clientURL": "http://127.0.0.1:60391/case-66bdb2b1-40a6-42a1-9549-2c69adaaa4b8/owner.html?token=66bdb2b1-40a6-42a1-9549-2c69adaaa4b8"
+              },
+              {
+                "phase": "after",
+                "clientURL": "http://127.0.0.1:60391/case-66bdb2b1-40a6-42a1-9549-2c69adaaa4b8/owner.html?token=66bdb2b1-40a6-42a1-9549-2c69adaaa4b8"
+              }
+            ]
+          }
+        },
+        {
+          "scenario": "parent-open-iframe",
+          "token": "eda04f6f-248f-4405-9f41-ec2d099775b6",
+          "scope": "http://127.0.0.1:60391/case-eda04f6f-248f-4405-9f41-ec2d099775b6/",
+          "scriptURL": "http://127.0.0.1:60391/worker.js?token=eda04f6f-248f-4405-9f41-ec2d099775b6",
+          "ownerURL": "http://127.0.0.1:60391/case-eda04f6f-248f-4405-9f41-ec2d099775b6/owner.html?token=eda04f6f-248f-4405-9f41-ec2d099775b6",
+          "callerURL": "http://127.0.0.1:60391/",
+          "callerControlled": false,
+          "errors": [],
+          "cleanupErrors": [],
+          "controllerEvents": [
+            {
+              "isTrusted": false,
+              "stage": "before",
+              "observedAt": 2593,
+              "controller": {
+                "scriptURL": "http://127.0.0.1:60391/worker.js?token=eda04f6f-248f-4405-9f41-ec2d099775b6",
+                "state": "activated"
+              }
+            },
+            {
+              "isTrusted": false,
+              "stage": "after",
+              "observedAt": 2605,
+              "controller": {
+                "scriptURL": "http://127.0.0.1:60391/worker.js?token=eda04f6f-248f-4405-9f41-ec2d099775b6",
+                "state": "activated"
+              }
+            }
+          ],
+          "before": {
+            "controller": {
+              "scriptURL": "http://127.0.0.1:60391/worker.js?token=eda04f6f-248f-4405-9f41-ec2d099775b6",
+              "state": "activated"
+            },
+            "url": "http://127.0.0.1:60391/case-eda04f6f-248f-4405-9f41-ec2d099775b6/owner.html?token=eda04f6f-248f-4405-9f41-ec2d099775b6",
+            "isTopLevel": false
+          },
+          "beforeNetwork": {
+            "token": "eda04f6f-248f-4405-9f41-ec2d099775b6",
+            "phase": "before",
+            "servedBy": "network"
+          },
+          "beforeWorkerObservations": [
+            {
+              "phase": "before",
+              "token": "eda04f6f-248f-4405-9f41-ec2d099775b6",
+              "requestURL": "http://127.0.0.1:60391/case-eda04f6f-248f-4405-9f41-ec2d099775b6/probe?token=eda04f6f-248f-4405-9f41-ec2d099775b6&phase=before",
+              "destination": "",
+              "clientId": "92153f48-785e-4470-a0fb-b99f96da29f2",
+              "resultingClientId": "",
+              "receivedAt": 1792097992711,
+              "workerScriptURL": "http://127.0.0.1:60391/worker.js?token=eda04f6f-248f-4405-9f41-ec2d099775b6",
+              "instance": "bdb68688-e38f-472b-a234-d500781bfe2f",
+              "clientURL": "http://127.0.0.1:60391/case-eda04f6f-248f-4405-9f41-ec2d099775b6/owner.html?token=eda04f6f-248f-4405-9f41-ec2d099775b6",
+              "clientType": "window",
+              "clientFrameType": "nested",
+              "clientInspectedAt": 1792097992711
+            }
+          ],
+          "operationAt": 2597,
+          "immediately": {
+            "controller": {
+              "scriptURL": "http://127.0.0.1:60391/worker.js?token=eda04f6f-248f-4405-9f41-ec2d099775b6",
+              "state": "activated"
+            },
+            "url": "http://127.0.0.1:60391/"
+          },
+          "sameControllerImmediately": true,
+          "sameDocumentImmediately": true,
+          "sameNavigatorImmediately": true,
+          "sameContainerImmediately": true,
+          "openReturnedOriginalDocument": true,
+          "writtenScript": {
+            "type": "document-open-script-executed",
+            "token": "eda04f6f-248f-4405-9f41-ec2d099775b6",
+            "phase": "written",
+            "servedBy": "network"
+          },
+          "afterScript": {
+            "controller": {
+              "scriptURL": "http://127.0.0.1:60391/worker.js?token=eda04f6f-248f-4405-9f41-ec2d099775b6",
+              "state": "activated"
+            },
+            "url": "http://127.0.0.1:60391/"
+          },
+          "sameControllerAfterScript": true,
+          "replacementMarkerPresent": true,
+          "originalMarkerPresent": false,
+          "afterNetwork": {
+            "token": "eda04f6f-248f-4405-9f41-ec2d099775b6",
+            "phase": "after",
+            "servedBy": "network"
+          },
+          "workerInstanceBefore": "bdb68688-e38f-472b-a234-d500781bfe2f",
+          "workerInstanceAfter": "bdb68688-e38f-472b-a234-d500781bfe2f",
+          "workerContinuityVerified": true,
+          "workerObservations": [
+            {
+              "phase": "before",
+              "token": "eda04f6f-248f-4405-9f41-ec2d099775b6",
+              "requestURL": "http://127.0.0.1:60391/case-eda04f6f-248f-4405-9f41-ec2d099775b6/probe?token=eda04f6f-248f-4405-9f41-ec2d099775b6&phase=before",
+              "destination": "",
+              "clientId": "92153f48-785e-4470-a0fb-b99f96da29f2",
+              "resultingClientId": "",
+              "receivedAt": 1792097992711,
+              "workerScriptURL": "http://127.0.0.1:60391/worker.js?token=eda04f6f-248f-4405-9f41-ec2d099775b6",
+              "instance": "bdb68688-e38f-472b-a234-d500781bfe2f",
+              "clientURL": "http://127.0.0.1:60391/case-eda04f6f-248f-4405-9f41-ec2d099775b6/owner.html?token=eda04f6f-248f-4405-9f41-ec2d099775b6",
+              "clientType": "window",
+              "clientFrameType": "nested",
+              "clientInspectedAt": 1792097992711
+            },
+            {
+              "phase": "written",
+              "token": "eda04f6f-248f-4405-9f41-ec2d099775b6",
+              "requestURL": "http://127.0.0.1:60391/case-eda04f6f-248f-4405-9f41-ec2d099775b6/written.js?token=eda04f6f-248f-4405-9f41-ec2d099775b6&phase=written",
+              "destination": "script",
+              "clientId": "92153f48-785e-4470-a0fb-b99f96da29f2",
+              "resultingClientId": "",
+              "receivedAt": 1792097992717,
+              "workerScriptURL": "http://127.0.0.1:60391/worker.js?token=eda04f6f-248f-4405-9f41-ec2d099775b6",
+              "instance": "bdb68688-e38f-472b-a234-d500781bfe2f",
+              "clientURL": "http://127.0.0.1:60391/case-eda04f6f-248f-4405-9f41-ec2d099775b6/owner.html?token=eda04f6f-248f-4405-9f41-ec2d099775b6",
+              "clientType": "window",
+              "clientFrameType": "nested",
+              "clientInspectedAt": 1792097992717
+            },
+            {
+              "phase": "after",
+              "token": "eda04f6f-248f-4405-9f41-ec2d099775b6",
+              "requestURL": "http://127.0.0.1:60391/case-eda04f6f-248f-4405-9f41-ec2d099775b6/probe?token=eda04f6f-248f-4405-9f41-ec2d099775b6&phase=after",
+              "destination": "",
+              "clientId": "92153f48-785e-4470-a0fb-b99f96da29f2",
+              "resultingClientId": "",
+              "receivedAt": 1792097992720,
+              "workerScriptURL": "http://127.0.0.1:60391/worker.js?token=eda04f6f-248f-4405-9f41-ec2d099775b6",
+              "instance": "bdb68688-e38f-472b-a234-d500781bfe2f",
+              "clientURL": "http://127.0.0.1:60391/case-eda04f6f-248f-4405-9f41-ec2d099775b6/owner.html?token=eda04f6f-248f-4405-9f41-ec2d099775b6",
+              "clientType": "window",
+              "clientFrameType": "nested",
+              "clientInspectedAt": 1792097992720
+            }
+          ],
+          "final": {
+            "controller": {
+              "scriptURL": "http://127.0.0.1:60391/worker.js?token=eda04f6f-248f-4405-9f41-ec2d099775b6",
+              "state": "activated"
+            },
+            "url": "http://127.0.0.1:60391/"
+          },
+          "sameControllerFinally": true,
+          "sameDocumentFinally": true,
+          "sameContainerFinally": true,
+          "observationEndedAt": 3611,
+          "summary": {
+            "writtenScriptFetchEvents": 1,
+            "ordinaryFetchEventsAfter": 1,
+            "clientIdentity": "same-clientId",
+            "controllerchangeEvents": 0,
+            "listenerControlBefore": 1,
+            "listenerControlAfter": 1,
+            "workerClientURLs": [
+              {
+                "phase": "before",
+                "clientURL": "http://127.0.0.1:60391/case-eda04f6f-248f-4405-9f41-ec2d099775b6/owner.html?token=eda04f6f-248f-4405-9f41-ec2d099775b6"
+              },
+              {
+                "phase": "written",
+                "clientURL": "http://127.0.0.1:60391/case-eda04f6f-248f-4405-9f41-ec2d099775b6/owner.html?token=eda04f6f-248f-4405-9f41-ec2d099775b6"
+              },
+              {
+                "phase": "after",
+                "clientURL": "http://127.0.0.1:60391/case-eda04f6f-248f-4405-9f41-ec2d099775b6/owner.html?token=eda04f6f-248f-4405-9f41-ec2d099775b6"
+              }
+            ]
+          }
+        },
+        {
+          "scenario": "self-open-top-level",
+          "token": "efbf7203-9654-43d4-8ac1-94a8615451b6",
+          "scope": "http://127.0.0.1:60391/case-efbf7203-9654-43d4-8ac1-94a8615451b6/",
+          "scriptURL": "http://127.0.0.1:60391/worker.js?token=efbf7203-9654-43d4-8ac1-94a8615451b6",
+          "ownerURL": "http://127.0.0.1:60391/case-efbf7203-9654-43d4-8ac1-94a8615451b6/owner.html?token=efbf7203-9654-43d4-8ac1-94a8615451b6",
+          "callerURL": "http://127.0.0.1:60391/",
+          "callerControlled": false,
+          "errors": [],
+          "cleanupErrors": [],
+          "controllerEvents": [
+            {
+              "isTrusted": false,
+              "stage": "before",
+              "observedAt": 4835,
+              "controller": {
+                "scriptURL": "http://127.0.0.1:60391/worker.js?token=efbf7203-9654-43d4-8ac1-94a8615451b6",
+                "state": "activated"
+              }
+            },
+            {
+              "isTrusted": false,
+              "stage": "after",
+              "observedAt": 4849,
+              "controller": {
+                "scriptURL": "http://127.0.0.1:60391/worker.js?token=efbf7203-9654-43d4-8ac1-94a8615451b6",
+                "state": "activated"
+              }
+            }
+          ],
+          "before": {
+            "controller": {
+              "scriptURL": "http://127.0.0.1:60391/worker.js?token=efbf7203-9654-43d4-8ac1-94a8615451b6",
+              "state": "activated"
+            },
+            "url": "http://127.0.0.1:60391/case-efbf7203-9654-43d4-8ac1-94a8615451b6/owner.html?token=efbf7203-9654-43d4-8ac1-94a8615451b6",
+            "isTopLevel": true
+          },
+          "beforeNetwork": {
+            "token": "efbf7203-9654-43d4-8ac1-94a8615451b6",
+            "phase": "before",
+            "servedBy": "network"
+          },
+          "beforeWorkerObservations": [
+            {
+              "phase": "before",
+              "token": "efbf7203-9654-43d4-8ac1-94a8615451b6",
+              "requestURL": "http://127.0.0.1:60391/case-efbf7203-9654-43d4-8ac1-94a8615451b6/probe?token=efbf7203-9654-43d4-8ac1-94a8615451b6&phase=before",
+              "destination": "",
+              "clientId": "44d5a284-40e8-4dc0-83e5-e45ab878f053",
+              "resultingClientId": "",
+              "receivedAt": 1792097994955,
+              "workerScriptURL": "http://127.0.0.1:60391/worker.js?token=efbf7203-9654-43d4-8ac1-94a8615451b6",
+              "instance": "c5241026-1d86-492c-8f73-32679e992f14",
+              "clientURL": "http://127.0.0.1:60391/case-efbf7203-9654-43d4-8ac1-94a8615451b6/owner.html?token=efbf7203-9654-43d4-8ac1-94a8615451b6",
+              "clientType": "window",
+              "clientFrameType": "auxiliary",
+              "clientInspectedAt": 1792097994955
+            }
+          ],
+          "operationAt": 4840,
+          "immediately": {
+            "controller": {
+              "scriptURL": "http://127.0.0.1:60391/worker.js?token=efbf7203-9654-43d4-8ac1-94a8615451b6",
+              "state": "activated"
+            },
+            "url": "http://127.0.0.1:60391/case-efbf7203-9654-43d4-8ac1-94a8615451b6/owner.html?token=efbf7203-9654-43d4-8ac1-94a8615451b6"
+          },
+          "sameControllerImmediately": true,
+          "sameDocumentImmediately": true,
+          "sameNavigatorImmediately": true,
+          "sameContainerImmediately": true,
+          "openReturnedOriginalDocument": true,
+          "writtenScript": {
+            "type": "document-open-script-executed",
+            "token": "efbf7203-9654-43d4-8ac1-94a8615451b6",
+            "phase": "written",
+            "servedBy": "network"
+          },
+          "afterScript": {
+            "controller": {
+              "scriptURL": "http://127.0.0.1:60391/worker.js?token=efbf7203-9654-43d4-8ac1-94a8615451b6",
+              "state": "activated"
+            },
+            "url": "http://127.0.0.1:60391/case-efbf7203-9654-43d4-8ac1-94a8615451b6/owner.html?token=efbf7203-9654-43d4-8ac1-94a8615451b6"
+          },
+          "sameControllerAfterScript": true,
+          "replacementMarkerPresent": true,
+          "originalMarkerPresent": false,
+          "afterNetwork": {
+            "token": "efbf7203-9654-43d4-8ac1-94a8615451b6",
+            "phase": "after",
+            "servedBy": "network"
+          },
+          "workerInstanceBefore": "c5241026-1d86-492c-8f73-32679e992f14",
+          "workerInstanceAfter": "c5241026-1d86-492c-8f73-32679e992f14",
+          "workerContinuityVerified": true,
+          "workerObservations": [
+            {
+              "phase": "before",
+              "token": "efbf7203-9654-43d4-8ac1-94a8615451b6",
+              "requestURL": "http://127.0.0.1:60391/case-efbf7203-9654-43d4-8ac1-94a8615451b6/probe?token=efbf7203-9654-43d4-8ac1-94a8615451b6&phase=before",
+              "destination": "",
+              "clientId": "44d5a284-40e8-4dc0-83e5-e45ab878f053",
+              "resultingClientId": "",
+              "receivedAt": 1792097994955,
+              "workerScriptURL": "http://127.0.0.1:60391/worker.js?token=efbf7203-9654-43d4-8ac1-94a8615451b6",
+              "instance": "c5241026-1d86-492c-8f73-32679e992f14",
+              "clientURL": "http://127.0.0.1:60391/case-efbf7203-9654-43d4-8ac1-94a8615451b6/owner.html?token=efbf7203-9654-43d4-8ac1-94a8615451b6",
+              "clientType": "window",
+              "clientFrameType": "auxiliary",
+              "clientInspectedAt": 1792097994955
+            },
+            {
+              "phase": "written",
+              "token": "efbf7203-9654-43d4-8ac1-94a8615451b6",
+              "requestURL": "http://127.0.0.1:60391/case-efbf7203-9654-43d4-8ac1-94a8615451b6/written.js?token=efbf7203-9654-43d4-8ac1-94a8615451b6&phase=written",
+              "destination": "script",
+              "clientId": "44d5a284-40e8-4dc0-83e5-e45ab878f053",
+              "resultingClientId": "",
+              "receivedAt": 1792097994960,
+              "workerScriptURL": "http://127.0.0.1:60391/worker.js?token=efbf7203-9654-43d4-8ac1-94a8615451b6",
+              "instance": "c5241026-1d86-492c-8f73-32679e992f14",
+              "clientURL": "http://127.0.0.1:60391/case-efbf7203-9654-43d4-8ac1-94a8615451b6/owner.html?token=efbf7203-9654-43d4-8ac1-94a8615451b6",
+              "clientType": "window",
+              "clientFrameType": "auxiliary",
+              "clientInspectedAt": 1792097994960
+            },
+            {
+              "phase": "after",
+              "token": "efbf7203-9654-43d4-8ac1-94a8615451b6",
+              "requestURL": "http://127.0.0.1:60391/case-efbf7203-9654-43d4-8ac1-94a8615451b6/probe?token=efbf7203-9654-43d4-8ac1-94a8615451b6&phase=after",
+              "destination": "",
+              "clientId": "44d5a284-40e8-4dc0-83e5-e45ab878f053",
+              "resultingClientId": "",
+              "receivedAt": 1792097994965,
+              "workerScriptURL": "http://127.0.0.1:60391/worker.js?token=efbf7203-9654-43d4-8ac1-94a8615451b6",
+              "instance": "c5241026-1d86-492c-8f73-32679e992f14",
+              "clientURL": "http://127.0.0.1:60391/case-efbf7203-9654-43d4-8ac1-94a8615451b6/owner.html?token=efbf7203-9654-43d4-8ac1-94a8615451b6",
+              "clientType": "window",
+              "clientFrameType": "auxiliary",
+              "clientInspectedAt": 1792097994965
+            }
+          ],
+          "final": {
+            "controller": {
+              "scriptURL": "http://127.0.0.1:60391/worker.js?token=efbf7203-9654-43d4-8ac1-94a8615451b6",
+              "state": "activated"
+            },
+            "url": "http://127.0.0.1:60391/case-efbf7203-9654-43d4-8ac1-94a8615451b6/owner.html?token=efbf7203-9654-43d4-8ac1-94a8615451b6"
+          },
+          "sameControllerFinally": true,
+          "sameDocumentFinally": true,
+          "sameContainerFinally": true,
+          "observationEndedAt": 5850,
+          "summary": {
+            "writtenScriptFetchEvents": 1,
+            "ordinaryFetchEventsAfter": 1,
+            "clientIdentity": "same-clientId",
+            "controllerchangeEvents": 0,
+            "listenerControlBefore": 1,
+            "listenerControlAfter": 1,
+            "workerClientURLs": [
+              {
+                "phase": "before",
+                "clientURL": "http://127.0.0.1:60391/case-efbf7203-9654-43d4-8ac1-94a8615451b6/owner.html?token=efbf7203-9654-43d4-8ac1-94a8615451b6"
+              },
+              {
+                "phase": "written",
+                "clientURL": "http://127.0.0.1:60391/case-efbf7203-9654-43d4-8ac1-94a8615451b6/owner.html?token=efbf7203-9654-43d4-8ac1-94a8615451b6"
+              },
+              {
+                "phase": "after",
+                "clientURL": "http://127.0.0.1:60391/case-efbf7203-9654-43d4-8ac1-94a8615451b6/owner.html?token=efbf7203-9654-43d4-8ac1-94a8615451b6"
+              }
+            ]
+          }
+        }
+      ],
+      "errors": [],
+      "running": false,
+      "complete": true,
+      "finished": "2026-10-15T20:59:55.979Z"
+    }
+  ],
+  "pageErrors": [],
+  "version": "158.0"
+}

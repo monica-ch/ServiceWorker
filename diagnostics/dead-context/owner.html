@@ -1,0 +1,13 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Loaded same-origin ServiceWorkerContainer owner</title>
+<p>Temporary owner for the dead-context diagnostic.</p>
+<script>
+addEventListener("load", () => {
+  const target = window.opener || window.parent;
+  target.postMessage({
+    type: "dead-context-owner-ready",
+    token: new URLSearchParams(location.search).get("token")
+  }, location.origin);
+}, {once: true});
+</script>

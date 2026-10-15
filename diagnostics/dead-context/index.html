@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>ServiceWorker 777: retained containers after owner removal</title>
+<style>
+body {font: 16px system-ui; max-width: 1200px; margin: 2em auto; padding: 0 1em}
+button {font: inherit; margin-right: 1em}
+table {border-collapse: collapse; width: 100%; margin-top: 1em}
+td, th {border: 1px solid #aaa; padding: .4em; text-align: left}
+pre {white-space: pre-wrap; overflow-wrap: anywhere; background: #eee; padding: 1em}
+</style>
+<h1>Retained ServiceWorkerContainer after owner removal</h1>
+<p>Observation-only preparation for
+<a href="https://github.com/w3c/ServiceWorker/issues/777">w3c/ServiceWorker#777</a>.
+No normative PASS/FAIL for destroyed-owner behavior. An unobserved callback is
+<strong>not proof that its promise remains pending</strong>.</p>
+<p>Six scenarios: loaded iframe and popup, each live, immediately removed/closed,
+and called 100 ms after removal/closure. Click once per scenario to provide a
+real user gesture for popups. Use a fresh, disposable profile.</p>
+<p><a href="/">Full matrix (seeded ready control)</a> |
+<a href="/?registerOnly">Isolated register() (no seed worker)</a>.
+The full matrix uses an active worker to give <code>ready</code> a meaningful
+live control; the isolated mode checks whether that setup influences registration.</p>
+<button id="next" disabled>Preparing</button><button id="download" disabled>Download JSON</button>
+<p id="status" role="status"></p><div id="frames"></div><div id="summary"></div><pre id="output"></pre>
+<script src="probe.js"></script>
+</html>

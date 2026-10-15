@@ -35,6 +35,16 @@ for [w3c/ServiceWorker#1141](https://github.com/w3c/ServiceWorker/issues/1141).
 The transparent pass-through WPT is tentative: it tests a proposed callback
 forwarding requirement, not established consensus.
 
+The [retained ServiceWorkerContainer diagnostic](diagnostics/dead-context/README.md)
+records API returns, live-parent promise callbacks, and registration side effects
+after removing an iframe or closing a popup for
+[w3c/ServiceWorker#777](https://github.com/w3c/ServiceWorker/issues/777).
+It is observation-only and distinguishes a popup close request from completed destruction.
+
+The [document.open diagnostic](diagnostics/document-open/README.md) observes
+controller preservation, written-subresource interception, client identity, and
+URL behavior for [w3c/ServiceWorker#1313](https://github.com/w3c/ServiceWorker/issues/1313).
+It compares self-open and parent-open cases without imposing a normative WPT contract.
 
 ## About labels and milestones on issues
 This is to explain how we use labels and milestones to triage the issues. Note: This is a draft, suggestions for improvements are welcomed.

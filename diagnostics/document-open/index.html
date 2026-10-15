@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Service Worker 1313: document.open and controller preservation</title>
+<style>
+body {font: 16px/1.45 system-ui; max-width: 1250px; margin: 2em auto; padding: 0 1em}
+button {font: inherit; margin-right: 1em}
+table {border-collapse: collapse; width: 100%; margin: 1em 0}
+td, th {border: 1px solid #aaa; padding: .4em; text-align: left}
+pre {white-space: pre-wrap; overflow-wrap: anywhere; background: #f1f3f5; padding: 1em}
+iframe {width: 400px; height: 100px}
+</style>
+<h1>document.open(): controller, client identity, and fetch routing</h1>
+<p>Observation-only diagnostic for
+<a href="https://github.com/w3c/ServiceWorker/issues/1313">w3c/ServiceWorker#1313</a>,
+not a normative WPT. Four scenarios run from an external observer that survives
+the target document's replacement. Use a fresh disposable profile.</p>
+<p>Click once per scenario. The top-level case opens a popup during the click.
+All requests use unique absolute URLs, so URL/base changes cannot accidentally
+change the requested resource. The no-open control inserts a script through the
+DOM: calling document.write() after load would implicitly open the document.</p>
+<button id="next" disabled>Preparing</button><button id="download" disabled>Download JSON</button>
+<p id="status" role="status"></p><div id="frames"></div><div id="summary"></div><pre id="output"></pre>
+<script src="/probe.js"></script>
+</html>

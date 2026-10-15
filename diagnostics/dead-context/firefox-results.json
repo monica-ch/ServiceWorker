@@ -1,0 +1,3672 @@
+{
+  "product": "Firefox",
+  "automation": "Native WebDriver BiDi, headless, trusted pointer clicks",
+  "diagnostics": [
+    {
+      "issue": "w3c/ServiceWorker#777",
+      "kind": "Observation only, not normative WPT",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:158.0) Gecko/20100101 Firefox/158.0",
+      "started": "2026-10-15T19:56:35.686Z",
+      "observationMs": 5000,
+      "delayedInvocationMs": 100,
+      "mode": "Seeded, all methods and first ready access",
+      "invocation": "Methods looked up on the retained container after lifecycle action",
+      "observers": "Both callbacks execute in live parent; use parent native then and returnedPromise.then",
+      "cases": [
+        {
+          "kind": "iframe",
+          "lifecycle": "live",
+          "methods": [
+            {
+              "method": "getRegistration",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 320,
+                  "value": {
+                    "kind": "registration",
+                    "scope": "http://127.0.0.1:65280/case-bd0a8eac-3c9b-43a3-87f8-3cac0d91a5a6/"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 320,
+                  "value": {
+                    "kind": "registration",
+                    "scope": "http://127.0.0.1:65280/case-bd0a8eac-3c9b-43a3-87f8-3cac0d91a5a6/"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true,
+              "invocationOffsetMs": 0
+            },
+            {
+              "method": "getRegistrations",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 320,
+                  "value": {
+                    "kind": "array",
+                    "scopes": [
+                      "http://127.0.0.1:65280/case-bd0a8eac-3c9b-43a3-87f8-3cac0d91a5a6/"
+                    ]
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 320,
+                  "value": {
+                    "kind": "array",
+                    "scopes": [
+                      "http://127.0.0.1:65280/case-bd0a8eac-3c9b-43a3-87f8-3cac0d91a5a6/"
+                    ]
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true,
+              "invocationOffsetMs": 1
+            },
+            {
+              "method": "ready",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 320,
+                  "value": {
+                    "kind": "registration",
+                    "scope": "http://127.0.0.1:65280/case-bd0a8eac-3c9b-43a3-87f8-3cac0d91a5a6/"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 320,
+                  "value": {
+                    "kind": "registration",
+                    "scope": "http://127.0.0.1:65280/case-bd0a8eac-3c9b-43a3-87f8-3cac0d91a5a6/"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true,
+              "invocationOffsetMs": 1
+            },
+            {
+              "method": "register",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 331,
+                  "value": {
+                    "kind": "registration",
+                    "scope": "http://127.0.0.1:65280/attempt-bd0a8eac-3c9b-43a3-87f8-3cac0d91a5a6/"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 331,
+                  "value": {
+                    "kind": "registration",
+                    "scope": "http://127.0.0.1:65280/attempt-bd0a8eac-3c9b-43a3-87f8-3cac0d91a5a6/"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true,
+              "invocationOffsetMs": 1
+            }
+          ],
+          "canaries": [
+            {
+              "method": "promise-fulfilled-before-action",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 320,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-before-lifecycle-action"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 320,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-before-lifecycle-action"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true
+            },
+            {
+              "method": "promise-resolved-from-parent-after-action",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 320,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-after-lifecycle-action"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 320,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-after-lifecycle-action"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true
+            }
+          ],
+          "checkpoints": [
+            {
+              "label": "first-parent-check",
+              "elapsedMs": 1,
+              "seedPresent": true,
+              "attemptPresent": true
+            },
+            {
+              "label": "end-of-observation",
+              "elapsedMs": 5061,
+              "seedPresent": true,
+              "attemptPresent": true
+            },
+            {
+              "label": "late-check",
+              "elapsedMs": 5316,
+              "seedPresent": true,
+              "attemptPresent": true
+            }
+          ],
+          "errors": [],
+          "seedScope": "http://127.0.0.1:65280/case-bd0a8eac-3c9b-43a3-87f8-3cac0d91a5a6/",
+          "attemptScope": "http://127.0.0.1:65280/attempt-bd0a8eac-3c9b-43a3-87f8-3cac0d91a5a6/",
+          "ownerURL": "http://127.0.0.1:65280/case-bd0a8eac-3c9b-43a3-87f8-3cac0d91a5a6/owner.html?token=bd0a8eac-3c9b-43a3-87f8-3cac0d91a5a6",
+          "controlledBefore": true,
+          "lifecycleActionAt": 319,
+          "invokedAt": 319,
+          "actualDelayMs": 0,
+          "observationEndedAt": 5635,
+          "cleanupErrors": []
+        },
+        {
+          "kind": "iframe",
+          "lifecycle": "immediate",
+          "methods": [
+            {
+              "method": "getRegistration",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 5956,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 5956,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true,
+              "invocationOffsetMs": 0
+            },
+            {
+              "method": "getRegistrations",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 5956,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 5956,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true,
+              "invocationOffsetMs": 0
+            },
+            {
+              "method": "ready",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 5956,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 5956,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true,
+              "invocationOffsetMs": 0
+            },
+            {
+              "method": "register",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 5956,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 5956,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true,
+              "invocationOffsetMs": 0
+            }
+          ],
+          "canaries": [
+            {
+              "method": "promise-fulfilled-before-action",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 5956,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-before-lifecycle-action"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 5956,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-before-lifecycle-action"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true
+            },
+            {
+              "method": "promise-resolved-from-parent-after-action",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 5956,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-after-lifecycle-action"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 5956,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-after-lifecycle-action"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true
+            }
+          ],
+          "checkpoints": [
+            {
+              "label": "first-parent-check",
+              "elapsedMs": 0,
+              "seedPresent": true,
+              "attemptPresent": false
+            },
+            {
+              "label": "end-of-observation",
+              "elapsedMs": 5008,
+              "seedPresent": true,
+              "attemptPresent": false
+            },
+            {
+              "label": "late-check",
+              "elapsedMs": 5261,
+              "seedPresent": true,
+              "attemptPresent": false
+            }
+          ],
+          "errors": [],
+          "seedScope": "http://127.0.0.1:65280/case-75f35a95-825b-4191-89aa-903df019425f/",
+          "attemptScope": "http://127.0.0.1:65280/attempt-75f35a95-825b-4191-89aa-903df019425f/",
+          "ownerURL": "http://127.0.0.1:65280/case-75f35a95-825b-4191-89aa-903df019425f/owner.html?token=75f35a95-825b-4191-89aa-903df019425f",
+          "controlledBefore": true,
+          "lifecycleActionAt": 5956,
+          "removalConfirmed": true,
+          "invokedAt": 5956,
+          "actualDelayMs": 0,
+          "observationEndedAt": 11217,
+          "cleanupErrors": []
+        },
+        {
+          "kind": "iframe",
+          "lifecycle": "delayed",
+          "methods": [
+            {
+              "method": "getRegistration",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 11624,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 11624,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true,
+              "invocationOffsetMs": 104
+            },
+            {
+              "method": "getRegistrations",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 11624,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 11624,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true,
+              "invocationOffsetMs": 104
+            },
+            {
+              "method": "ready",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 11624,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 11624,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true,
+              "invocationOffsetMs": 104
+            },
+            {
+              "method": "register",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 11624,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 11624,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true,
+              "invocationOffsetMs": 104
+            }
+          ],
+          "canaries": [
+            {
+              "method": "promise-fulfilled-before-action",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 11624,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-before-lifecycle-action"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 11624,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-before-lifecycle-action"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true
+            },
+            {
+              "method": "promise-resolved-from-parent-after-action",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 11624,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-after-lifecycle-action"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 11624,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-after-lifecycle-action"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true
+            }
+          ],
+          "checkpoints": [
+            {
+              "label": "first-parent-check",
+              "elapsedMs": 1,
+              "seedPresent": true,
+              "attemptPresent": false
+            },
+            {
+              "label": "end-of-observation",
+              "elapsedMs": 5311,
+              "seedPresent": true,
+              "attemptPresent": false
+            },
+            {
+              "label": "late-check",
+              "elapsedMs": 5563,
+              "seedPresent": true,
+              "attemptPresent": false
+            }
+          ],
+          "errors": [],
+          "seedScope": "http://127.0.0.1:65280/case-399f0e39-8838-4f29-8b2a-4f9f5c46126f/",
+          "attemptScope": "http://127.0.0.1:65280/attempt-399f0e39-8838-4f29-8b2a-4f9f5c46126f/",
+          "ownerURL": "http://127.0.0.1:65280/case-399f0e39-8838-4f29-8b2a-4f9f5c46126f/owner.html?token=399f0e39-8838-4f29-8b2a-4f9f5c46126f",
+          "controlledBefore": true,
+          "lifecycleActionAt": 11520,
+          "removalConfirmed": true,
+          "invokedAt": 11624,
+          "actualDelayMs": 104,
+          "observationEndedAt": 17187,
+          "cleanupErrors": []
+        },
+        {
+          "kind": "popup",
+          "lifecycle": "live",
+          "methods": [
+            {
+              "method": "getRegistration",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 18424,
+                  "value": {
+                    "kind": "registration",
+                    "scope": "http://127.0.0.1:65280/case-2b715269-570c-4f79-a991-69947551f974/"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 18424,
+                  "value": {
+                    "kind": "registration",
+                    "scope": "http://127.0.0.1:65280/case-2b715269-570c-4f79-a991-69947551f974/"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true,
+              "invocationOffsetMs": 0
+            },
+            {
+              "method": "getRegistrations",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 18424,
+                  "value": {
+                    "kind": "array",
+                    "scopes": [
+                      "http://127.0.0.1:65280/case-2b715269-570c-4f79-a991-69947551f974/"
+                    ]
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 18425,
+                  "value": {
+                    "kind": "array",
+                    "scopes": [
+                      "http://127.0.0.1:65280/case-2b715269-570c-4f79-a991-69947551f974/"
+                    ]
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true,
+              "invocationOffsetMs": 0
+            },
+            {
+              "method": "ready",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 18424,
+                  "value": {
+                    "kind": "registration",
+                    "scope": "http://127.0.0.1:65280/case-2b715269-570c-4f79-a991-69947551f974/"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 18424,
+                  "value": {
+                    "kind": "registration",
+                    "scope": "http://127.0.0.1:65280/case-2b715269-570c-4f79-a991-69947551f974/"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true,
+              "invocationOffsetMs": 0
+            },
+            {
+              "method": "register",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 18436,
+                  "value": {
+                    "kind": "registration",
+                    "scope": "http://127.0.0.1:65280/attempt-2b715269-570c-4f79-a991-69947551f974/"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 18436,
+                  "value": {
+                    "kind": "registration",
+                    "scope": "http://127.0.0.1:65280/attempt-2b715269-570c-4f79-a991-69947551f974/"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true,
+              "invocationOffsetMs": 0
+            }
+          ],
+          "canaries": [
+            {
+              "method": "promise-fulfilled-before-action",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 18423,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-before-lifecycle-action"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 18423,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-before-lifecycle-action"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true
+            },
+            {
+              "method": "promise-resolved-from-parent-after-action",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 18423,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-after-lifecycle-action"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 18423,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-after-lifecycle-action"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true
+            }
+          ],
+          "checkpoints": [
+            {
+              "label": "first-parent-check",
+              "elapsedMs": 3,
+              "seedPresent": true,
+              "attemptPresent": true
+            },
+            {
+              "label": "end-of-observation",
+              "elapsedMs": 5529,
+              "seedPresent": true,
+              "attemptPresent": true
+            },
+            {
+              "label": "late-check",
+              "elapsedMs": 6536,
+              "seedPresent": true,
+              "attemptPresent": true
+            }
+          ],
+          "errors": [],
+          "seedScope": "http://127.0.0.1:65280/case-2b715269-570c-4f79-a991-69947551f974/",
+          "attemptScope": "http://127.0.0.1:65280/attempt-2b715269-570c-4f79-a991-69947551f974/",
+          "ownerURL": "http://127.0.0.1:65280/case-2b715269-570c-4f79-a991-69947551f974/owner.html?token=2b715269-570c-4f79-a991-69947551f974",
+          "controlledBefore": true,
+          "lifecycleActionAt": 18422,
+          "invokedAt": 18422,
+          "actualDelayMs": 0,
+          "observationEndedAt": 24958,
+          "cleanupErrors": []
+        },
+        {
+          "kind": "popup",
+          "lifecycle": "immediate",
+          "methods": [
+            {
+              "method": "getRegistration",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 26255,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 26256,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true,
+              "invocationOffsetMs": 1
+            },
+            {
+              "method": "getRegistrations",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 26256,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 26256,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true,
+              "invocationOffsetMs": 1
+            },
+            {
+              "method": "ready",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 26254,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 26254,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true,
+              "invocationOffsetMs": 1
+            },
+            {
+              "method": "register",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 26272,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 26272,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true,
+              "invocationOffsetMs": 1
+            }
+          ],
+          "canaries": [
+            {
+              "method": "promise-fulfilled-before-action",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 26244,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-before-lifecycle-action"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 26244,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-before-lifecycle-action"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true
+            },
+            {
+              "method": "promise-resolved-from-parent-after-action",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 26244,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-after-lifecycle-action"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 26244,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-after-lifecycle-action"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true
+            }
+          ],
+          "checkpoints": [
+            {
+              "label": "first-parent-check",
+              "elapsedMs": 12,
+              "seedPresent": true,
+              "attemptPresent": true
+            },
+            {
+              "label": "end-of-observation",
+              "elapsedMs": 5397,
+              "seedPresent": true,
+              "attemptPresent": true
+            },
+            {
+              "label": "late-check",
+              "elapsedMs": 5660,
+              "seedPresent": true,
+              "attemptPresent": true
+            }
+          ],
+          "errors": [],
+          "seedScope": "http://127.0.0.1:65280/case-c1df069d-656a-44a5-9f5c-86648f3620aa/",
+          "attemptScope": "http://127.0.0.1:65280/attempt-c1df069d-656a-44a5-9f5c-86648f3620aa/",
+          "ownerURL": "http://127.0.0.1:65280/case-c1df069d-656a-44a5-9f5c-86648f3620aa/owner.html?token=c1df069d-656a-44a5-9f5c-86648f3620aa",
+          "controlledBefore": true,
+          "lifecycleActionAt": 26243,
+          "removalConfirmed": true,
+          "invokedAt": 26244,
+          "actualDelayMs": 1,
+          "observationEndedAt": 31904,
+          "cleanupErrors": []
+        },
+        {
+          "kind": "popup",
+          "lifecycle": "delayed",
+          "methods": [
+            {
+              "method": "getRegistration",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 33226,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 33226,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true,
+              "invocationOffsetMs": 99
+            },
+            {
+              "method": "getRegistrations",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 33226,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 33226,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true,
+              "invocationOffsetMs": 100
+            },
+            {
+              "method": "ready",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 33226,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 33226,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true,
+              "invocationOffsetMs": 100
+            },
+            {
+              "method": "register",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 33226,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 33226,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true,
+              "invocationOffsetMs": 100
+            }
+          ],
+          "canaries": [
+            {
+              "method": "promise-fulfilled-before-action",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 33226,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-before-lifecycle-action"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 33226,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-before-lifecycle-action"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true
+            },
+            {
+              "method": "promise-resolved-from-parent-after-action",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 33226,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-after-lifecycle-action"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 33226,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-after-lifecycle-action"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true
+            }
+          ],
+          "checkpoints": [
+            {
+              "label": "first-parent-check",
+              "elapsedMs": 1,
+              "seedPresent": true,
+              "attemptPresent": false
+            },
+            {
+              "label": "end-of-observation",
+              "elapsedMs": 5017,
+              "seedPresent": true,
+              "attemptPresent": false
+            },
+            {
+              "label": "late-check",
+              "elapsedMs": 5269,
+              "seedPresent": true,
+              "attemptPresent": false
+            }
+          ],
+          "errors": [],
+          "seedScope": "http://127.0.0.1:65280/case-25aeac86-efec-4613-83d4-0dd9e3d8b636/",
+          "attemptScope": "http://127.0.0.1:65280/attempt-25aeac86-efec-4613-83d4-0dd9e3d8b636/",
+          "ownerURL": "http://127.0.0.1:65280/case-25aeac86-efec-4613-83d4-0dd9e3d8b636/owner.html?token=25aeac86-efec-4613-83d4-0dd9e3d8b636",
+          "controlledBefore": true,
+          "lifecycleActionAt": 33126,
+          "removalConfirmed": true,
+          "invokedAt": 33225,
+          "actualDelayMs": 99,
+          "observationEndedAt": 38494,
+          "cleanupErrors": []
+        }
+      ],
+      "errors": [],
+      "complete": true,
+      "running": false,
+      "finished": "2026-10-15T19:57:14.165Z"
+    },
+    {
+      "issue": "w3c/ServiceWorker#777",
+      "kind": "Observation only, not normative WPT",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:158.0) Gecko/20100101 Firefox/158.0",
+      "started": "2026-10-15T19:57:14.191Z",
+      "observationMs": 5000,
+      "delayedInvocationMs": 100,
+      "mode": "Seeded, all methods and first ready access",
+      "invocation": "Methods looked up on the retained container after lifecycle action",
+      "observers": "Both callbacks execute in live parent; use parent native then and returnedPromise.then",
+      "cases": [
+        {
+          "kind": "iframe",
+          "lifecycle": "live",
+          "methods": [
+            {
+              "method": "getRegistration",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 96,
+                  "value": {
+                    "kind": "registration",
+                    "scope": "http://127.0.0.1:65280/case-da03fa6e-44d3-4f2a-b3c9-f92ef482475a/"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 96,
+                  "value": {
+                    "kind": "registration",
+                    "scope": "http://127.0.0.1:65280/case-da03fa6e-44d3-4f2a-b3c9-f92ef482475a/"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true,
+              "invocationOffsetMs": 0
+            },
+            {
+              "method": "getRegistrations",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 96,
+                  "value": {
+                    "kind": "array",
+                    "scopes": [
+                      "http://127.0.0.1:65280/case-da03fa6e-44d3-4f2a-b3c9-f92ef482475a/"
+                    ]
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 96,
+                  "value": {
+                    "kind": "array",
+                    "scopes": [
+                      "http://127.0.0.1:65280/case-da03fa6e-44d3-4f2a-b3c9-f92ef482475a/"
+                    ]
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true,
+              "invocationOffsetMs": 0
+            },
+            {
+              "method": "ready",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 96,
+                  "value": {
+                    "kind": "registration",
+                    "scope": "http://127.0.0.1:65280/case-da03fa6e-44d3-4f2a-b3c9-f92ef482475a/"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 96,
+                  "value": {
+                    "kind": "registration",
+                    "scope": "http://127.0.0.1:65280/case-da03fa6e-44d3-4f2a-b3c9-f92ef482475a/"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true,
+              "invocationOffsetMs": 0
+            },
+            {
+              "method": "register",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 112,
+                  "value": {
+                    "kind": "registration",
+                    "scope": "http://127.0.0.1:65280/attempt-da03fa6e-44d3-4f2a-b3c9-f92ef482475a/"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 112,
+                  "value": {
+                    "kind": "registration",
+                    "scope": "http://127.0.0.1:65280/attempt-da03fa6e-44d3-4f2a-b3c9-f92ef482475a/"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true,
+              "invocationOffsetMs": 0
+            }
+          ],
+          "canaries": [
+            {
+              "method": "promise-fulfilled-before-action",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 96,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-before-lifecycle-action"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 96,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-before-lifecycle-action"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true
+            },
+            {
+              "method": "promise-resolved-from-parent-after-action",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 96,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-after-lifecycle-action"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 96,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-after-lifecycle-action"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true
+            }
+          ],
+          "checkpoints": [
+            {
+              "label": "first-parent-check",
+              "elapsedMs": 1,
+              "seedPresent": true,
+              "attemptPresent": true
+            },
+            {
+              "label": "end-of-observation",
+              "elapsedMs": 5532,
+              "seedPresent": true,
+              "attemptPresent": true
+            },
+            {
+              "label": "late-check",
+              "elapsedMs": 5796,
+              "seedPresent": true,
+              "attemptPresent": true
+            }
+          ],
+          "errors": [],
+          "seedScope": "http://127.0.0.1:65280/case-da03fa6e-44d3-4f2a-b3c9-f92ef482475a/",
+          "attemptScope": "http://127.0.0.1:65280/attempt-da03fa6e-44d3-4f2a-b3c9-f92ef482475a/",
+          "ownerURL": "http://127.0.0.1:65280/case-da03fa6e-44d3-4f2a-b3c9-f92ef482475a/owner.html?token=da03fa6e-44d3-4f2a-b3c9-f92ef482475a",
+          "controlledBefore": true,
+          "lifecycleActionAt": 95,
+          "invokedAt": 95,
+          "actualDelayMs": 0,
+          "observationEndedAt": 5891,
+          "cleanupErrors": []
+        },
+        {
+          "kind": "iframe",
+          "lifecycle": "immediate",
+          "methods": [
+            {
+              "method": "getRegistration",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 6107,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 6108,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true,
+              "invocationOffsetMs": 0
+            },
+            {
+              "method": "getRegistrations",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 6108,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 6108,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true,
+              "invocationOffsetMs": 0
+            },
+            {
+              "method": "ready",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 6108,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 6108,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true,
+              "invocationOffsetMs": 0
+            },
+            {
+              "method": "register",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 6108,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 6108,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true,
+              "invocationOffsetMs": 0
+            }
+          ],
+          "canaries": [
+            {
+              "method": "promise-fulfilled-before-action",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 6108,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-before-lifecycle-action"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 6108,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-before-lifecycle-action"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true
+            },
+            {
+              "method": "promise-resolved-from-parent-after-action",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 6108,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-after-lifecycle-action"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 6108,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-after-lifecycle-action"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true
+            }
+          ],
+          "checkpoints": [
+            {
+              "label": "first-parent-check",
+              "elapsedMs": 1,
+              "seedPresent": true,
+              "attemptPresent": false
+            },
+            {
+              "label": "end-of-observation",
+              "elapsedMs": 5401,
+              "seedPresent": true,
+              "attemptPresent": false
+            },
+            {
+              "label": "late-check",
+              "elapsedMs": 5656,
+              "seedPresent": true,
+              "attemptPresent": false
+            }
+          ],
+          "errors": [],
+          "seedScope": "http://127.0.0.1:65280/case-2380ca19-3c72-4e1f-9500-0567de332ccc/",
+          "attemptScope": "http://127.0.0.1:65280/attempt-2380ca19-3c72-4e1f-9500-0567de332ccc/",
+          "ownerURL": "http://127.0.0.1:65280/case-2380ca19-3c72-4e1f-9500-0567de332ccc/owner.html?token=2380ca19-3c72-4e1f-9500-0567de332ccc",
+          "controlledBefore": true,
+          "lifecycleActionAt": 6107,
+          "removalConfirmed": true,
+          "invokedAt": 6107,
+          "actualDelayMs": 0,
+          "observationEndedAt": 11764,
+          "cleanupErrors": []
+        },
+        {
+          "kind": "iframe",
+          "lifecycle": "delayed",
+          "methods": [
+            {
+              "method": "getRegistration",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 12082,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 12082,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true,
+              "invocationOffsetMs": 100
+            },
+            {
+              "method": "getRegistrations",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 12082,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 12082,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true,
+              "invocationOffsetMs": 100
+            },
+            {
+              "method": "ready",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 12082,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 12082,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true,
+              "invocationOffsetMs": 100
+            },
+            {
+              "method": "register",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 12082,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 12082,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true,
+              "invocationOffsetMs": 100
+            }
+          ],
+          "canaries": [
+            {
+              "method": "promise-fulfilled-before-action",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 12082,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-before-lifecycle-action"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 12082,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-before-lifecycle-action"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true
+            },
+            {
+              "method": "promise-resolved-from-parent-after-action",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 12082,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-after-lifecycle-action"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 12082,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-after-lifecycle-action"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true
+            }
+          ],
+          "checkpoints": [
+            {
+              "label": "first-parent-check",
+              "elapsedMs": 0,
+              "seedPresent": true,
+              "attemptPresent": false
+            },
+            {
+              "label": "end-of-observation",
+              "elapsedMs": 5004,
+              "seedPresent": true,
+              "attemptPresent": false
+            },
+            {
+              "label": "late-check",
+              "elapsedMs": 5258,
+              "seedPresent": true,
+              "attemptPresent": false
+            }
+          ],
+          "errors": [],
+          "seedScope": "http://127.0.0.1:65280/case-2524872b-acf9-4163-9105-d3e96e19412c/",
+          "attemptScope": "http://127.0.0.1:65280/attempt-2524872b-acf9-4163-9105-d3e96e19412c/",
+          "ownerURL": "http://127.0.0.1:65280/case-2524872b-acf9-4163-9105-d3e96e19412c/owner.html?token=2524872b-acf9-4163-9105-d3e96e19412c",
+          "controlledBefore": true,
+          "lifecycleActionAt": 11982,
+          "removalConfirmed": true,
+          "invokedAt": 12082,
+          "actualDelayMs": 100,
+          "observationEndedAt": 17340,
+          "cleanupErrors": []
+        },
+        {
+          "kind": "popup",
+          "lifecycle": "live",
+          "methods": [
+            {
+              "method": "getRegistration",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 18559,
+                  "value": {
+                    "kind": "registration",
+                    "scope": "http://127.0.0.1:65280/case-1c6e4e0c-b498-4f5b-9ba5-c0c85db6f21b/"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 18559,
+                  "value": {
+                    "kind": "registration",
+                    "scope": "http://127.0.0.1:65280/case-1c6e4e0c-b498-4f5b-9ba5-c0c85db6f21b/"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true,
+              "invocationOffsetMs": 0
+            },
+            {
+              "method": "getRegistrations",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 18559,
+                  "value": {
+                    "kind": "array",
+                    "scopes": [
+                      "http://127.0.0.1:65280/case-1c6e4e0c-b498-4f5b-9ba5-c0c85db6f21b/"
+                    ]
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 18559,
+                  "value": {
+                    "kind": "array",
+                    "scopes": [
+                      "http://127.0.0.1:65280/case-1c6e4e0c-b498-4f5b-9ba5-c0c85db6f21b/"
+                    ]
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true,
+              "invocationOffsetMs": 0
+            },
+            {
+              "method": "ready",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 18559,
+                  "value": {
+                    "kind": "registration",
+                    "scope": "http://127.0.0.1:65280/case-1c6e4e0c-b498-4f5b-9ba5-c0c85db6f21b/"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 18559,
+                  "value": {
+                    "kind": "registration",
+                    "scope": "http://127.0.0.1:65280/case-1c6e4e0c-b498-4f5b-9ba5-c0c85db6f21b/"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true,
+              "invocationOffsetMs": 0
+            },
+            {
+              "method": "register",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 18570,
+                  "value": {
+                    "kind": "registration",
+                    "scope": "http://127.0.0.1:65280/attempt-1c6e4e0c-b498-4f5b-9ba5-c0c85db6f21b/"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 18570,
+                  "value": {
+                    "kind": "registration",
+                    "scope": "http://127.0.0.1:65280/attempt-1c6e4e0c-b498-4f5b-9ba5-c0c85db6f21b/"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true,
+              "invocationOffsetMs": 0
+            }
+          ],
+          "canaries": [
+            {
+              "method": "promise-fulfilled-before-action",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 18556,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-before-lifecycle-action"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 18556,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-before-lifecycle-action"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true
+            },
+            {
+              "method": "promise-resolved-from-parent-after-action",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 18556,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-after-lifecycle-action"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 18556,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-after-lifecycle-action"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true
+            }
+          ],
+          "checkpoints": [
+            {
+              "label": "first-parent-check",
+              "elapsedMs": 4,
+              "seedPresent": true,
+              "attemptPresent": true
+            },
+            {
+              "label": "end-of-observation",
+              "elapsedMs": 5002,
+              "seedPresent": true,
+              "attemptPresent": true
+            },
+            {
+              "label": "late-check",
+              "elapsedMs": 6051,
+              "seedPresent": true,
+              "attemptPresent": true
+            }
+          ],
+          "errors": [],
+          "seedScope": "http://127.0.0.1:65280/case-1c6e4e0c-b498-4f5b-9ba5-c0c85db6f21b/",
+          "attemptScope": "http://127.0.0.1:65280/attempt-1c6e4e0c-b498-4f5b-9ba5-c0c85db6f21b/",
+          "ownerURL": "http://127.0.0.1:65280/case-1c6e4e0c-b498-4f5b-9ba5-c0c85db6f21b/owner.html?token=1c6e4e0c-b498-4f5b-9ba5-c0c85db6f21b",
+          "controlledBefore": true,
+          "lifecycleActionAt": 18555,
+          "invokedAt": 18555,
+          "actualDelayMs": 0,
+          "observationEndedAt": 24606,
+          "cleanupErrors": []
+        },
+        {
+          "kind": "popup",
+          "lifecycle": "immediate",
+          "methods": [
+            {
+              "method": "getRegistration",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 25931,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 25931,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true,
+              "invocationOffsetMs": 0
+            },
+            {
+              "method": "getRegistrations",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 25931,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 25931,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true,
+              "invocationOffsetMs": 0
+            },
+            {
+              "method": "ready",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 25927,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 25927,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true,
+              "invocationOffsetMs": 0
+            },
+            {
+              "method": "register",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 25946,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 25946,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true,
+              "invocationOffsetMs": 0
+            }
+          ],
+          "canaries": [
+            {
+              "method": "promise-fulfilled-before-action",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 25917,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-before-lifecycle-action"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 25917,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-before-lifecycle-action"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true
+            },
+            {
+              "method": "promise-resolved-from-parent-after-action",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 25917,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-after-lifecycle-action"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 25917,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-after-lifecycle-action"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true
+            }
+          ],
+          "checkpoints": [
+            {
+              "label": "first-parent-check",
+              "elapsedMs": 14,
+              "seedPresent": true,
+              "attemptPresent": true
+            },
+            {
+              "label": "end-of-observation",
+              "elapsedMs": 5414,
+              "seedPresent": true,
+              "attemptPresent": true
+            },
+            {
+              "label": "late-check",
+              "elapsedMs": 5679,
+              "seedPresent": true,
+              "attemptPresent": true
+            }
+          ],
+          "errors": [],
+          "seedScope": "http://127.0.0.1:65280/case-d8fad795-a0bf-4995-9556-ddb3ad2f844f/",
+          "attemptScope": "http://127.0.0.1:65280/attempt-d8fad795-a0bf-4995-9556-ddb3ad2f844f/",
+          "ownerURL": "http://127.0.0.1:65280/case-d8fad795-a0bf-4995-9556-ddb3ad2f844f/owner.html?token=d8fad795-a0bf-4995-9556-ddb3ad2f844f",
+          "controlledBefore": true,
+          "lifecycleActionAt": 25917,
+          "removalConfirmed": true,
+          "invokedAt": 25917,
+          "actualDelayMs": 0,
+          "observationEndedAt": 31596,
+          "cleanupErrors": []
+        },
+        {
+          "kind": "popup",
+          "lifecycle": "delayed",
+          "methods": [
+            {
+              "method": "getRegistration",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 32887,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 32887,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true,
+              "invocationOffsetMs": 100
+            },
+            {
+              "method": "getRegistrations",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 32887,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 32887,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true,
+              "invocationOffsetMs": 100
+            },
+            {
+              "method": "ready",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 32887,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 32887,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true,
+              "invocationOffsetMs": 100
+            },
+            {
+              "method": "register",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 32887,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 32887,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true,
+              "invocationOffsetMs": 100
+            }
+          ],
+          "canaries": [
+            {
+              "method": "promise-fulfilled-before-action",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 32887,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-before-lifecycle-action"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 32887,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-before-lifecycle-action"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true
+            },
+            {
+              "method": "promise-resolved-from-parent-after-action",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 32887,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-after-lifecycle-action"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 32887,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-after-lifecycle-action"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true
+            }
+          ],
+          "checkpoints": [
+            {
+              "label": "first-parent-check",
+              "elapsedMs": 1,
+              "seedPresent": true,
+              "attemptPresent": false
+            },
+            {
+              "label": "end-of-observation",
+              "elapsedMs": 5426,
+              "seedPresent": true,
+              "attemptPresent": false
+            },
+            {
+              "label": "late-check",
+              "elapsedMs": 5681,
+              "seedPresent": true,
+              "attemptPresent": false
+            }
+          ],
+          "errors": [],
+          "seedScope": "http://127.0.0.1:65280/case-44785d68-7a71-4d58-b2c2-0da15accf91a/",
+          "attemptScope": "http://127.0.0.1:65280/attempt-44785d68-7a71-4d58-b2c2-0da15accf91a/",
+          "ownerURL": "http://127.0.0.1:65280/case-44785d68-7a71-4d58-b2c2-0da15accf91a/owner.html?token=44785d68-7a71-4d58-b2c2-0da15accf91a",
+          "controlledBefore": true,
+          "lifecycleActionAt": 32786,
+          "removalConfirmed": true,
+          "invokedAt": 32886,
+          "actualDelayMs": 100,
+          "observationEndedAt": 38567,
+          "cleanupErrors": []
+        }
+      ],
+      "errors": [],
+      "complete": true,
+      "running": false,
+      "finished": "2026-10-15T19:57:52.848Z"
+    },
+    {
+      "issue": "w3c/ServiceWorker#777",
+      "kind": "Observation only, not normative WPT",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:158.0) Gecko/20100101 Firefox/158.0",
+      "started": "2026-10-15T19:57:52.922Z",
+      "observationMs": 5000,
+      "delayedInvocationMs": 100,
+      "mode": "Unseeded, isolated register()",
+      "invocation": "Methods looked up on the retained container after lifecycle action",
+      "observers": "Both callbacks execute in live parent; use parent native then and returnedPromise.then",
+      "cases": [
+        {
+          "kind": "iframe",
+          "lifecycle": "live",
+          "methods": [
+            {
+              "method": "register",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 54,
+                  "value": {
+                    "kind": "registration",
+                    "scope": "http://127.0.0.1:65280/attempt-128ac2ac-dd84-4bbf-bb3c-5910a37e4b09/"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 54,
+                  "value": {
+                    "kind": "registration",
+                    "scope": "http://127.0.0.1:65280/attempt-128ac2ac-dd84-4bbf-bb3c-5910a37e4b09/"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true,
+              "invocationOffsetMs": 1
+            }
+          ],
+          "canaries": [
+            {
+              "method": "promise-fulfilled-before-action",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 35,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-before-lifecycle-action"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 35,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-before-lifecycle-action"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true
+            },
+            {
+              "method": "promise-resolved-from-parent-after-action",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 35,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-after-lifecycle-action"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 35,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-after-lifecycle-action"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true
+            }
+          ],
+          "checkpoints": [
+            {
+              "label": "first-parent-check",
+              "elapsedMs": 4,
+              "seedPresent": false,
+              "attemptPresent": true
+            },
+            {
+              "label": "end-of-observation",
+              "elapsedMs": 5358,
+              "seedPresent": false,
+              "attemptPresent": true
+            },
+            {
+              "label": "late-check",
+              "elapsedMs": 5612,
+              "seedPresent": false,
+              "attemptPresent": true
+            }
+          ],
+          "errors": [],
+          "seedScope": "http://127.0.0.1:65280/case-128ac2ac-dd84-4bbf-bb3c-5910a37e4b09/",
+          "attemptScope": "http://127.0.0.1:65280/attempt-128ac2ac-dd84-4bbf-bb3c-5910a37e4b09/",
+          "ownerURL": "http://127.0.0.1:65280/case-128ac2ac-dd84-4bbf-bb3c-5910a37e4b09/owner.html?token=128ac2ac-dd84-4bbf-bb3c-5910a37e4b09",
+          "controlledBefore": false,
+          "lifecycleActionAt": 34,
+          "invokedAt": 34,
+          "actualDelayMs": 0,
+          "observationEndedAt": 5646,
+          "cleanupErrors": []
+        },
+        {
+          "kind": "iframe",
+          "lifecycle": "immediate",
+          "methods": [
+            {
+              "method": "register",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 5916,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 5916,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true,
+              "invocationOffsetMs": 1
+            }
+          ],
+          "canaries": [
+            {
+              "method": "promise-fulfilled-before-action",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 5916,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-before-lifecycle-action"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 5916,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-before-lifecycle-action"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true
+            },
+            {
+              "method": "promise-resolved-from-parent-after-action",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 5916,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-after-lifecycle-action"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 5916,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-after-lifecycle-action"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true
+            }
+          ],
+          "checkpoints": [
+            {
+              "label": "first-parent-check",
+              "elapsedMs": 0,
+              "seedPresent": false,
+              "attemptPresent": false
+            },
+            {
+              "label": "end-of-observation",
+              "elapsedMs": 5135,
+              "seedPresent": false,
+              "attemptPresent": false
+            },
+            {
+              "label": "late-check",
+              "elapsedMs": 5391,
+              "seedPresent": false,
+              "attemptPresent": false
+            }
+          ],
+          "errors": [],
+          "seedScope": "http://127.0.0.1:65280/case-96509764-d1eb-40b5-82d9-2d10b4e5e9d8/",
+          "attemptScope": "http://127.0.0.1:65280/attempt-96509764-d1eb-40b5-82d9-2d10b4e5e9d8/",
+          "ownerURL": "http://127.0.0.1:65280/case-96509764-d1eb-40b5-82d9-2d10b4e5e9d8/owner.html?token=96509764-d1eb-40b5-82d9-2d10b4e5e9d8",
+          "controlledBefore": false,
+          "lifecycleActionAt": 5915,
+          "removalConfirmed": true,
+          "invokedAt": 5916,
+          "actualDelayMs": 1,
+          "observationEndedAt": 11307,
+          "cleanupErrors": []
+        },
+        {
+          "kind": "iframe",
+          "lifecycle": "delayed",
+          "methods": [
+            {
+              "method": "register",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 11582,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 11582,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true,
+              "invocationOffsetMs": 100
+            }
+          ],
+          "canaries": [
+            {
+              "method": "promise-fulfilled-before-action",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 11582,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-before-lifecycle-action"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 11582,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-before-lifecycle-action"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true
+            },
+            {
+              "method": "promise-resolved-from-parent-after-action",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 11582,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-after-lifecycle-action"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 11582,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-after-lifecycle-action"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true
+            }
+          ],
+          "checkpoints": [
+            {
+              "label": "first-parent-check",
+              "elapsedMs": 2,
+              "seedPresent": false,
+              "attemptPresent": false
+            },
+            {
+              "label": "end-of-observation",
+              "elapsedMs": 5038,
+              "seedPresent": false,
+              "attemptPresent": false
+            },
+            {
+              "label": "late-check",
+              "elapsedMs": 5291,
+              "seedPresent": false,
+              "attemptPresent": false
+            }
+          ],
+          "errors": [],
+          "seedScope": "http://127.0.0.1:65280/case-24c50cfe-7e1c-4dc9-8f67-997000314dfe/",
+          "attemptScope": "http://127.0.0.1:65280/attempt-24c50cfe-7e1c-4dc9-8f67-997000314dfe/",
+          "ownerURL": "http://127.0.0.1:65280/case-24c50cfe-7e1c-4dc9-8f67-997000314dfe/owner.html?token=24c50cfe-7e1c-4dc9-8f67-997000314dfe",
+          "controlledBefore": false,
+          "lifecycleActionAt": 11481,
+          "removalConfirmed": true,
+          "invokedAt": 11581,
+          "actualDelayMs": 100,
+          "observationEndedAt": 16872,
+          "cleanupErrors": []
+        },
+        {
+          "kind": "popup",
+          "lifecycle": "live",
+          "methods": [
+            {
+              "method": "register",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 17088,
+                  "value": {
+                    "kind": "registration",
+                    "scope": "http://127.0.0.1:65280/attempt-c8e17b7d-2643-4ec7-bfac-ffba7acd0ce0/"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 17088,
+                  "value": {
+                    "kind": "registration",
+                    "scope": "http://127.0.0.1:65280/attempt-c8e17b7d-2643-4ec7-bfac-ffba7acd0ce0/"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true,
+              "invocationOffsetMs": 0
+            }
+          ],
+          "canaries": [
+            {
+              "method": "promise-fulfilled-before-action",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 17073,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-before-lifecycle-action"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 17073,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-before-lifecycle-action"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true
+            },
+            {
+              "method": "promise-resolved-from-parent-after-action",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 17073,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-after-lifecycle-action"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 17073,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-after-lifecycle-action"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true
+            }
+          ],
+          "checkpoints": [
+            {
+              "label": "first-parent-check",
+              "elapsedMs": 2,
+              "seedPresent": false,
+              "attemptPresent": true
+            },
+            {
+              "label": "end-of-observation",
+              "elapsedMs": 5119,
+              "seedPresent": false,
+              "attemptPresent": true
+            },
+            {
+              "label": "late-check",
+              "elapsedMs": 6130,
+              "seedPresent": false,
+              "attemptPresent": true
+            }
+          ],
+          "errors": [],
+          "seedScope": "http://127.0.0.1:65280/case-c8e17b7d-2643-4ec7-bfac-ffba7acd0ce0/",
+          "attemptScope": "http://127.0.0.1:65280/attempt-c8e17b7d-2643-4ec7-bfac-ffba7acd0ce0/",
+          "ownerURL": "http://127.0.0.1:65280/case-c8e17b7d-2643-4ec7-bfac-ffba7acd0ce0/owner.html?token=c8e17b7d-2643-4ec7-bfac-ffba7acd0ce0",
+          "controlledBefore": false,
+          "lifecycleActionAt": 17073,
+          "invokedAt": 17073,
+          "actualDelayMs": 0,
+          "observationEndedAt": 23203,
+          "cleanupErrors": []
+        },
+        {
+          "kind": "popup",
+          "lifecycle": "immediate",
+          "methods": [
+            {
+              "method": "register",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 23473,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 23473,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true,
+              "invocationOffsetMs": 1
+            }
+          ],
+          "canaries": [
+            {
+              "method": "promise-fulfilled-before-action",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 23434,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-before-lifecycle-action"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 23434,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-before-lifecycle-action"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true
+            },
+            {
+              "method": "promise-resolved-from-parent-after-action",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 23434,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-after-lifecycle-action"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 23434,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-after-lifecycle-action"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true
+            }
+          ],
+          "checkpoints": [
+            {
+              "label": "first-parent-check",
+              "elapsedMs": 13,
+              "seedPresent": false,
+              "attemptPresent": true
+            },
+            {
+              "label": "end-of-observation",
+              "elapsedMs": 5010,
+              "seedPresent": false,
+              "attemptPresent": true
+            },
+            {
+              "label": "late-check",
+              "elapsedMs": 5264,
+              "seedPresent": false,
+              "attemptPresent": true
+            }
+          ],
+          "errors": [],
+          "seedScope": "http://127.0.0.1:65280/case-06759244-2631-4fef-b86b-f67f47fe3beb/",
+          "attemptScope": "http://127.0.0.1:65280/attempt-06759244-2631-4fef-b86b-f67f47fe3beb/",
+          "ownerURL": "http://127.0.0.1:65280/case-06759244-2631-4fef-b86b-f67f47fe3beb/owner.html?token=06759244-2631-4fef-b86b-f67f47fe3beb",
+          "controlledBefore": false,
+          "lifecycleActionAt": 23433,
+          "removalConfirmed": true,
+          "invokedAt": 23434,
+          "actualDelayMs": 1,
+          "observationEndedAt": 28698,
+          "cleanupErrors": []
+        },
+        {
+          "kind": "popup",
+          "lifecycle": "delayed",
+          "methods": [
+            {
+              "method": "register",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 28966,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 28966,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true,
+              "invocationOffsetMs": 101
+            }
+          ],
+          "canaries": [
+            {
+              "method": "promise-fulfilled-before-action",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 28966,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-before-lifecycle-action"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 28966,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-before-lifecycle-action"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true
+            },
+            {
+              "method": "promise-resolved-from-parent-after-action",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 28966,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-after-lifecycle-action"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 28966,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-after-lifecycle-action"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true
+            }
+          ],
+          "checkpoints": [
+            {
+              "label": "first-parent-check",
+              "elapsedMs": 1,
+              "seedPresent": false,
+              "attemptPresent": false
+            },
+            {
+              "label": "end-of-observation",
+              "elapsedMs": 5026,
+              "seedPresent": false,
+              "attemptPresent": false
+            },
+            {
+              "label": "late-check",
+              "elapsedMs": 5281,
+              "seedPresent": false,
+              "attemptPresent": false
+            }
+          ],
+          "errors": [],
+          "seedScope": "http://127.0.0.1:65280/case-1bcf64b1-f084-4d9a-bdf9-0894eb831708/",
+          "attemptScope": "http://127.0.0.1:65280/attempt-1bcf64b1-f084-4d9a-bdf9-0894eb831708/",
+          "ownerURL": "http://127.0.0.1:65280/case-1bcf64b1-f084-4d9a-bdf9-0894eb831708/owner.html?token=1bcf64b1-f084-4d9a-bdf9-0894eb831708",
+          "controlledBefore": false,
+          "lifecycleActionAt": 28865,
+          "removalConfirmed": true,
+          "invokedAt": 28966,
+          "actualDelayMs": 101,
+          "observationEndedAt": 34247,
+          "cleanupErrors": []
+        }
+      ],
+      "errors": [],
+      "complete": true,
+      "running": false,
+      "finished": "2026-10-15T19:58:27.257Z"
+    },
+    {
+      "issue": "w3c/ServiceWorker#777",
+      "kind": "Observation only, not normative WPT",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:158.0) Gecko/20100101 Firefox/158.0",
+      "started": "2026-10-15T19:58:27.358Z",
+      "observationMs": 5000,
+      "delayedInvocationMs": 100,
+      "mode": "Unseeded, isolated register()",
+      "invocation": "Methods looked up on the retained container after lifecycle action",
+      "observers": "Both callbacks execute in live parent; use parent native then and returnedPromise.then",
+      "cases": [
+        {
+          "kind": "iframe",
+          "lifecycle": "live",
+          "methods": [
+            {
+              "method": "register",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 70,
+                  "value": {
+                    "kind": "registration",
+                    "scope": "http://127.0.0.1:65280/attempt-3f98fb36-87a5-49ba-af30-f38ff3282fbe/"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 70,
+                  "value": {
+                    "kind": "registration",
+                    "scope": "http://127.0.0.1:65280/attempt-3f98fb36-87a5-49ba-af30-f38ff3282fbe/"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true,
+              "invocationOffsetMs": 0
+            }
+          ],
+          "canaries": [
+            {
+              "method": "promise-fulfilled-before-action",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 34,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-before-lifecycle-action"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 34,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-before-lifecycle-action"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true
+            },
+            {
+              "method": "promise-resolved-from-parent-after-action",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 34,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-after-lifecycle-action"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 34,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-after-lifecycle-action"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true
+            }
+          ],
+          "checkpoints": [
+            {
+              "label": "first-parent-check",
+              "elapsedMs": 1,
+              "seedPresent": false,
+              "attemptPresent": true
+            },
+            {
+              "label": "end-of-observation",
+              "elapsedMs": 5055,
+              "seedPresent": false,
+              "attemptPresent": true
+            },
+            {
+              "label": "late-check",
+              "elapsedMs": 5308,
+              "seedPresent": false,
+              "attemptPresent": true
+            }
+          ],
+          "errors": [],
+          "seedScope": "http://127.0.0.1:65280/case-3f98fb36-87a5-49ba-af30-f38ff3282fbe/",
+          "attemptScope": "http://127.0.0.1:65280/attempt-3f98fb36-87a5-49ba-af30-f38ff3282fbe/",
+          "ownerURL": "http://127.0.0.1:65280/case-3f98fb36-87a5-49ba-af30-f38ff3282fbe/owner.html?token=3f98fb36-87a5-49ba-af30-f38ff3282fbe",
+          "controlledBefore": false,
+          "lifecycleActionAt": 33,
+          "invokedAt": 33,
+          "actualDelayMs": 0,
+          "observationEndedAt": 5341,
+          "cleanupErrors": []
+        },
+        {
+          "kind": "iframe",
+          "lifecycle": "immediate",
+          "methods": [
+            {
+              "method": "register",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 5593,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 5593,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true,
+              "invocationOffsetMs": 1
+            }
+          ],
+          "canaries": [
+            {
+              "method": "promise-fulfilled-before-action",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 5593,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-before-lifecycle-action"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 5593,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-before-lifecycle-action"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true
+            },
+            {
+              "method": "promise-resolved-from-parent-after-action",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 5593,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-after-lifecycle-action"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 5593,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-after-lifecycle-action"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true
+            }
+          ],
+          "checkpoints": [
+            {
+              "label": "first-parent-check",
+              "elapsedMs": 0,
+              "seedPresent": false,
+              "attemptPresent": false
+            },
+            {
+              "label": "end-of-observation",
+              "elapsedMs": 5295,
+              "seedPresent": false,
+              "attemptPresent": false
+            },
+            {
+              "label": "late-check",
+              "elapsedMs": 5549,
+              "seedPresent": false,
+              "attemptPresent": false
+            }
+          ],
+          "errors": [],
+          "seedScope": "http://127.0.0.1:65280/case-30235d1a-2833-4b67-910b-f99a40461369/",
+          "attemptScope": "http://127.0.0.1:65280/attempt-30235d1a-2833-4b67-910b-f99a40461369/",
+          "ownerURL": "http://127.0.0.1:65280/case-30235d1a-2833-4b67-910b-f99a40461369/owner.html?token=30235d1a-2833-4b67-910b-f99a40461369",
+          "controlledBefore": false,
+          "lifecycleActionAt": 5592,
+          "removalConfirmed": true,
+          "invokedAt": 5593,
+          "actualDelayMs": 1,
+          "observationEndedAt": 11142,
+          "cleanupErrors": []
+        },
+        {
+          "kind": "iframe",
+          "lifecycle": "delayed",
+          "methods": [
+            {
+              "method": "register",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 11413,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 11413,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true,
+              "invocationOffsetMs": 100
+            }
+          ],
+          "canaries": [
+            {
+              "method": "promise-fulfilled-before-action",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 11413,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-before-lifecycle-action"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 11413,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-before-lifecycle-action"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true
+            },
+            {
+              "method": "promise-resolved-from-parent-after-action",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 11413,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-after-lifecycle-action"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 11413,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-after-lifecycle-action"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true
+            }
+          ],
+          "checkpoints": [
+            {
+              "label": "first-parent-check",
+              "elapsedMs": 1,
+              "seedPresent": false,
+              "attemptPresent": false
+            },
+            {
+              "label": "end-of-observation",
+              "elapsedMs": 5045,
+              "seedPresent": false,
+              "attemptPresent": false
+            },
+            {
+              "label": "late-check",
+              "elapsedMs": 5299,
+              "seedPresent": false,
+              "attemptPresent": false
+            }
+          ],
+          "errors": [],
+          "seedScope": "http://127.0.0.1:65280/case-e7bcbe4d-f191-4ae2-868f-113f95283325/",
+          "attemptScope": "http://127.0.0.1:65280/attempt-e7bcbe4d-f191-4ae2-868f-113f95283325/",
+          "ownerURL": "http://127.0.0.1:65280/case-e7bcbe4d-f191-4ae2-868f-113f95283325/owner.html?token=e7bcbe4d-f191-4ae2-868f-113f95283325",
+          "controlledBefore": false,
+          "lifecycleActionAt": 11313,
+          "removalConfirmed": true,
+          "invokedAt": 11413,
+          "actualDelayMs": 100,
+          "observationEndedAt": 16712,
+          "cleanupErrors": []
+        },
+        {
+          "kind": "popup",
+          "lifecycle": "live",
+          "methods": [
+            {
+              "method": "register",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 16926,
+                  "value": {
+                    "kind": "registration",
+                    "scope": "http://127.0.0.1:65280/attempt-1125a519-9b23-411b-8aa7-6a28c72e93b0/"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 16926,
+                  "value": {
+                    "kind": "registration",
+                    "scope": "http://127.0.0.1:65280/attempt-1125a519-9b23-411b-8aa7-6a28c72e93b0/"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true,
+              "invocationOffsetMs": 0
+            }
+          ],
+          "canaries": [
+            {
+              "method": "promise-fulfilled-before-action",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 16908,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-before-lifecycle-action"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 16908,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-before-lifecycle-action"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true
+            },
+            {
+              "method": "promise-resolved-from-parent-after-action",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 16908,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-after-lifecycle-action"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 16908,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-after-lifecycle-action"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true
+            }
+          ],
+          "checkpoints": [
+            {
+              "label": "first-parent-check",
+              "elapsedMs": 3,
+              "seedPresent": false,
+              "attemptPresent": true
+            },
+            {
+              "label": "end-of-observation",
+              "elapsedMs": 5342,
+              "seedPresent": false,
+              "attemptPresent": true
+            },
+            {
+              "label": "late-check",
+              "elapsedMs": 6355,
+              "seedPresent": false,
+              "attemptPresent": true
+            }
+          ],
+          "errors": [],
+          "seedScope": "http://127.0.0.1:65280/case-1125a519-9b23-411b-8aa7-6a28c72e93b0/",
+          "attemptScope": "http://127.0.0.1:65280/attempt-1125a519-9b23-411b-8aa7-6a28c72e93b0/",
+          "ownerURL": "http://127.0.0.1:65280/case-1125a519-9b23-411b-8aa7-6a28c72e93b0/owner.html?token=1125a519-9b23-411b-8aa7-6a28c72e93b0",
+          "controlledBefore": false,
+          "lifecycleActionAt": 16908,
+          "invokedAt": 16908,
+          "actualDelayMs": 0,
+          "observationEndedAt": 23263,
+          "cleanupErrors": []
+        },
+        {
+          "kind": "popup",
+          "lifecycle": "immediate",
+          "methods": [
+            {
+              "method": "register",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 23477,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 23477,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true,
+              "invocationOffsetMs": 0
+            }
+          ],
+          "canaries": [
+            {
+              "method": "promise-fulfilled-before-action",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 23441,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-before-lifecycle-action"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 23441,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-before-lifecycle-action"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true
+            },
+            {
+              "method": "promise-resolved-from-parent-after-action",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 23441,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-after-lifecycle-action"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 23441,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-after-lifecycle-action"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true
+            }
+          ],
+          "checkpoints": [
+            {
+              "label": "first-parent-check",
+              "elapsedMs": 13,
+              "seedPresent": false,
+              "attemptPresent": true
+            },
+            {
+              "label": "end-of-observation",
+              "elapsedMs": 5196,
+              "seedPresent": false,
+              "attemptPresent": true
+            },
+            {
+              "label": "late-check",
+              "elapsedMs": 5450,
+              "seedPresent": false,
+              "attemptPresent": true
+            }
+          ],
+          "errors": [],
+          "seedScope": "http://127.0.0.1:65280/case-1eafdcb6-1f63-497b-ba1c-c9e49efbd0ce/",
+          "attemptScope": "http://127.0.0.1:65280/attempt-1eafdcb6-1f63-497b-ba1c-c9e49efbd0ce/",
+          "ownerURL": "http://127.0.0.1:65280/case-1eafdcb6-1f63-497b-ba1c-c9e49efbd0ce/owner.html?token=1eafdcb6-1f63-497b-ba1c-c9e49efbd0ce",
+          "controlledBefore": false,
+          "lifecycleActionAt": 23440,
+          "removalConfirmed": true,
+          "invokedAt": 23440,
+          "actualDelayMs": 0,
+          "observationEndedAt": 28890,
+          "cleanupErrors": []
+        },
+        {
+          "kind": "popup",
+          "lifecycle": "delayed",
+          "methods": [
+            {
+              "method": "register",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 29138,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "rejected",
+                  "callbackObservedAt": 29138,
+                  "error": {
+                    "name": "InvalidStateError",
+                    "message": "An attempt was made to use an object that is not, or is no longer, usable"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true,
+              "invocationOffsetMs": 101
+            }
+          ],
+          "canaries": [
+            {
+              "method": "promise-fulfilled-before-action",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 29138,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-before-lifecycle-action"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 29138,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-before-lifecycle-action"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true
+            },
+            {
+              "method": "promise-resolved-from-parent-after-action",
+              "returnedSynchronously": true,
+              "returnType": "object",
+              "observers": {
+                "parent-native-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 29138,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-after-lifecycle-action"
+                  }
+                },
+                "returned-promise-then": {
+                  "state": "fulfilled",
+                  "callbackObservedAt": 29138,
+                  "value": {
+                    "kind": "string",
+                    "value": "fulfilled-after-lifecycle-action"
+                  }
+                }
+              },
+              "nativePromiseBrandAccepted": true
+            }
+          ],
+          "checkpoints": [
+            {
+              "label": "first-parent-check",
+              "elapsedMs": 1,
+              "seedPresent": false,
+              "attemptPresent": false
+            },
+            {
+              "label": "end-of-observation",
+              "elapsedMs": 5001,
+              "seedPresent": false,
+              "attemptPresent": false
+            },
+            {
+              "label": "late-check",
+              "elapsedMs": 5267,
+              "seedPresent": false,
+              "attemptPresent": false
+            }
+          ],
+          "errors": [],
+          "seedScope": "http://127.0.0.1:65280/case-7707878d-6750-4c4f-967c-4d46792ea347/",
+          "attemptScope": "http://127.0.0.1:65280/attempt-7707878d-6750-4c4f-967c-4d46792ea347/",
+          "ownerURL": "http://127.0.0.1:65280/case-7707878d-6750-4c4f-967c-4d46792ea347/owner.html?token=7707878d-6750-4c4f-967c-4d46792ea347",
+          "controlledBefore": false,
+          "lifecycleActionAt": 29037,
+          "removalConfirmed": true,
+          "invokedAt": 29138,
+          "actualDelayMs": 101,
+          "observationEndedAt": 34405,
+          "cleanupErrors": []
+        }
+      ],
+      "errors": [],
+      "complete": true,
+      "running": false,
+      "finished": "2026-10-15T19:59:01.846Z"
+    }
+  ],
+  "pageErrors": [],
+  "version": "158.0"
+}
